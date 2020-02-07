@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import { Switch, Route } from "react-router-dom";
+import HomePage from "./components/HomePage"
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state= {
+    currentUser: false
+    }
+  }
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Switch>
+        {this.state.currentUser ? (
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return (
+                  <div>HELLO WELCOME</div>
+                  // <Dashboard
+                  //   // toLogout={() => this.logoutClick()}
+                  //   // currentUser={this.state.currentUser}
+                  //   // rerouteUrl="/"
+                  //   // onFollowCurrentUser={user => this.updateUser(user)}
+                  // />
+                );
+              }}
+            />
+          ) : (
+            <Route exact path="/" component={HomePage} />
+          )}
+        </Switch>
     </div>
-  );
+  );}
 }
 
 export default App;

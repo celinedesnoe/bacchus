@@ -1,0 +1,50 @@
+
+$theme-colors: (
+  "primary": #680202,
+  "secondary": #e8f0f5,
+  "tertiary": #d5d4ff,
+  "tertiary-2": #eaeaff,
+  "danger": #e24d5f,
+  "muted": #b0bac9,
+  "black": #2a294e,
+  "black-secondary": #69707f,
+  "black-tertiary": #8798ad,
+  "gray": #bfc5d2,
+  "gray-secondary": #f4f6fc,
+  "gray-tertiary": #eef3f5,
+  "green": #67d563,
+  "pink": #FF3892,
+  "light-pink": #ffeaf3,
+  "purple": #6866a8,
+  "light-purple": #e3e2ff,
+  "grey-light": #e9eef5,
+  "grey-lighter": #f4f6fc,
+  "grey-dark": #63687e,
+  "grey": #b4bac8,
+  "orange": #f76b1c,
+  "orange-light": #fab505,
+  "purple-light-brand": #dddcff,
+  "success": #67d563
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.background-home{
+  height: 100vh;
+}
+
