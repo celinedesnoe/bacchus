@@ -61,21 +61,19 @@ div {
 
 input {
   background-color: rgba(104, 2, 2, 0.1) !important;
-  border-color: rgba(104, 2, 2, 0.1) !important;
   font-size: 12px !important;
+  border: 0px solid theme-color("primary") !important;
+
   &::placeholder {
     opacity: 0.5 !important;
   }
   &:focus {
-    // border: 1px solid theme-color("primary") !important;
-    // box-shadow: 0 0 0 0.1rem rgba(104, 2, 2, 0.25) !important;
-    border: none !important;
+    border: 0px solid theme-color("primary") !important;
     box-shadow: none !important;
   }
+
   &:active {
-    // border: 1px solid theme-color("primary") !important;
-    // box-shadow: 0 0 0 0.1rem rgba(104, 2, 2, 0.25) !important;
-    border: none !important;
+    border: 0px solid theme-color("primary") !important;
     box-shadow: none !important;
   }
 }
@@ -84,10 +82,17 @@ input {
   background-color: theme-color("primary");
   color: white;
   border-radius: 5px;
+  border: 2px solid theme-color("primary");
   text-align: center;
   font-family: "Abril Fatface", cursive;
   padding: 4px;
   min-width: fit-content;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    color: theme-color("primary");
+    background-color: white;
+  }
 }
 
 .loader {
