@@ -1,4 +1,3 @@
-
 $theme-colors: (
   "primary": #680202,
   "secondary": #e8f0f5,
@@ -13,7 +12,7 @@ $theme-colors: (
   "gray-secondary": #f4f6fc,
   "gray-tertiary": #eef3f5,
   "green": #67d563,
-  "pink": #FF3892,
+  "pink": #ff3892,
   "light-pink": #ffeaf3,
   "purple": #6866a8,
   "light-purple": #e3e2ff,
@@ -29,22 +28,27 @@ $theme-colors: (
 
 @import "~bootstrap/scss/bootstrap.scss";
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.background-home{
+.background-home {
   height: 100vh;
 }
 
+.loader {
+  background-image: url("/loader.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 30px;
+  height: 30px;
+}

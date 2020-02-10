@@ -10,7 +10,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className="bg-primary background-home text-white">
-          HOMEPAGE
+          <div>HOMEPAGE</div>
+          <div className="loader"></div>
       </div>
     );
   }
