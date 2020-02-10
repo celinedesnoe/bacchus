@@ -1,29 +1,30 @@
 $theme-colors: (
   "primary": #680202,
-  "secondary": #e8f0f5,
-  "tertiary": #d5d4ff,
-  "tertiary-2": #eaeaff,
-  "danger": #e24d5f,
-  "muted": #b0bac9,
-  "black": #2a294e,
-  "black-secondary": #69707f,
-  "black-tertiary": #8798ad,
-  "gray": #bfc5d2,
-  "gray-secondary": #f4f6fc,
-  "gray-tertiary": #eef3f5,
-  "green": #67d563,
-  "pink": #ff3892,
-  "light-pink": #ffeaf3,
-  "purple": #6866a8,
-  "light-purple": #e3e2ff,
-  "grey-light": #e9eef5,
-  "grey-lighter": #f4f6fc,
-  "grey-dark": #63687e,
-  "grey": #b4bac8,
-  "orange": #f76b1c,
-  "orange-light": #fab505,
-  "purple-light-brand": #dddcff,
-  "success": #67d563
+  "secondary": #f7d1cd,
+  "tertiary": #a7d49b,
+  "grey": #e3e4db,
+  "dark": #393d3f // "tertiary-2": #eaeaff,
+    // "danger": #e24d5f,
+    // "muted": #b0bac9,
+    // "black": #2a294e,
+    // "black-secondary": #69707f,
+    // "black-tertiary": #8798ad,
+    // "gray": #bfc5d2,
+    // "gray-secondary": #f4f6fc,
+    // "gray-tertiary": #eef3f5,
+    // "green": #67d563,
+    // "pink": #ff3892,
+    // "light-pink": #ffeaf3,
+    // "purple": #6866a8,
+    // "light-purple": #e3e2ff,
+    // "grey-light": #e9eef5,
+    // "grey-lighter": #f4f6fc,
+    // "grey-dark": #63687e,
+    // "grey": #b4bac8,
+    // "orange": #f76b1c,
+    // "orange-light": #fab505,
+    // "purple-light-brand": #dddcff,
+    // "success": #67d563
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
@@ -44,6 +45,18 @@ code {
   height: 100vh;
 }
 
+.title-bacchus {
+  font-family: "Permanent Marker", cursive;
+  color: theme-color("grey");
+  font-size: 30px;
+}
+
+.subtitle {
+  font-family: "Abril Fatface", cursive;
+  color: theme-color("grey");
+  font-size: 20px;
+}
+
 .loader {
   background-image: url("/loader.svg");
   background-position: center;
@@ -51,4 +64,36 @@ code {
   background-repeat: no-repeat;
   min-height: 30px;
   height: 30px;
+  width: 30px;
+}
+
+.loader-homepage {
+  height: 33vh;
+  width: 33vw;
+}
+
+.loader-homepage-done {
+  animation: 1s loader-bigger forwards;
+  @keyframes loader-bigger {
+    from {
+      height: 33vh;
+      width: 33vw;
+    }
+    to {
+      transform: scale(0.9);
+      height: 20vh;
+      width: 20vw;
+    }
+  }
+}
+
+.log-in-box {
+  background-color: theme-color("grey");
+  color: theme-color("dark");
+  width: 325px;
+  height: 255px;
+  border-radius: 4px;
+  animation: 1s log-in-box-show forwards;
+  animation-delay: 1s;
+
 }
