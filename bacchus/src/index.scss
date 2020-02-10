@@ -45,16 +45,49 @@ code {
   height: 100vh;
 }
 
-.title-bacchus {
+h2 {
   font-family: "Permanent Marker", cursive;
-  color: theme-color("grey");
-  font-size: 30px;
 }
 
-.subtitle {
+h3,
+h4,
+h5 {
   font-family: "Abril Fatface", cursive;
-  color: theme-color("grey");
-  font-size: 20px;
+}
+
+div {
+  font-family: "Martel", serif;
+}
+
+input {
+  background-color: rgba(104, 2, 2, 0.1) !important;
+  border-color: rgba(104, 2, 2, 0.1) !important;
+  font-size: 12px !important;
+  &::placeholder {
+    opacity: 0.5 !important;
+  }
+  &:focus {
+    // border: 1px solid theme-color("primary") !important;
+    // box-shadow: 0 0 0 0.1rem rgba(104, 2, 2, 0.25) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  &:active {
+    // border: 1px solid theme-color("primary") !important;
+    // box-shadow: 0 0 0 0.1rem rgba(104, 2, 2, 0.25) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.button {
+  background-color: theme-color("primary");
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  padding: 4px;
+  min-width: fit-content;
 }
 
 .loader {
@@ -88,12 +121,11 @@ code {
 }
 
 .log-in-box {
-  background-color: theme-color("grey");
+  background-color: white;
   color: theme-color("dark");
   width: 325px;
   height: 255px;
   border-radius: 4px;
   animation: 1s log-in-box-show forwards;
   animation-delay: 1s;
-
 }
