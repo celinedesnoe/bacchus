@@ -13,10 +13,10 @@ class HomePage extends Component {
     return (
       <div className="">
         <div className="header-dashboard bg-grey">
-          <div className="d-flex justify-content-around">
+          <div className="d-flex justify-content-around py-3 px-2">
             <div className="">
-              <div>Welcome Céline,</div>
-              <div>You have <span>54</span>bottles in stock</div>
+              <h3 className="">Welcome Céline,</h3>
+              <h4>You have <span className="nb-bottles">54</span> bottles in stock</h4>
             </div>
             <div className={`profile-image`} style={{backgroundImage: `url(https://randomuser.me/api/portraits/women/90.jpg)`}}/>
           </div>
