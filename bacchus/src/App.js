@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
+import Dashboard from './components/Dashboard';
+
 
 class App extends Component {
 	constructor(props) {
@@ -32,6 +34,7 @@ class App extends Component {
 					) : (
 						<Route exact path="/" component={HomePage} />
 					)}
+					<Route exact path="/dashboard" component={Dashboard} />
 				</Switch>
 			</div>
 		);

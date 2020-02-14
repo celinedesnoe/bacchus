@@ -43,6 +43,9 @@ code {
 
 .background-home {
   height: 100vh;
+  background-image: linear-gradient(rgba(57, 61, 63, 0.75), rgba(57, 61, 63, 0.75)), url("/background.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 h2 {
@@ -60,38 +63,43 @@ div {
 }
 
 input {
-  background-color: rgba(104, 2, 2, 0.1) !important;
+  background-color: theme-color("grey") !important;
   font-size: 12px !important;
-  border: 0px solid theme-color("primary") !important;
+  border: 0px solid theme-color("grey")!important;
+  color: theme-color("dark") !important;
 
   &::placeholder {
     opacity: 0.5 !important;
   }
   &:focus {
-    border: 0px solid theme-color("primary") !important;
+    border: 0px solid theme-color("grey") !important;
     box-shadow: none !important;
   }
 
   &:active {
-    border: 0px solid theme-color("primary") !important;
+    border: 0px solid theme-color("grey") !important;
     box-shadow: none !important;
   }
 }
 
 .button {
-  background-color: theme-color("primary");
+  background-color: theme-color("tertiary");
   color: white;
   border-radius: 5px;
-  border: 2px solid theme-color("primary");
+  border: 2px solid theme-color("tertiary");
   text-align: center;
   font-family: "Abril Fatface", cursive;
   padding: 4px;
   min-width: fit-content;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
   &:hover {
-    color: theme-color("primary");
+    color: theme-color("tertiary");
     background-color: white;
+    box-shadow: 0px 2px 6px rgba(57, 61, 63, 0.4);
+    text-decoration: none;
+
   }
 }
 
@@ -133,4 +141,17 @@ input {
   border-radius: 4px;
   animation: 1s log-in-box-show forwards;
   animation-delay: 1s;
+}
+
+.profile-image{
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.header-dashboard{
+  border-radius: 0px 0px 40px 40px;
 }
