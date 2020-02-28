@@ -40,7 +40,7 @@ class HomePage extends Component {
               <h2 className="permanent">Bacchus</h2>
               <h3 className="subtitle">Know your wine</h3>
             </div>
-            <div classNAme="ml-2">
+            <div className="ml-2">
               <img
                 src="/two-bottles.svg"
                 className="two-bottles"
@@ -50,7 +50,11 @@ class HomePage extends Component {
           </div>
         </div>
 
-        {this.state.login ? <LogIn /> : <SignUp />}
+        {this.state.login ? (
+          <LogIn onSubmit={this.logIn} />
+        ) : (
+          <SignUp onSubmit={this.signUp} />
+        )}
 
         <div
           className="position-absolute text-primary"
