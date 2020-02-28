@@ -1,51 +1,28 @@
 $theme-colors: (
-  "primary": #680202,
-  "secondary": #f7d1cd,
-  "tertiary": #a7d49b,
-  "grey": #e3e4db,
-  "dark": #393d3f // "tertiary-2": #eaeaff,
-    // "danger": #e24d5f,
-    // "muted": #b0bac9,
-    // "black": #2a294e,
-    // "black-secondary": #69707f,
-    // "black-tertiary": #8798ad,
-    // "gray": #bfc5d2,
-    // "gray-secondary": #f4f6fc,
-    // "gray-tertiary": #eef3f5,
-    // "green": #67d563,
-    // "pink": #ff3892,
-    // "light-pink": #ffeaf3,
-    // "purple": #6866a8,
-    // "light-purple": #e3e2ff,
-    // "grey-light": #e9eef5,
-    // "grey-lighter": #f4f6fc,
-    // "grey-dark": #63687e,
-    // "grey": #b4bac8,
-    // "orange": #f76b1c,
-    // "orange-light": #fab505,
-    // "purple-light-brand": #dddcff,
-    // "success": #67d563
+  "primary": #1a2340,
+  "primary-light": #e8e8ec,
+  "secondary": #ed254e,
+  "tertiary": #f9dc5c,
+  "grey": #908f8f
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
+.App {
+  height: 100vh;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-.background-home {
-  height: 100vh;
-  background-image: linear-gradient(rgba(57, 61, 63, 0.75), rgba(57, 61, 63, 0.75)), url("/background.jpg");
-  background-position: center;
-  background-size: cover;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 h2 {
@@ -63,10 +40,10 @@ div {
 }
 
 input {
-  background-color: theme-color("grey") !important;
+  background-color: theme-color("primary-light") !important;
   font-size: 12px !important;
-  border: 0px solid theme-color("grey")!important;
-  color: theme-color("dark") !important;
+  border: 0px solid theme-color("primary-light") !important;
+  color: theme-color("primary") !important;
 
   &::placeholder {
     opacity: 0.5 !important;
@@ -99,51 +76,34 @@ input {
     background-color: white;
     box-shadow: 0px 2px 6px rgba(57, 61, 63, 0.4);
     text-decoration: none;
-
   }
 }
 
-.loader {
-  background-image: url("/loader.svg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 30px;
-  height: 30px;
-  width: 30px;
+.auth-header {
+  background-color: theme-color("primary");
+  border-radius: 0px 0px 40px 40px;
+  width: 100%;
+  height: 50%;
 }
 
-.loader-homepage {
-  height: 33vh;
-  width: 33vw;
-}
-
-.loader-homepage-done {
-  animation: 1s loader-bigger forwards;
-  @keyframes loader-bigger {
-    from {
-      height: 33vh;
-      width: 33vw;
-    }
-    to {
-      transform: scale(0.9);
-      height: 20vh;
-      width: 20vw;
-    }
-  }
+.card {
+  background-color: white;
+  color: theme-color("dark");
+  border-radius: 4px;
+  box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.25);
 }
 
 .log-in-box {
-  background-color: white;
-  color: theme-color("dark");
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 325px;
   height: 255px;
-  border-radius: 4px;
   animation: 1s log-in-box-show forwards;
   animation-delay: 1s;
 }
 
-.profile-image{
+.profile-image {
   width: 40px;
   height: 40px;
   background-position: center;
@@ -152,15 +112,20 @@ input {
   border-radius: 10px;
 }
 
-.header-dashboard{
+.header-dashboard {
   border-radius: 0px 0px 40px 40px;
 }
 
-.nb-bottles{
+.nb-bottles {
   background-image: linear-gradient(90deg, white, white);
-  background-size: 0 .5em;
+  background-size: 0 0.5em;
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 10px;
   padding: 0 4px;
+}
+
+.two-bottles {
+  height: 60px;
+  width: 60px;
 }

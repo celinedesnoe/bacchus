@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input.jsx";
 import { Link } from "react-router-dom";
 import { postSignUp } from "../api";
+import SvgTwoBottles from "./SvgTwoBottles";
 
 class HomePage extends Component {
   constructor(props) {
@@ -26,15 +27,25 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="background-home text-white d-flex align-items-center justify-content-center flex-column">
-        <div className="mb-4 d-flex flex-column align-items-center justify-content-center">
-          <h2 className="permanent">Bacchus</h2>
-          <h3 className="subtitle">Know your wine</h3>
+      <div className="h-100 text-white">
+        <div className="auth-header mb-4 d-flex flex-column">
+          <div className="d-flex align-items-center p-4">
+            <div>
+              <h2 className="permanent">Bacchus</h2>
+              <h3 className="subtitle">Know your wine</h3>
+            </div>
+            <div>
+              <img
+                src="/two-bottles.svg"
+                className="two-bottles"
+                al="two-bottles"
+              />
+              {/* <SvgTwoBottles className="two-bottles" /> */}
+            </div>
+          </div>
         </div>
 
-        <div className={`loader  loader-homepage-done  `} />
-
-        <div className="log-in-box d-flex align-items-center flex-column mt-3">
+        <div className="position-absolute card log-in-box d-flex align-items-center flex-column mt-3">
           <h4 className="my-4 text-dark">Log in to your cellar</h4>
           <form onSubmit={console.log("SUBMIT")}>
             <div className="w-100 px-5">
