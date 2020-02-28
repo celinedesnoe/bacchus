@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Input from "./Input.jsx";
+import LogIn from "./LogIn.jsx";
+import SignUp from "./SignUp.jsx";
+
 import { Link } from "react-router-dom";
 import { postSignUp } from "../api";
 import SvgTwoBottles from "./SvgTwoBottles";
@@ -8,7 +11,9 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: ""
+      content: "",
+      login: true,
+      signup: false
     };
   }
 
@@ -26,6 +31,7 @@ class HomePage extends Component {
   }
 
   render() {
+    const { login } = this.state;
     return (
       <div className="h-100 text-white">
         <div className="auth-header mb-4 d-flex flex-column">
@@ -34,34 +40,24 @@ class HomePage extends Component {
               <h2 className="permanent">Bacchus</h2>
               <h3 className="subtitle">Know your wine</h3>
             </div>
-            <div>
+            <div classNAme="ml-2">
               <img
                 src="/two-bottles.svg"
                 className="two-bottles"
                 al="two-bottles"
               />
-              {/* <SvgTwoBottles className="two-bottles" /> */}
             </div>
           </div>
         </div>
 
-        <div className="position-absolute card log-in-box d-flex align-items-center flex-column mt-3">
-          <h4 className="my-4 text-dark">Log in to your cellar</h4>
-          <form onSubmit={console.log("SUBMIT")}>
-            <div className="w-100 px-5">
-              <Input placeholder="Email" className="mb-2" />
-            </div>
-            <div className="w-100 px-5">
-              <Input placeholder="Password" className="mb-2" />
-            </div>
-            {/* <Link to="/dashboard"> */}
-            <div className="w-100 px-5 mt-3">
-              <div className="button" onClick={e => this.handleSubmit(e)}>
-                Log in
-              </div>
-            </div>
-            {/* </Link> */}
-          </form>
+        {this.state.login ? <LogIn /> : <SignUp />}
+
+        <div
+          className="position-absolute text-primary"
+          style={{ bottom: 0 }}
+          onClick={() => this.setState({ login: false })}
+        >
+          Already saved your cellar on Bacchus? Click here
         </div>
       </div>
     );
