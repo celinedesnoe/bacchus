@@ -17,6 +17,7 @@ const LogIn = props => {
                 className="mb-3"
                 title="E-mail"
                 onChange={e => setEmail(e.target.value)}
+                value={email}
               />
             </div>
             <div className="w-100">
@@ -26,6 +27,7 @@ const LogIn = props => {
                 title="Password"
                 type="password"
                 onChange={e => setPassword(e.target.value)}
+                value={password}
               />
             </div>
             <div className="w-100 mt-5">
