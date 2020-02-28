@@ -50,6 +50,7 @@ const SignUp = props => {
                     className="button"
                     onClick={e => {
                       setStep(2);
+                      props.signUp(e, name, email, password);
                     }}
                   >
                     Next
@@ -85,7 +86,9 @@ const SignUp = props => {
                   <div
                     className="button"
                     onClick={e => {
-                      console.log(name, email, password, cellar, capacity);
+                      {
+                        props.createCellar(e, cellar, capacity);
+                      }
                     }}
                   >
                     Ready to start?{" "}

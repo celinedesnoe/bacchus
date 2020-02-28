@@ -4,7 +4,7 @@ import LogIn from "./LogIn.jsx";
 import SignUp from "./SignUp.jsx";
 
 import { Link } from "react-router-dom";
-import { postSignUp } from "../api";
+import { postSignUp, postCellar } from "../api";
 import SvgTwoBottles from "./SvgTwoBottles";
 
 class HomePage extends Component {
@@ -17,16 +17,27 @@ class HomePage extends Component {
     };
   }
 
-  handleSubmit(event) {
+  signUp(event, name, email, password) {
     event.preventDefault();
     let user = {
-      email: "aaa@aa.fr",
-      originalPassword: "abc123"
+      email: email,
+      originalPassword: password,
+      name: name
     };
     postSignUp(user).then(response => {
       console.log(response);
       // this.props.signupSuccess(response.data);
-      // this.setState({ addPhoneNumber: true });
+    });
+  }
+
+  createCellar(event, cellar, capacity) {
+    let cellarInfo = {
+      name: cellar,
+      capacity: capacity
+    };
+    console.log(cellarInfo);
+    postCellar(cellarInfo).then(response => {
+      console.log(response);
     });
   }
 
@@ -53,7 +64,7 @@ class HomePage extends Component {
         {this.state.login ? (
           <LogIn onSubmit={this.logIn} />
         ) : (
-          <SignUp onSubmit={this.signUp} />
+          <SignUp signUp={this.signUp} createCellar={this.createCellar} />
         )}
 
         <div

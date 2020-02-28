@@ -30,6 +30,12 @@ export function postSignUp(userSubmission) {
     .catch(errorHandler);
 }
 
+export function postCellar(cellarSubmission) {
+  return backendApi
+    .post("/api/process-create-cellar", cellarSubmission)
+    .catch(errorHandler);
+}
+
 // export function postLogIn(loginCredentials) {
 //   console.log(loginCredentials);
 //   return backendApi
