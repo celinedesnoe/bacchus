@@ -104,7 +104,7 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  height: 50%;
+  height: fit-content;
   animation: 1s log-in-box-show forwards;
   animation-delay: 1s;
 }
