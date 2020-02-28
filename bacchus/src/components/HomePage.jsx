@@ -55,7 +55,7 @@ class HomePage extends Component {
         <div
           className="position-absolute text-primary"
           style={{ bottom: 0 }}
-          onClick={() => this.setState({ login: false })}
+          onClick={() => this.setState({ login: !login })}
         >
           Already saved your cellar on Bacchus? Click here
         </div>
