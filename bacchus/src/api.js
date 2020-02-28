@@ -36,12 +36,12 @@ export function postCellar(cellarSubmission) {
     .catch(errorHandler);
 }
 
-// export function postLogIn(loginCredentials) {
-//   console.log(loginCredentials);
-//   return backendApi
-//     .post("/api/process-login", loginCredentials)
-//     .catch(errorHandler);
-// }
+export function postLogIn(loginCredentials) {
+  console.log(loginCredentials);
+  return backendApi
+    .post("/api/process-login", loginCredentials)
+    .catch(errorHandler);
+}
 
 // export function getLogOut() {
 //   return backendApi.get("/api/logout").catch(errorHandler);

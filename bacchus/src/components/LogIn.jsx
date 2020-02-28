@@ -33,7 +33,7 @@ const LogIn = props => {
             <div className="w-100 mt-5">
               <div
                 className="button"
-                onClick={e => console.log(email, password)}
+                onClick={e => props.logIn(e, email, password)}
               >
                 Log in
               </div>

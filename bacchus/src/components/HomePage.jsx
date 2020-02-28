@@ -4,7 +4,7 @@ import LogIn from "./LogIn.jsx";
 import SignUp from "./SignUp.jsx";
 
 import { Link } from "react-router-dom";
-import { postSignUp, postCellar } from "../api";
+import { postSignUp, postCellar, postLogIn } from "../api";
 import SvgTwoBottles from "./SvgTwoBottles";
 
 class HomePage extends Component {
@@ -25,6 +25,18 @@ class HomePage extends Component {
       name: name
     };
     postSignUp(user).then(response => {
+      console.log(response);
+      // this.props.signupSuccess(response.data);
+    });
+  }
+
+  logIn(event, email, password) {
+    event.preventDefault();
+    let user = {
+      email: email,
+      originalPassword: password
+    };
+    postLogIn(user).then(response => {
       console.log(response);
       // this.props.signupSuccess(response.data);
     });
@@ -62,7 +74,7 @@ class HomePage extends Component {
         </div>
 
         {this.state.login ? (
-          <LogIn onSubmit={this.logIn} />
+          <LogIn logIn={this.logIn} />
         ) : (
           <SignUp signUp={this.signUp} createCellar={this.createCellar} />
         )}

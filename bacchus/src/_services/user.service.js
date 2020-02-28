@@ -14,32 +14,6 @@ export const userService = {
   me
 };
 
-function tokenAuth(refreshToken, email) {
-  return new Promise((resolve, reject) => {
-    localStorage.removeItem("user");
-    API.post("/refreshtokens", {
-      refresh_token: refreshToken,
-      email: email
-    })
-      .then(response => {
-        let tokens = response.data.tokens;
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ tokens: tokens, Email: email })
-        );
-        API.defaults.headers.common["access_token"] = tokens.access_token;
-        store.dispatch({
-          type: "UPDATE_USER",
-          user: { tokens: tokens, Email: email }
-        });
-        resolve(tokens);
-      })
-      .catch(err => {
-        reject(err);
-      });
-  });
-}
-
 function me() {
   return new Promise((resolve, reject) => {
     API.get("/me")
@@ -62,57 +36,11 @@ function me() {
   });
 }
 
-function updateNotificationsPreferences(payload) {
-  let user = store.getState().authentication.user;
-
-  user.NotificationFollow[payload] = !user.NotificationFollow[payload];
-
-  let body = {};
-  body[payload] = user.NotificationFollow[payload];
-
-  API.put("/me/notifications", body);
-
-  return { type: "UPDATE_USER", user };
-}
-
-function refreshToken(refreshToken, email, callback) {
-  let fullUser = store.getState().authentication.user;
-  return new Promise(() => {
-    API.post("/refreshtokens", {
-      refresh_token: refreshToken,
-      email: email
-    })
-      .then(response => {
-        let localUser = null;
-        try {
-          localUser = localStorage.getItem("user");
-        } catch (e) {
-          console.log("no localStorage");
-        }
-        if (localUser) {
-          let user = JSON.parse(localUser);
-          user.tokens = response.data.tokens;
-          fullUser.tokens = response.data.tokens;
-          store.dispatch({ type: "UPDATE_USER", user: fullUser });
-          localStorage.setItem(
-            "user",
-            JSON.stringify({ tokens: user.tokens, Email: user.Email })
-          );
-        }
-        callback(response.data.tokens);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
-}
-
 function login(username, password, projectguid, callback) {
   return new Promise(() => {
     API.post("/widget/login", {
       email: username,
-      password: password,
-      appguid: projectguid
+      password: password
     })
       .then(response => {
         if (response.data.return_code === 6) {
