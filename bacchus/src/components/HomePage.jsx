@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Input from "./Input.jsx";
+import { connect } from "react-redux";
+import { userActions } from "../_actions";
 import LogIn from "./LogIn.jsx";
 import SignUp from "./SignUp.jsx";
 
-import { Link } from "react-router-dom";
 import { postSignUp, postCellar, postLogIn } from "../api";
-import SvgTwoBottles from "./SvgTwoBottles";
 
 class HomePage extends Component {
   constructor(props) {
@@ -30,17 +29,22 @@ class HomePage extends Component {
     });
   }
 
-  logIn(event, email, password) {
+  logIn = (event, email, password) => {
     event.preventDefault();
     let user = {
       email: email,
       originalPassword: password
     };
-    postLogIn(user).then(response => {
-      console.log(response);
-      // this.props.signupSuccess(response.data);
-    });
-  }
+    userActions.userLogin(user);
+    // console.log("userActions", userActions.userLogin(user));
+    // this.props.dispatch(userActions.userLogIn(user));
+
+    // postLogIn(user).then(response => {
+    //   console.log(response);
+
+    //   // this.props.signupSuccess(response.data);
+    // });
+  };
 
   createCellar(event, cellar, capacity) {
     let cellarInfo = {
@@ -55,6 +59,7 @@ class HomePage extends Component {
 
   render() {
     const { login } = this.state;
+    console.log("");
     return (
       <div className="h-100 text-white">
         <div className="auth-header mb-4 d-flex flex-column">
@@ -91,4 +96,14 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+// function mapDispatchToProps(dispatch) {
+//   return { actions: bindActionCreators(userLogIn, dispatch) };
+// }
+// export default connect(mapDispatchToProps)(HomePage);
+
+const mapStateToProps = state => {
+  const { authReducer } = state;
+  return { user: authReducer };
+};
+
+export default connect(mapStateToProps)(HomePage);
