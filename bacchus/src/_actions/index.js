@@ -7,13 +7,25 @@ import { postSignUp, postCellar, postLogIn } from "../api";
 // });
 
 export const userActions = {
-  userLogin
+  userLogin,
+  userSignUp
 };
 
 function userLogin(user) {
-  // console.log("HELLO LOGIN");
   return new Promise((resolve, reject) => {
     postLogIn(user)
+      .then(user => {
+        resolve(user);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+}
+
+function userSignUp(user) {
+  return new Promise((resolve, reject) => {
+    postSignUp(user)
       .then(user => {
         resolve(user);
       })

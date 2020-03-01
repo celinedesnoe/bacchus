@@ -23,10 +23,7 @@ class HomePage extends Component {
       originalPassword: password,
       name: name
     };
-    postSignUp(user).then(response => {
-      console.log(response);
-      // this.props.signupSuccess(response.data);
-    });
+    userActions.userSignUp(user);
   }
 
   logIn = (event, email, password) => {
@@ -36,14 +33,7 @@ class HomePage extends Component {
       originalPassword: password
     };
     userActions.userLogin(user);
-    // console.log("userActions", userActions.userLogin(user));
-    // this.props.dispatch(userActions.userLogIn(user));
-
-    // postLogIn(user).then(response => {
-    //   console.log(response);
-
-    //   // this.props.signupSuccess(response.data);
-    // });
+    // this.props.signupSuccess(response.data);
   };
 
   createCellar(event, cellar, capacity) {
