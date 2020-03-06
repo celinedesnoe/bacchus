@@ -33,6 +33,7 @@ class HomePage extends Component {
       originalPassword: password
     };
     userActions.userLogin(user);
+    // this.props.dispatch(userActions.success(user));
     // this.props.signupSuccess(response.data);
   };
 
@@ -49,7 +50,7 @@ class HomePage extends Component {
 
   render() {
     const { login } = this.state;
-    console.log("");
+    console.log("this.props.user", this.props.user);
     return (
       <div className="h-100 text-white">
         <div className="auth-header mb-4 d-flex flex-column">

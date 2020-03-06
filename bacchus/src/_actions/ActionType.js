@@ -1,1 +1,3 @@
-export const LOGIN = "LOGIN";
+export const userConstants = {
+  LOGIN: "LOGIN"
+};

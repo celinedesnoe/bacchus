@@ -1,15 +1,15 @@
-import * as actionType from "../_actions/ActionType";
+import { userConstants } from "../_actions/ActionType";
 
-const authReducer = (state = 0, action) => {
+export const authReducer = (state = 0, action) => {
+  console.log("state + action.payload", state + action.payload);
   let newState;
+
   switch (action.type) {
-    case actionType.LOGIN:
-      console.log("HELLO LOGIN");
+    case userConstants.LOGIN:
+      console.log("state + action.payload", state + action.payload);
       return (newState = state + action.payload);
 
     default:
       return state;
   }
 };
-
-export default authReducer;

@@ -1,4 +1,4 @@
-import * as actionType from "./ActionType";
+import { userConstants } from "./ActionType";
 import { postSignUp, postCellar, postLogIn } from "../api";
 
 // export const userLogIn = () => ({
@@ -6,10 +6,10 @@ import { postSignUp, postCellar, postLogIn } from "../api";
 //   payload: 1
 // });
 
-export const userActions = {
-  userLogin,
-  userSignUp
-};
+function success(user) {
+  console.log("HELLO");
+  return { type: "LOGIN", user };
+}
 
 function userLogin(user) {
   return new Promise((resolve, reject) => {
@@ -24,13 +24,22 @@ function userLogin(user) {
 }
 
 function userSignUp(user) {
-  return new Promise((resolve, reject) => {
-    postSignUp(user)
-      .then(user => {
-        resolve(user);
-      })
-      .catch(err => {
-        reject(err);
-      });
-  });
+  return function(dispatch) {
+    dispatch({ type: "LOGIN", user });
+    return new Promise((resolve, reject) => {
+      postSignUp(user)
+        .then(user => {
+          resolve(user);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  };
 }
+
+export const userActions = {
+  userLogin,
+  userSignUp,
+  success
+};
