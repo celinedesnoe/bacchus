@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faSearch);
 
 class App extends Component {
   constructor(props) {

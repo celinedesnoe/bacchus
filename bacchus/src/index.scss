@@ -117,3 +117,17 @@ input {
   background-color: white !important;
   color: theme-color("grey") !important;
 }
+
+.search-bar {
+  border-radius: 4px;
+}
+
+.filter-not-selected {
+  background-color: white;
+  border-color: theme-color("secondary");
+  color: theme-color("secondary");
+}
+
+.empty-dashboard-box {
+  width: 80%;
+}

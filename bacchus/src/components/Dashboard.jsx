@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import Search from "./Search.jsx";
+import Button from "./Button.jsx";
+import EmptyDashboard from "./EmptyDashboard.jsx";
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: ""
+      content: "",
+      filterSelected: "all"
     };
   }
 
   render() {
     return (
       <div className="">
-        <div className="header-dashboard">
-          <div className="d-flex justify-content-around py-3 px-2">
+        <div className="header-dashboard px-3 py-2">
+          <div className="d-flex justify-content-between mt-3">
             <div className="">
               <h3 className="">Welcome Céline,</h3>
               <h5>
@@ -22,13 +25,30 @@ class HomePage extends Component {
               </h5>
             </div>
             <div
-              className={`profile-image`}
+              className={`profile-image mr-3`}
               style={{
                 backgroundImage: `url(https://randomuser.me/api/portraits/women/90.jpg)`
               }}
             />
           </div>
-          <Search />
+          <Search placeholder="Name, Region, Appellation..." className="" />
+          <div className="d-flex my-3">
+            <Button
+              text="All"
+              className="mr-2"
+              selected={this.state.filterSelected === "all"}
+              filter={true}
+            />
+            <Button
+              text="In stock"
+              className=""
+              selected={this.state.filterSelected === "instock"}
+              filter={true}
+            />
+          </div>
+        </div>
+        <div className="d-flex justify-content-center">
+          <EmptyDashboard />
         </div>
       </div>
     );

@@ -1,11 +1,15 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Search = props => {
   const id = "input-id-" + Math.round(Math.random() * 1000);
 
   return (
-    <div>
+    <div className="d-flex align-items-center bg-white search-bar my-2">
       {props.title && <div className="label-input">{props.title}</div>}
+      <div className="text-grey pl-2 mt-1">
+        <FontAwesomeIcon icon={["fa", "search"]} />
+      </div>
       <input
         className={`form-control form-search ${
           props.error ? "is-invalid" : ""
