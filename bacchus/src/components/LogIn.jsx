@@ -10,7 +10,10 @@ const LogIn = props => {
       <div className="position-absolute card log-in-box d-flex align-items-center flex-column mt-3">
         <div>
           <h4 className="my-4 text-dark">Log in to your cellar</h4>
-          <form onSubmit={console.log("SUBMIT")} className="w-100">
+          <form
+            onSubmit={e => props.logIn(e, email, password)}
+            className="w-100"
+          >
             <div className="w-100">
               <Input
                 placeholder="john.doe@gmail.com"
