@@ -18,6 +18,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.extrabold {
+  font-weight: 800;
+}
+
 input {
   background-color: theme-color("primary-light") !important;
   font-size: 12px !important;
