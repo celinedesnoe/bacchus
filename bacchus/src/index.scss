@@ -13,30 +13,9 @@ $theme-colors: (
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Catamaran", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-h2 {
-  font-family: "Permanent Marker", cursive;
-}
-
-h3,
-h4,
-h5 {
-  font-family: "Abril Fatface", cursive;
-}
-
-div {
-  font-family: "Martel", serif;
 }
 
 input {
@@ -70,7 +49,6 @@ input {
   border-radius: 5px;
   border: 2px solid theme-color("secondary");
   text-align: center;
-  font-family: "Abril Fatface", cursive;
   padding: 4px;
   min-width: fit-content;
   cursor: pointer;
@@ -119,19 +97,23 @@ input {
 }
 
 .header-dashboard {
+  h3 {
+    font-weight: 600;
+  }
   border-radius: 0px 0px 40px 40px;
+  background-color: theme-color("primary");
+  color: white;
 }
-
 .nb-bottles {
-  background-image: linear-gradient(90deg, white, white);
-  background-size: 0 0.5em;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 10px;
-  padding: 0 4px;
+  font-weight: 800;
 }
 
 .two-bottles {
   height: 70px;
   width: 70px;
+}
+
+.form-search {
+  background-color: white !important;
+  color: theme-color("grey") !important;
 }

@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    let userInfo = localStorage.getItem("currentUser");
+    if (userInfo) {
+      userInfo = JSON.parse(userInfo);
+    }
     this.state = {
-      currentUser: false
+      currentUser: userInfo
     };
   }
 
@@ -18,26 +21,11 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          {this.props.user?.email ? (
-            <Route
-              exact
-              path="/"
-              render={() => {
-                return (
-                  <div>HELLO WELCOME</div>
-                  // <Dashboard
-                  //   // toLogout={() => this.logoutClick()}
-                  //   // currentUser={this.state.currentUser}
-                  //   // rerouteUrl="/"
-                  //   // onFollowCurrentUser={user => this.updateUser(user)}
-                  // />
-                );
-              }}
-            />
+          {this.state.currentUser ? (
+            <Route to="/" component={Dashboard} />
           ) : (
             <Route exact path="/" component={HomePage} />
           )}
-          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
         </Switch>
       </div>
     );
