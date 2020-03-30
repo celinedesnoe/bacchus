@@ -33,8 +33,6 @@ class HomePage extends Component {
       originalPassword: password
     };
     userActions.userLogin(user);
-    // this.props.dispatch(userActions.success(user));
-    // this.props.signupSuccess(response.data);
   };
 
   createCellar(event, cellar, capacity) {
@@ -86,11 +84,6 @@ class HomePage extends Component {
     );
   }
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return { actions: bindActionCreators(userLogIn, dispatch) };
-// }
-// export default connect(mapDispatchToProps)(HomePage);
 
 const mapStateToProps = state => {
   const { authReducer } = state;

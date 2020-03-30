@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
@@ -11,11 +12,13 @@ class App extends Component {
       currentUser: false
     };
   }
+
   render() {
+    console.log("this.props", this.props.user, this.props.user?.email);
     return (
       <div className="App">
         <Switch>
-          {this.state.currentUser ? (
+          {this.props.user?.email ? (
             <Route
               exact
               path="/"
@@ -34,11 +37,16 @@ class App extends Component {
           ) : (
             <Route exact path="/" component={HomePage} />
           )}
-          <Route exact path="/dashboard" component={Dashboard} />
+          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  const { authReducer } = state;
+  return { user: authReducer };
+};
+
+export default connect(mapStateToProps)(App);

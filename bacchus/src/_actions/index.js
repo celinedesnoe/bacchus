@@ -4,9 +4,10 @@ import { store } from "../_helpers/store";
 function userLogin(user) {
   postLogIn(user)
     .then(user => {
+      let userLogged = user.data;
       store.dispatch({
         type: "LOGIN",
-        user
+        userLogged
       });
     })
     .catch(err => {
@@ -17,9 +18,10 @@ function userLogin(user) {
 function userSignUp(user) {
   postSignUp(user)
     .then(user => {
+      let userLogged = user.data;
       store.dispatch({
         type: "LOGIN",
-        user
+        userLogged
       });
     })
     .catch(err => {
