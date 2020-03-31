@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Input from "./Input";
 import ColorSelector from "./ColorSelector";
 import MillesimeSelector from "./MillesimeSelector";

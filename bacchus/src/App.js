@@ -29,14 +29,20 @@ class App extends Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.user.email !== this.props.user.email) {
+      this.setState({ currentUser: this.props.user });
+    }
+  }
+
   render() {
     console.log("props", this.props);
     return (
       <div className="App">
         <Switch>
-          {/* {!this.state.currentUser && (
+          {!this.state.currentUser && (
             <Route exact path="/" component={HomePage} />
-          )} */}
+          )}
           <Route exact path="/" component={Dashboard} />
 
           <Route exact path="/new-bottle" component={NewBottle} />
