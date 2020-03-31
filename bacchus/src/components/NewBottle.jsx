@@ -32,7 +32,7 @@ const NewBottle = props => {
       </div>
       <div className="d-flex flex-column justify-content-center my-5 mx-3">
         {findStep()}
-        <div className="d-flex justify-content-center mt-3">
+        <div className="d-flex justify-content-center mt-4">
           {[1, 2, 3, 4, 5].map((oneStep, index) => (
             <div
               key={oneStep}
@@ -47,6 +47,7 @@ const NewBottle = props => {
         <Button
           text={step === 5 ? "Save" : "Next"}
           className={`${step > 1 && "ml-3"} w-100`}
+          onClick={() => setStep(step + 1)}
         />
       </div>
     </div>
