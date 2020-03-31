@@ -5,7 +5,7 @@ const Input = props => {
 
   return (
     <div>
-      {props.title && <div className="label-input">{props.title}</div>}
+      {props.title && <div className="label-input mb-2">{props.title}</div>}
       <input
         className={`form-control ${props.error ? "is-invalid" : ""}  ${
           props.className ? props.className : ""

@@ -7,9 +7,15 @@ import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
 import NewBottle from "./components/NewBottle";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch, faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faTimes,
+  faCheck,
+  faChevronRight,
+  faChevronLeft
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faTimes, faCheck);
+library.add(faSearch, faTimes, faCheck, faChevronRight, faChevronLeft);
 
 class App extends Component {
   constructor(props) {

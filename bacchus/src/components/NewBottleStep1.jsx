@@ -8,19 +8,19 @@ const NewBottleStep1 = props => {
   const [name, setName] = useState("");
 
   return (
-    <div className="d-flex justify-content-center px-4">
-      <div className="card">
-        <div>Add your bottle</div>
-        <Input
-          placeholder="Château Margaux"
-          className="mb-3"
-          title="Name of the château or domain*"
-          onChange={e => setName(e.target.value)}
-          value={name}
-        />
-        <ColorSelector />
-        <MillesimeSelector />
+    <div className="card card-new-bottle w-100">
+      <div className="d-flex justify-content-center mb-4 mt-3">
+        Add your bottle
       </div>
+      <Input
+        placeholder="Château Margaux"
+        className="mb-4"
+        title="Name of the château or domain*"
+        onChange={e => setName(e.target.value)}
+        value={name}
+      />
+      <ColorSelector />
+      <MillesimeSelector />
     </div>
   );
 };

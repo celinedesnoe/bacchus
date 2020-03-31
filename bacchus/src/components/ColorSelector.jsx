@@ -7,8 +7,8 @@ const ColorSelector = props => {
   const [color, setColor] = useState("");
   console.log("color", color);
   return (
-    <div>
-      <div className="label-input">Color</div>
+    <div className="mb-4">
+      <div className="label-input mb-2">Color</div>
       <div className="d-flex">
         <ColorInput
           color="Red"
