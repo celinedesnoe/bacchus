@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "./Button";
+import { history } from "../_helpers/history";
 
 const EmptyDashboard = props => {
   return (
@@ -13,7 +13,11 @@ const EmptyDashboard = props => {
           al="two-bottles"
         />
       </div>
-      <Button text="Add a bottle" className="my-2" />
+      <Button
+        text="Add a bottle"
+        className="my-2 w-100"
+        onClick={() => history.push("/new-bottle")}
+      />
     </div>
   );
 };

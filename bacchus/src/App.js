@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { withRouter } from "react-router";
+
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
+import NewBottle from "./components/NewBottle";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faTimes, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch);
+library.add(faSearch, faTimes, faCheck);
 
 class App extends Component {
   constructor(props) {
@@ -21,15 +24,16 @@ class App extends Component {
   }
 
   render() {
-    console.log("this.props", this.props.user, this.props.user?.email);
+    console.log("props", this.props);
     return (
       <div className="App">
         <Switch>
-          {this.state.currentUser ? (
-            <Route to="/" component={Dashboard} />
-          ) : (
+          {/* {!this.state.currentUser && (
             <Route exact path="/" component={HomePage} />
-          )}
+          )} */}
+          <Route exact path="/" component={Dashboard} />
+
+          <Route exact path="/new-bottle" component={NewBottle} />
         </Switch>
       </div>
     );
@@ -41,4 +45,4 @@ const mapStateToProps = state => {
   return { user: authReducer };
 };
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

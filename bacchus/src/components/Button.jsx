@@ -7,7 +7,7 @@ const Button = props => {
       className={`button px-2 ${props.className} ${props.filter &&
         !props.selected &&
         "filter-not-selected"}`}
-      onClick={e => console.log(e)}
+      onClick={props.onClick ? props.onClick : null}
     >
       {text}
     </div>
