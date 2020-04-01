@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MillesimeSelector = props => {
-  const [millesime, setMillesime] = useState(2015);
+const MillesimeSelector = ({ addMillesime, bottleMillesime }) => {
+  const [millesime, setMillesime] = useState(
+    bottleMillesime ? bottleMillesime : 2015
+  );
+  useEffect(() => {
+    addMillesime(millesime);
+  }, [millesime]);
 
   return (
     <div className="mb-3">

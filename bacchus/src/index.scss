@@ -15,11 +15,10 @@ $theme-colors: (
 
 body {
   margin: 0;
-  // font-family: "Catamaran", sans-serif;
-  font-family: "Mukta", sans-serif;
-
+  font-family: "Catamaran", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 0.98895;
 }
 
 .extrabold {
@@ -34,6 +33,7 @@ input {
 
   &::placeholder {
     opacity: 0.5 !important;
+    font-size: 14px !important;
   }
   &:focus {
     border: 0px solid theme-color("grey") !important;

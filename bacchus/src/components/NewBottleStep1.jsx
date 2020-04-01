@@ -2,9 +2,16 @@ import React, { useState } from "react";
 import Input from "./Input";
 import ColorSelector from "./ColorSelector";
 import MillesimeSelector from "./MillesimeSelector";
+import { useEffect } from "react";
 
-const NewBottleStep1 = props => {
-  const [name, setName] = useState("");
+const NewBottleStep1 = ({ setDetails, bottle }) => {
+  const [name, setName] = useState(bottle.name);
+  const [color, setColor] = useState(bottle.color);
+  const [millesime, setMillesime] = useState(bottle.millesime);
+
+  useEffect(() => {
+    setDetails(name, color, millesime);
+  }, [name, color, millesime]);
 
   return (
     <div className="card card-new-bottle w-100">
@@ -18,8 +25,11 @@ const NewBottleStep1 = props => {
         onChange={e => setName(e.target.value)}
         value={name}
       />
-      <ColorSelector />
-      <MillesimeSelector />
+      <ColorSelector addColor={setColor} bottleColor={bottle.color} />
+      <MillesimeSelector
+        addMillesime={setMillesime}
+        bottleMillesime={bottle.millesime}
+      />
     </div>
   );
 };

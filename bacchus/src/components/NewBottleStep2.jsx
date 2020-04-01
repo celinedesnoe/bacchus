@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "./Input";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NewBottleStep2 = props => {
-  const [cepage, setCepage] = useState("");
-  const [appellation, setAppellation] = useState("");
+const NewBottleStep2 = ({ bottle, setDetails }) => {
+  const [cepage, setCepage] = useState(bottle.cepage);
+  const [appellation, setAppellation] = useState(bottle.appellation);
+  const [region, setRegion] = useState(bottle.region);
+  const [country, setCountry] = useState(bottle.country);
+
+  useEffect(() => {
+    setDetails(cepage, appellation, region, country);
+  }, [cepage, appellation, region, country]);
 
   return (
     <div>
@@ -23,6 +28,20 @@ const NewBottleStep2 = props => {
           className="mb-3"
           onChange={e => setAppellation(e.target.value)}
           value={appellation}
+        />
+        <Input
+          title="Region"
+          placeholder="Bordeaux"
+          className="mb-3"
+          onChange={e => setRegion(e.target.value)}
+          value={region}
+        />
+        <Input
+          title="Country"
+          placeholder="France"
+          className="mb-3"
+          onChange={e => setCountry(e.target.value)}
+          value={country}
         />
       </div>
     </div>

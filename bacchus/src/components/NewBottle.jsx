@@ -9,16 +9,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NewBottle = props => {
   const [step, setStep] = useState(1);
+  const [bottle, setBottle] = useState({});
+
+  const setDetails1 = (name, color, millesime) => {
+    bottle.name = name;
+    bottle.color = color;
+    bottle.millesime = millesime;
+    setBottle(bottle);
+  };
+
+  const setDetails2 = (cepage, appellation, region, country) => {
+    bottle.cepage = cepage;
+    bottle.appellation = appellation;
+    bottle.region = region;
+    bottle.country = country;
+    setBottle(bottle);
+  };
+
   const findStep = () => {
     switch (step) {
       case 1:
-        return <NewBottleStep1 />;
+        return <NewBottleStep1 setDetails={setDetails1} bottle={bottle} />;
       case 2:
-        return <NewBottleStep2 />;
+        return <NewBottleStep2 setDetails={setDetails2} bottle={bottle} />;
       case 3:
         return <NewBottleStep3 />;
     }
   };
+
+  console.log("bottle", bottle);
   return (
     <div>
       <div className="header-new-bottle d-flex justify-content-center py-4 position-relative">
@@ -43,7 +62,13 @@ const NewBottle = props => {
       </div>
 
       <div className="d-flex align-items-center mx-3">
-        {step > 1 && <Button text="Previous" className="mr-3 w-100" />}
+        {step > 1 && (
+          <Button
+            text="Previous"
+            className="mr-3 w-100"
+            onClick={() => setStep(step - 1)}
+          />
+        )}
         <Button
           text={step === 5 ? "Save" : "Next"}
           className={`${step > 1 && "ml-3"} w-100`}

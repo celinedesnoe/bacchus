@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Input from "./Input";
+import React, { useState, useEffect } from "react";
 import ColorInput from "./ColorInput";
 
-const ColorSelector = props => {
-  const [color, setColor] = useState("");
-  console.log("color", color);
+const ColorSelector = ({ addColor, bottleColor }) => {
+  const [color, setColor] = useState(bottleColor);
+  useEffect(() => {
+    addColor(color);
+  }, [color]);
   return (
     <div className="mb-4">
       <div className="label-input mb-2">Color</div>
