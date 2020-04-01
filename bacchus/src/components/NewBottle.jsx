@@ -3,6 +3,7 @@ import { history } from "../_helpers/history";
 import NewBottleStep1 from "./NewBottleStep1.jsx";
 import NewBottleStep2 from "./NewBottleStep2.jsx";
 import NewBottleStep3 from "./NewBottleStep3.jsx";
+import NewBottleStep5 from "./NewBottleStep5.jsx";
 import Button from "./Button.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -26,6 +27,22 @@ const NewBottle = props => {
     setBottle(bottle);
   };
 
+  const setDetails3 = (nb, price) => {
+    bottle.nb = nb;
+    bottle.price = price;
+    setBottle(bottle);
+  };
+
+  // const setDetails4 = picture => {
+  //   bottle.picture = picture;
+  //   setBottle(bottle);
+  // };
+
+  const save = () => {
+    // ADD REDUX + ROUTE HERE
+    console.log("bottle", bottle);
+  };
+
   const findStep = () => {
     switch (step) {
       case 1:
@@ -33,7 +50,11 @@ const NewBottle = props => {
       case 2:
         return <NewBottleStep2 setDetails={setDetails2} bottle={bottle} />;
       case 3:
-        return <NewBottleStep3 />;
+        return <NewBottleStep3 setDetails={setDetails3} bottle={bottle} />;
+      case 4:
+        return <NewBottleStep5 bottle={bottle} />;
+      // case 5:
+      //   return <NewBottleStep5 setDetails={setDetails4} bottle={bottle} />;
     }
   };
 
@@ -49,31 +70,33 @@ const NewBottle = props => {
         </div>
         <h4 className="extrabold m-0">New wine</h4>
       </div>
-      <div className="d-flex flex-column justify-content-center my-5 mx-3">
-        {findStep()}
-        <div className="d-flex justify-content-center mt-4">
-          {[1, 2, 3, 4, 5].map((oneStep, index) => (
-            <div
-              key={oneStep}
-              className={`dot-step ${index + 1 === step && "selected"}`}
-            ></div>
-          ))}
+      <div>
+        <div className="d-flex flex-column justify-content-center my-5 mx-3">
+          {findStep()}
+          <div className="d-flex justify-content-center mt-4">
+            {[1, 2, 3, 4, 5].map((oneStep, index) => (
+              <div
+                key={oneStep}
+                className={`dot-step ${index + 1 === step && "selected"}`}
+              ></div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="d-flex align-items-center mx-3">
-        {step > 1 && (
+        <div className="d-flex align-items-center mx-3">
+          {step > 1 && (
+            <Button
+              text="Previous"
+              className="mr-3 w-100"
+              onClick={() => setStep(step - 1)}
+            />
+          )}
           <Button
-            text="Previous"
-            className="mr-3 w-100"
-            onClick={() => setStep(step - 1)}
+            text={step === 5 ? "Save" : "Next"}
+            className={`${step > 1 && "ml-3"} w-100`}
+            onClick={() => (step === 5 ? save() : setStep(step + 1))}
           />
-        )}
-        <Button
-          text={step === 5 ? "Save" : "Next"}
-          className={`${step > 1 && "ml-3"} w-100`}
-          onClick={() => setStep(step + 1)}
-        />
+        </div>
       </div>
     </div>
   );

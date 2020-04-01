@@ -237,3 +237,24 @@ input {
     border: 1px solid theme-color("primary");
   }
 }
+
+.badge {
+  border-radius: 10px;
+  padding: 8px;
+  font-size: inherit;
+  &-primary {
+    background-color: theme-color("primary");
+  }
+  &-tertiary {
+    background-color: theme-color("tertiary");
+  }
+}
+
+.new-bottle-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.card-new-bottle {
+  font-size: 18px;
+}

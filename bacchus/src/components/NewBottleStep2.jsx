@@ -14,7 +14,9 @@ const NewBottleStep2 = ({ bottle, setDetails }) => {
   return (
     <div>
       <div className="card">
-        <div>Add your bottle</div>
+        <div className="d-flex justify-content-center mb-4 mt-3">
+          Add details
+        </div>
         <Input
           title="Cépage"
           placeholder="Pinot Noir"

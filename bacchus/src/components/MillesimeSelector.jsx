@@ -26,7 +26,12 @@ const MillesimeSelector = ({ addMillesime, bottleMillesime }) => {
         >
           <FontAwesomeIcon icon={["fa", "chevron-right"]} />
         </div>
-        <div className="millesime-card py-2 px-3 mx-3">N/A</div>
+        <div
+          className="millesime-card py-2 px-3 mx-3"
+          onClick={() => setMillesime(null)}
+        >
+          N/A
+        </div>
       </div>
     </div>
   );
