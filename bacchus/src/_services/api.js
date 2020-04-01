@@ -30,15 +30,21 @@ export function postSignUp(userSubmission) {
     .catch(errorHandler);
 }
 
+export function postLogIn(loginCredentials) {
+  return backendApi
+    .post("/api/process-login", loginCredentials)
+    .catch(errorHandler);
+}
+
 export function postCellar(cellarSubmission) {
   return backendApi
     .post("/api/process-create-cellar", cellarSubmission)
     .catch(errorHandler);
 }
 
-export function postLogIn(loginCredentials) {
+export function postNewBottle(bottle) {
   return backendApi
-    .post("/api/process-login", loginCredentials)
+    .post("/api/process-create-bottle", bottle)
     .catch(errorHandler);
 }
 

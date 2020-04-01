@@ -1,7 +1,3 @@
-import axios from "axios";
-import { store, socket } from "../_helpers";
-import { userConstants } from "../_constants";
-
 export const userService = {
   postSignUp,
   postLogIn

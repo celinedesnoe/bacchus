@@ -239,8 +239,8 @@ input {
 }
 
 .badge {
-  border-radius: 10px;
-  padding: 8px;
+  border-radius: 15px;
+  padding: 8px 16px;
   font-size: inherit;
   &-primary {
     background-color: theme-color("primary");

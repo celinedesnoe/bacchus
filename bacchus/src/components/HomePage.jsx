@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { userActions } from "../_actions";
+import { authActions } from "../_actions";
 import LogIn from "./LogIn.jsx";
 import SignUp from "./SignUp.jsx";
 
-import { postSignUp, postCellar, postLogIn } from "../api";
+import { postSignUp, postCellar, postLogIn } from "../_services/api";
 
 class HomePage extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class HomePage extends Component {
       originalPassword: password,
       name: name
     };
-    userActions.userSignUp(user);
+    authActions.userSignUp(user);
     this.updateUser(user);
   }
 
@@ -42,7 +42,7 @@ class HomePage extends Component {
       email: email,
       originalPassword: password
     };
-    userActions.userLogin(user);
+    authActions.userLogin(user);
     this.updateUser(user);
   };
 
