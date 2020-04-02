@@ -16,15 +16,6 @@ class HomePage extends Component {
     };
   }
 
-  updateUser(newUser) {
-    if (newUser) {
-      localStorage.setItem("currentUser", JSON.stringify(newUser));
-    } else {
-      localStorage.removeItem("currentUser");
-    }
-    this.setState({ currentUser: newUser });
-  }
-
   signUp(event, name, email, password) {
     event.preventDefault();
     let user = {
@@ -33,7 +24,6 @@ class HomePage extends Component {
       name: name
     };
     authActions.userSignUp(user);
-    this.updateUser(user);
   }
 
   logIn = (event, email, password) => {
@@ -43,7 +33,6 @@ class HomePage extends Component {
       originalPassword: password
     };
     authActions.userLogin(user);
-    this.updateUser(user);
   };
 
   createCellar(event, cellar, capacity) {

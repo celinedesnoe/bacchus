@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { authActions } from "./_actions";
 
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
@@ -23,6 +24,10 @@ class App extends Component {
     let userInfo = localStorage.getItem("currentUser");
     if (userInfo) {
       userInfo = JSON.parse(userInfo);
+      this.props.dispatch({
+        type: "LOGIN",
+        userLogged: userInfo
+      });
     }
     this.state = {
       currentUser: userInfo
