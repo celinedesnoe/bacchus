@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { history } from "../_helpers/history";
+import { bottleActions } from "../_actions";
+
 import NewBottleStep1 from "./NewBottleStep1.jsx";
 import NewBottleStep2 from "./NewBottleStep2.jsx";
 import NewBottleStep3 from "./NewBottleStep3.jsx";
@@ -40,6 +42,7 @@ const NewBottle = props => {
 
   const save = () => {
     // ADD REDUX + ROUTE HERE
+    bottleActions.addBottle(bottle);
     console.log("bottle", bottle);
   };
 
