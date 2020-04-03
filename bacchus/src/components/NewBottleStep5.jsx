@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Input from "./Input";
 
 const NewBottleStep5 = ({ bottle, setDetails }) => {
-  const bottlePicto = () => {
+  const [bottlePicto, setBottlePicto] = useState("");
+
+  useEffect(() => {
+    findBottlePicto();
+  }, []);
+  const findBottlePicto = () => {
     switch (bottle.color) {
       case "red":
-        return "RED";
+        return setBottlePicto("redwine.svg");
       case "white":
-        return "WHITE";
+        return setBottlePicto("whitewine.svg");
       case "rosé":
-        return "ROSE";
+        return setBottlePicto("roséwine.svg");
     }
   };
 
@@ -19,7 +23,9 @@ const NewBottleStep5 = ({ bottle, setDetails }) => {
         The bottle you want to add is:
       </div>
       <div className="card card-new-bottle">
-        <div className="position-absolute new-bottle-name">{bottlePicto}</div>
+        <div className="position-absolute new-bottle-name">
+          <img alt="bottle" src={`/${bottlePicto}`} className="bottle-picto" />
+        </div>
         <div className="pl-5 mt-3">
           <div>{bottle.name}</div>
           <div className="d-flex row mt-4">
