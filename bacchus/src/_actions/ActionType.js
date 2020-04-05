@@ -3,5 +3,6 @@ export const userConstants = {
 };
 
 export const bottleConstants = {
-  ADD: "ADD"
+  ADD: "ADD",
+  GETALL: "GETALL"
 };

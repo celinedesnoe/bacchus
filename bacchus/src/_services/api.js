@@ -48,6 +48,12 @@ export function postNewBottle(bottle) {
     .catch(errorHandler);
 }
 
+export function getAllBottles(userId) {
+  return backendApi
+    .post(`/api/process-all-bottles/${userId}`)
+    .catch(errorHandler);
+}
+
 // export function getLogOut() {
 //   return backendApi.get("/api/logout").catch(errorHandler);
 // }

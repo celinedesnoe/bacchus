@@ -1,8 +1,7 @@
-import { postNewBottle } from "../_services/api";
+import { postNewBottle, getAllBottles } from "../_services/api";
 import { store } from "../_helpers/store";
 
 function addBottle(bottle) {
-  console.log("store.getState()", store.getState());
   let userId = store.getState().authReducer._id;
   bottle.userId = userId;
   postNewBottle(bottle)
@@ -18,6 +17,28 @@ function addBottle(bottle) {
     });
 }
 
+function addAllBottles() {
+  // let user = {};
+  // let userId = store.getState().authReducer._id;
+  // user.userId = userId;
+  // }
+  // user.color = "rosé";
+  // console.log("UUUUUUSSSSER", user);
+  let userId = store.getState().authReducer._id;
+  getAllBottles(userId)
+    .then(bottle => {
+      let allBottles = bottle.data;
+      store.dispatch({
+        type: "GETALL",
+        allBottles
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
 export const bottleActions = {
-  addBottle
+  addBottle,
+  addAllBottles
 };

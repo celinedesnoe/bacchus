@@ -5,6 +5,8 @@ export const bottlesReducer = (state = [], action) => {
   switch (action.type) {
     case bottleConstants.ADD:
       return state.push(action.newBottle);
+    case bottleConstants.GETALL:
+      return state.push(action.allBottles);
     default:
       return state;
   }

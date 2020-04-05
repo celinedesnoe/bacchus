@@ -1,15 +1,22 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import Search from "./Search.jsx";
 import Button from "./Button.jsx";
 import EmptyDashboard from "./EmptyDashboard.jsx";
+import { bottleActions } from "../_actions";
 
-class HomePage extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       content: "",
       filterSelected: "all"
     };
+  }
+
+  componentDidMount() {
+    bottleActions.addAllBottles(this.props.user);
   }
 
   render() {
@@ -55,4 +62,9 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+  const { authReducer } = state;
+  return { user: authReducer };
+};
+
+export default connect(mapStateToProps)(Dashboard);
