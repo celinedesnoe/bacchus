@@ -72,32 +72,40 @@ const NewBottle = props => {
         <h4 className="extrabold m-0">New wine</h4>
       </div>
       <div>
-        <div className="d-flex flex-column justify-content-center my-5 mx-3">
-          {findStep()}
-          <div className="d-flex justify-content-center mt-4">
-            {[1, 2, 3, 4].map((oneStep, index) => (
-              <div
-                key={oneStep}
-                className={`dot-step ${index + 1 === step && "selected"}`}
-              ></div>
-            ))}
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            step === 4 ? save() : setStep(step + 1);
+          }}
+        >
+          <div className="d-flex flex-column justify-content-center my-5 mx-3">
+            {findStep()}
+            <div className="d-flex justify-content-center mt-4">
+              {[1, 2, 3, 4].map((oneStep, index) => (
+                <div
+                  key={oneStep}
+                  className={`dot-step ${index + 1 === step && "selected"}`}
+                ></div>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="d-flex align-items-center mx-3">
-          {step > 1 && (
+          <div className="d-flex align-items-center mx-3">
+            {step > 1 && (
+              <Button
+                text="Previous"
+                className="mr-3 w-100"
+                onClick={() => setStep(step - 1)}
+              />
+            )}
             <Button
-              text="Previous"
-              className="mr-3 w-100"
-              onClick={() => setStep(step - 1)}
+              text={step === 4 ? "Save" : "Next"}
+              type="submit"
+              className={`${step > 1 && "ml-3"} w-100`}
+              onClick={() => (step === 4 ? save() : setStep(step + 1))}
             />
-          )}
-          <Button
-            text={step === 4 ? "Save" : "Next"}
-            className={`${step > 1 && "ml-3"} w-100`}
-            onClick={() => (step === 4 ? save() : setStep(step + 1))}
-          />
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );
