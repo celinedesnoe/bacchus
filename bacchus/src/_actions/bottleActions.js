@@ -18,12 +18,6 @@ function addBottle(bottle) {
 }
 
 function addAllBottles() {
-  // let user = {};
-  // let userId = store.getState().authReducer._id;
-  // user.userId = userId;
-  // }
-  // user.color = "rosé";
-  // console.log("UUUUUUSSSSER", user);
   let userId = store.getState().authReducer._id;
   getAllBottles(userId)
     .then(bottle => {

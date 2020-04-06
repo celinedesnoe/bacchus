@@ -27,7 +27,10 @@ class Dashboard extends Component {
             <div className="">
               <h3 className="">Welcome Céline,</h3>
               <h5>
-                You have <span className="text-secondary nb-bottles">54</span>{" "}
+                You have
+                <span className="text-secondary nb-bottles">
+                  {` ${this.props.bottles.length} `}
+                </span>
                 bottles in stock
               </h5>
             </div>
@@ -63,8 +66,8 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-  const { authReducer } = state;
-  return { user: authReducer };
+  const { authReducer, bottlesReducer } = state;
+  return { user: authReducer, bottles: bottlesReducer };
 };
 
 export default connect(mapStateToProps)(Dashboard);

@@ -6,7 +6,7 @@ export const bottlesReducer = (state = [], action) => {
     case bottleConstants.ADD:
       return state.push(action.newBottle);
     case bottleConstants.GETALL:
-      return state.push(action.allBottles);
+      return state.concat(action.allBottles);
     default:
       return state;
   }
