@@ -51,6 +51,10 @@ input {
   color: theme-color("grey");
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .button {
   background-color: theme-color("secondary");
   color: white;
@@ -158,6 +162,7 @@ input {
   font-size: 12px;
   border-radius: 0px 4px 4px 0px;
   transition: 0.4s;
+  cursor: pointer;
 
   .radio {
     font-size: 9px;
