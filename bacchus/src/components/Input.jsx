@@ -10,7 +10,6 @@ const Input = props => {
         className={`form-control pb-1 ${props.error ? "is-invalid" : ""}  ${
           props.className ? props.className : ""
         } `}
-        // style={style}
         value={props.value}
         onChange={props.onChange}
         type={props.type ? props.type : `text`}

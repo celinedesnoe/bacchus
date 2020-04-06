@@ -5,6 +5,7 @@ import Search from "./Search.jsx";
 import Button from "./Button.jsx";
 import EmptyDashboard from "./EmptyDashboard.jsx";
 import BottleCard from "./BottleCard.jsx";
+import AddButton from "./AddButton.jsx";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class Dashboard extends Component {
             </div>
           )}
         </div>
+        <AddButton />
       </div>
     );
   }

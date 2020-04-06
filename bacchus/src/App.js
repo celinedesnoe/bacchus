@@ -14,10 +14,11 @@ import {
   faTimes,
   faCheck,
   faChevronRight,
-  faChevronLeft
+  faChevronLeft,
+  faPlus
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faTimes, faCheck, faChevronRight, faChevronLeft);
+library.add(faSearch, faTimes, faCheck, faChevronRight, faChevronLeft, faPlus);
 
 class App extends Component {
   constructor(props) {
