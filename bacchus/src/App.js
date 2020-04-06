@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { authActions } from "./_actions";
+import { bottleActions } from "./_actions";
 
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
@@ -36,6 +37,8 @@ class App extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.user.email !== this.props.user.email) {
+      bottleActions.addAllBottles(this.props.user);
+
       this.setState({ currentUser: this.props.user });
     }
   }
@@ -58,8 +61,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  const { authReducer } = state;
-  return { user: authReducer };
+  const { authReducer, bottlesReducer } = state;
+  return { user: authReducer, bottles: bottlesReducer };
 };
 
 export default withRouter(connect(mapStateToProps)(App));

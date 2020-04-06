@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Search from "./Search.jsx";
 import Button from "./Button.jsx";
 import EmptyDashboard from "./EmptyDashboard.jsx";
-import { bottleActions } from "../_actions";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -13,10 +12,6 @@ class Dashboard extends Component {
       content: "",
       filterSelected: "all"
     };
-  }
-
-  componentDidMount() {
-    bottleActions.addAllBottles(this.props.user);
   }
 
   render() {

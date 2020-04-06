@@ -41,9 +41,8 @@ const NewBottle = props => {
   // };
 
   const save = () => {
-    // ADD REDUX + ROUTE HERE
     bottleActions.addBottle(bottle);
-    console.log("bottle", bottle);
+    history.push("/");
   };
 
   const findStep = () => {
@@ -61,7 +60,6 @@ const NewBottle = props => {
     }
   };
 
-  console.log("bottle", bottle);
   return (
     <div>
       <div className="header-new-bottle d-flex justify-content-center py-4 position-relative">
@@ -77,7 +75,7 @@ const NewBottle = props => {
         <div className="d-flex flex-column justify-content-center my-5 mx-3">
           {findStep()}
           <div className="d-flex justify-content-center mt-4">
-            {[1, 2, 3, 4, 5].map((oneStep, index) => (
+            {[1, 2, 3, 4].map((oneStep, index) => (
               <div
                 key={oneStep}
                 className={`dot-step ${index + 1 === step && "selected"}`}
@@ -95,9 +93,9 @@ const NewBottle = props => {
             />
           )}
           <Button
-            text={step === 5 ? "Save" : "Next"}
+            text={step === 4 ? "Save" : "Next"}
             className={`${step > 1 && "ml-3"} w-100`}
-            onClick={() => (step === 5 ? save() : setStep(step + 1))}
+            onClick={() => (step === 4 ? save() : setStep(step + 1))}
           />
         </div>
       </div>
