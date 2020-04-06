@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Input from "../Input";
 
-const NewBottleStep3 = ({ bottle, setDetails }) => {
+const NewBottleStep3 = ({ bottle, setDetails, submit }) => {
   const [bottlesNumber, setBottlesNumber] = useState(bottle.nb);
   const [price, setPrice] = useState(bottle.price);
 

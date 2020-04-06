@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Input from "../Input";
 
-const NewBottleStep2 = ({ bottle, setDetails }) => {
+const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
   const [cepage, setCepage] = useState(bottle.cepage);
   const [appellation, setAppellation] = useState(bottle.appellation);
   const [region, setRegion] = useState(bottle.region);

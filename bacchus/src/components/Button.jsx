@@ -8,7 +8,6 @@ const Button = props => {
         !props.selected &&
         "filter-not-selected"}`}
       onClick={props.onClick ? props.onClick : null}
-      type={props.type}
     >
       {text}
     </div>

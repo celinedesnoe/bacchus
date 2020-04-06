@@ -4,7 +4,7 @@ import ColorSelector from "./ColorSelector";
 import MillesimeSelector from "./MillesimeSelector";
 import { useEffect } from "react";
 
-const NewBottleStep1 = ({ setDetails, bottle }) => {
+const NewBottleStep1 = ({ setDetails, bottle, submit }) => {
   const [name, setName] = useState(bottle.name);
   const [color, setColor] = useState(bottle.color);
   const [millesime, setMillesime] = useState(bottle.millesime);
