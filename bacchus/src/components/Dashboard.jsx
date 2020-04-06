@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Search from "./Search.jsx";
 import Button from "./Button.jsx";
 import EmptyDashboard from "./EmptyDashboard.jsx";
+import BottleCard from "./BottleCard.jsx";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -53,7 +54,15 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className="d-flex justify-content-center">
-          <EmptyDashboard />
+          {this.props.bottles.length === 0 ? (
+            <EmptyDashboard />
+          ) : (
+            <div className="list-bottles d-flex flex-column w-100 px-4">
+              {this.props.bottles.map((bottle, index) => (
+                <BottleCard bottle={bottle} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     );

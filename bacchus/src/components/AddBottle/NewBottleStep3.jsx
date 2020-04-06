@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Input from "./Input";
+import Input from "../Input";
 
 const NewBottleStep3 = ({ bottle, setDetails }) => {
   const [bottlesNumber, setBottlesNumber] = useState(bottle.nb);

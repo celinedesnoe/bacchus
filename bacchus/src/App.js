@@ -7,7 +7,7 @@ import { bottleActions } from "./_actions";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
-import NewBottle from "./components/NewBottle";
+import NewBottle from "./components/AddBottle/NewBottle";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,

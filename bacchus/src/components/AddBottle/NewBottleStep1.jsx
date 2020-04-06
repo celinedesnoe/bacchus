@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Input from "./Input";
+import Input from "../Input";
 import ColorSelector from "./ColorSelector";
 import MillesimeSelector from "./MillesimeSelector";
 import { useEffect } from "react";

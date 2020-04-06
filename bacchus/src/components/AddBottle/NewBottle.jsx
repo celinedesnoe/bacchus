@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { history } from "../_helpers/history";
-import { bottleActions } from "../_actions";
+import { history } from "../../_helpers/history";
+import { bottleActions } from "../../_actions";
 
 import NewBottleStep1 from "./NewBottleStep1.jsx";
 import NewBottleStep2 from "./NewBottleStep2.jsx";
 import NewBottleStep3 from "./NewBottleStep3.jsx";
 import NewBottleStep5 from "./NewBottleStep5.jsx";
-import Button from "./Button.jsx";
+import Button from "../Button.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

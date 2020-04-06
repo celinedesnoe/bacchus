@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Input from "./Input";
+import Input from "../Input";
 
 const NewBottleStep2 = ({ bottle, setDetails }) => {
   const [cepage, setCepage] = useState(bottle.cepage);
