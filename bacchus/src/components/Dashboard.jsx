@@ -27,7 +27,7 @@ class Dashboard extends Component {
   }
 
   search = text => {
-    const results = this.state.bottles.filter(
+    const results = this.props.bottles.filter(
       bottle =>
         bottle.name?.includes(text) ||
         bottle.appellation?.includes(text) ||
