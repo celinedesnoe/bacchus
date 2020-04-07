@@ -1,8 +1,9 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { history } from "../_helpers/history";
+import { connect } from "react-redux";
 
-const HeaderDashboard = () => {
+import Search from "./Search.jsx";
+import Button from "./Button.jsx";
+const HeaderDashboard = props => {
   return (
     <div className="header-dashboard px-3 py-2">
       <div className="d-flex justify-content-between mt-3">
@@ -23,7 +24,11 @@ const HeaderDashboard = () => {
           }}
         />
       </div>
-      <Search placeholder="Name, Region, Appellation..." className="" />
+      <Search
+        placeholder="Name, Region, Appellation..."
+        className=""
+        onChange={e => props.search(e.target.value)}
+      />
       <div className="d-flex my-3">
         <Button
           text="All"

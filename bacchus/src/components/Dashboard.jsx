@@ -1,33 +1,56 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import Search from "./Search.jsx";
-import Button from "./Button.jsx";
 import EmptyDashboard from "./EmptyDashboard.jsx";
 import BottleCard from "./BottleCard.jsx";
 import AddButton from "./AddButton.jsx";
+import HeaderDashboard from "./HeaderDashboard.jsx";
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       content: "",
-      filterSelected: "all"
+      filterSelected: "all",
+      bottles: []
     };
   }
+
+  componentDidMount() {
+    this.setState({ bottles: this.props.bottles });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.bottles.length !== this.props.bottles.length) {
+      this.setState({ bottles: this.props.bottles });
+    }
+  }
+
+  search = text => {
+    const results = this.state.bottles.filter(
+      bottle =>
+        bottle.name?.includes(text) ||
+        bottle.appellation?.includes(text) ||
+        bottle.cépage?.includes(text)
+    );
+    this.setState({ bottles: results });
+  };
 
   render() {
     return (
       <div className="">
-        <HeaderDashboard filterSelected={this.state.filterSelected} />
+        <HeaderDashboard
+          filterSelected={this.state.filterSelected}
+          search={this.search}
+        />
 
         <div className="d-flex justify-content-center">
           {this.props.bottles.length === 0 ? (
             <EmptyDashboard />
           ) : (
             <div className="list-bottles d-flex flex-column w-100 px-4">
-              {this.props.bottles.map((bottle, index) => (
-                <BottleCard bottle={bottle} />
+              {this.state.bottles.map((bottle, index) => (
+                <BottleCard bottle={bottle} key={bottle._id} />
               ))}
             </div>
           )}
