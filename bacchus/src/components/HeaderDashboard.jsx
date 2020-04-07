@@ -34,12 +34,14 @@ const HeaderDashboard = props => {
           text="All"
           className="mr-2"
           selected={props.filterSelected === "all"}
+          onClick={() => props.selectFilter("all")}
           filter={true}
         />
         <Button
           text="In stock"
           className=""
           selected={props.filterSelected === "instock"}
+          onClick={() => props.selectFilter("instock")}
           filter={true}
         />
       </div>

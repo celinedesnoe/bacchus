@@ -12,7 +12,9 @@ class Dashboard extends Component {
     this.state = {
       content: "",
       filterSelected: "all",
-      bottles: []
+      searchValue: "",
+      bottles: [],
+      bottlesResults: []
     };
   }
 
@@ -22,18 +24,40 @@ class Dashboard extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.bottles.length !== this.props.bottles.length) {
-      this.setState({ bottles: this.props.bottles });
+      this.setState({
+        bottles: this.props.bottles,
+        bottlesResults: this.props.bottles
+      });
     }
   }
 
-  search = text => {
-    const results = this.props.bottles.filter(
-      bottle =>
-        bottle.name?.includes(text) ||
-        bottle.appellation?.includes(text) ||
-        bottle.cépage?.includes(text)
-    );
-    this.setState({ bottles: results });
+  search = searchValue => {
+    this.setState({ searchValue: searchValue }, () => this.displayBottles());
+  };
+
+  selectFilter = filter => {
+    this.setState({ filterSelected: filter }, () => this.displayBottles());
+  };
+
+  displayBottles = () => {
+    let { bottles } = this.props;
+    let { filterSelected, searchValue } = this.state;
+    let results = [];
+    if (searchValue !== "") {
+      results = bottles.filter(bottle =>
+        Object.keys(bottle).some(
+          key => bottle[key].toString().search(searchValue) !== -1
+        )
+      );
+      if (filterSelected !== "all") {
+        results = results.filter(bottle => bottle.nb > 0);
+      }
+    } else if (filterSelected !== "all") {
+      results = bottles.filter(bottle => bottle.nb > 0);
+    } else {
+      results = bottles;
+    }
+    this.setState({ bottlesResults: results });
   };
 
   render() {
@@ -42,6 +66,7 @@ class Dashboard extends Component {
         <HeaderDashboard
           filterSelected={this.state.filterSelected}
           search={this.search}
+          selectFilter={this.selectFilter}
         />
 
         <div className="d-flex justify-content-center">
@@ -49,7 +74,7 @@ class Dashboard extends Component {
             <EmptyDashboard />
           ) : (
             <div className="list-bottles d-flex flex-column w-100 px-4">
-              {this.state.bottles.map((bottle, index) => (
+              {this.state.bottlesResults.map((bottle, index) => (
                 <BottleCard bottle={bottle} key={bottle._id} />
               ))}
             </div>
