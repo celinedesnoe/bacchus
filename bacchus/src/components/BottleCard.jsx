@@ -23,8 +23,8 @@ const NewBottleStep5 = ({ bottle, setDetails }) => {
         <img alt="bottle" src={`/${bottlePicto}`} className="bottle-picto" />
       </div>
       <div className="pl-5 mt-3">
-        <div>{bottle.name}</div>
-        <div className="">{bottle.millesime}</div>
+        <div className="extrabold mb-1">{bottle.name}</div>
+        <div className="small text-grey">{bottle.millesime}</div>
       </div>
     </div>
   );

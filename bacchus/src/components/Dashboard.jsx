@@ -19,15 +19,18 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    this.setState({ bottles: this.props.bottles });
+    this.setState({ bottles: this.props.bottles }, () => this.displayBottles());
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.bottles.length !== this.props.bottles.length) {
-      this.setState({
-        bottles: this.props.bottles,
-        bottlesResults: this.props.bottles
-      });
+      this.setState(
+        {
+          bottles: this.props.bottles,
+          bottlesResults: this.props.bottles
+        },
+        () => this.displayBottles()
+      );
     }
   }
 
