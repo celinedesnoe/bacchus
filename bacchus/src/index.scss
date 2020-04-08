@@ -273,6 +273,14 @@ input {
     background-color: theme-color("secondary");
     color: white;
   }
+  .input-inline {
+    background-color: white !important;
+    font-size: 14px !important;
+    border: 0px solid white !important;
+    color: #1a2340 !important;
+    width: 54px;
+    height: 27px;
+  }
 }
 
 .card-new-bottle {
