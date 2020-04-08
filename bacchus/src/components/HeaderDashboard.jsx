@@ -8,7 +8,7 @@ const HeaderDashboard = props => {
     <div className="header-dashboard px-3 py-2">
       <div className="d-flex justify-content-between mt-3">
         <div className="">
-          <h3 className="">Welcome {props.user.firstName},</h3>
+          <h3 className="">Welcome {props.user.name},</h3>
           <h5>
             You have
             <span className="text-secondary nb-bottles">

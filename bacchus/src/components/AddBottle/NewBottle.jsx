@@ -88,7 +88,7 @@ const NewBottle = props => {
           {step > 1 && (
             <Button
               text="Previous"
-              className="mr-3 w-100"
+              className="mr-3 w-100 button-secondary"
               onClick={() => setStep(step - 1)}
             />
           )}

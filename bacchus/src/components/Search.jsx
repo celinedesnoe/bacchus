@@ -7,7 +7,7 @@ const Search = props => {
   return (
     <div className="d-flex align-items-center bg-white search-bar my-2">
       {props.title && <div className="label-input">{props.title}</div>}
-      <div className="text-grey pl-2 mt-1">
+      <div className="text-grey pl-2">
         <FontAwesomeIcon icon={["fa", "search"]} />
       </div>
       <input
