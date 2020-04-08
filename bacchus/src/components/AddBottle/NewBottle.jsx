@@ -76,7 +76,7 @@ const NewBottle = props => {
     <div>
       <div className="header-new-bottle d-flex justify-content-center py-4 position-relative">
         <div
-          className="position-absolute p-2 close cursor-pointer text-primary"
+          className="position-absolute p-2 close-icon cursor-pointer text-white"
           onClick={() => history.push("/")}
         >
           <FontAwesomeIcon icon={["fa", "times"]} />
