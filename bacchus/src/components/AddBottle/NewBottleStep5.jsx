@@ -14,6 +14,8 @@ const NewBottleStep5 = ({ bottle, setDetails }) => {
         return setBottlePicto("whitewine.svg");
       case "rosé":
         return setBottlePicto("roséwine.svg");
+      default:
+        return setBottlePicto("unknownwine.svg");
     }
   };
 
@@ -31,29 +33,38 @@ const NewBottleStep5 = ({ bottle, setDetails }) => {
           <div className="d-flex row mt-4">
             <div className="col-6">
               <div className="label-input pb-1 mr-4">Millésime</div>
-              <div className="">{bottle.millesime}</div>
+              <div className="">
+                {bottle.millesime ? bottle.millesime : "?"}
+              </div>
             </div>
             <div className="col-6">
               <div className="label-input pb-1">Origin</div>
               <div className="">
-                {bottle.region}, {bottle.country}
+                {bottle.region ? bottle.region : "?"},{" "}
+                {bottle.country ? bottle.country : "?"}
               </div>
             </div>
           </div>
           <div className="d-flex row mt-3">
             <div className="col-6">
               <div className="label-input pb-1 mr-4">Appellation</div>
-              <div className="">{bottle.appellation}</div>
+              <div className="">
+                {bottle.appellation ? bottle.appellation : "N/A"}
+              </div>
             </div>
             <div className="col-6">
               <div className="label-input pb-1">Cépage</div>
-              <div className="">{bottle.cepage}</div>
+              <div className="">{bottle.cepage ? bottle.cepage : "N/A"}</div>
             </div>
           </div>
         </div>
         <div className="d-flex justify-content-between mt-4">
-          <div className="badge badge-primary">{bottle.nb} bottles</div>
-          <div className="badge badge-tertiary">{bottle.price} $</div>
+          <div className="badge badge-primary">
+            {bottle.nb ? bottle.nb : "?"} bottles
+          </div>
+          <div className="badge badge-tertiary">
+            {bottle.price ? bottle.price : "?"} $
+          </div>
         </div>
       </div>
     </div>
