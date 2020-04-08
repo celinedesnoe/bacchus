@@ -13,12 +13,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const NewBottle = props => {
   const [step, setStep] = useState(1);
   const [bottle, setBottle] = useState({});
+  const [error, setError] = useState(null);
 
   const setDetails1 = (name, color, millesime) => {
     bottle.name = name;
     bottle.color = color;
     bottle.millesime = millesime;
     setBottle(bottle);
+    setError(false);
   };
 
   const setDetails2 = (cepage, appellation, region, country) => {
@@ -35,11 +37,6 @@ const NewBottle = props => {
     setBottle(bottle);
   };
 
-  // const setDetails4 = picture => {
-  //   bottle.picture = picture;
-  //   setBottle(bottle);
-  // };
-
   const save = () => {
     bottleActions.addBottle(bottle);
     history.push("/");
@@ -48,7 +45,13 @@ const NewBottle = props => {
   const findStep = () => {
     switch (step) {
       case 1:
-        return <NewBottleStep1 setDetails={setDetails1} bottle={bottle} />;
+        return (
+          <NewBottleStep1
+            setDetails={setDetails1}
+            bottle={bottle}
+            error={error}
+          />
+        );
       case 2:
         return <NewBottleStep2 setDetails={setDetails2} bottle={bottle} />;
       case 3:
@@ -57,6 +60,15 @@ const NewBottle = props => {
         return <NewBottleStep5 bottle={bottle} />;
       // case 5:
       //   return <NewBottleStep5 setDetails={setDetails4} bottle={bottle} />;
+    }
+  };
+
+  const nextStep = () => {
+    if (!bottle.name) {
+      setError(true);
+    } else {
+      setError(false);
+      step === 4 ? save() : setStep(step + 1);
     }
   };
 
@@ -95,7 +107,7 @@ const NewBottle = props => {
           <Button
             text={step === 4 ? "Save" : "Next"}
             className={`${step > 1 && "ml-3"} w-100`}
-            onClick={() => (step === 4 ? save() : setStep(step + 1))}
+            onClick={nextStep}
           />
         </div>
       </div>

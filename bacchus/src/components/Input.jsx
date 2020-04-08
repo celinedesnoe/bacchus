@@ -4,12 +4,12 @@ const Input = props => {
   const id = "input-id-" + Math.round(Math.random() * 1000);
 
   return (
-    <div>
+    <div className={`${props.className ? props.className : ""}`}>
       {props.title && <div className="label-input mb-2">{props.title}</div>}
       <input
-        className={`form-control pb-1 ${props.error ? "is-invalid" : ""}  ${
-          props.className ? props.className : ""
-        } `}
+        className={`form-control pb-1  ${
+          props.error ? "input-invalid mb-1" : ""
+        }   `}
         value={props.value}
         onChange={props.onChange}
         type={props.type ? props.type : `text`}
@@ -23,6 +23,9 @@ const Input = props => {
         onKeyUp={props.onKeyUp}
         autoComplete={props.autoComplete}
       />
+      {props.error && (
+        <div className="input-error">{props.title} is required</div>
+      )}
     </div>
   );
 };

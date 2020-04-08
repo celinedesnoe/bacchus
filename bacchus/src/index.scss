@@ -44,6 +44,15 @@ input {
     border: 0px solid theme-color("grey") !important;
     box-shadow: none !important;
   }
+
+  &.input-invalid {
+    border: 1px solid theme-color("secondary") !important;
+  }
+}
+
+.input-error {
+  font-size: 12px;
+  color: theme-color("secondary");
 }
 
 .label-input {

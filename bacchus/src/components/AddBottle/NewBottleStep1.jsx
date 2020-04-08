@@ -4,7 +4,7 @@ import ColorSelector from "./ColorSelector";
 import MillesimeSelector from "./MillesimeSelector";
 import { useEffect } from "react";
 
-const NewBottleStep1 = ({ setDetails, bottle, submit }) => {
+const NewBottleStep1 = ({ setDetails, bottle, error }) => {
   const [name, setName] = useState(bottle.name);
   const [color, setColor] = useState(bottle.color);
   const [millesime, setMillesime] = useState(bottle.millesime);
@@ -20,10 +20,11 @@ const NewBottleStep1 = ({ setDetails, bottle, submit }) => {
       </div>
       <Input
         placeholder="Château Margaux"
-        className="mb-4"
+        className={"mb-4"}
         title="Name of the château or domain*"
         onChange={e => setName(e.target.value)}
         value={name}
+        error={error}
       />
       <ColorSelector addColor={setColor} bottleColor={bottle.color} />
       <MillesimeSelector
