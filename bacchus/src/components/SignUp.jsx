@@ -13,6 +13,12 @@ const SignUp = props => {
 
   const submitSignup = e => {
     let error = {};
+    let checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+      email
+    );
+    if (!checkEmail) {
+      error.email = "Please enter a correct email address";
+    }
     if (!name) {
       error.name = "Name is required";
     }
