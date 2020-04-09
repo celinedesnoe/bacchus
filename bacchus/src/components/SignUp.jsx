@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "./Input.jsx";
+import Button from "./Button.jsx";
 
 const SignUp = props => {
   const [step, setStep] = useState(1);
@@ -46,15 +47,14 @@ const SignUp = props => {
                   />
                 </div>
                 <div className="w-100 mt-5">
-                  <div
-                    className="button"
+                  <Button
+                    text="Next"
+                    className="py-2"
                     onClick={e => {
                       setStep(2);
                       props.signUp(e, name, email, password);
                     }}
-                  >
-                    Next
-                  </div>
+                  />
                 </div>
               </form>
             </>
@@ -83,16 +83,15 @@ const SignUp = props => {
                 </div>
 
                 <div className="w-100 mt-5">
-                  <div
-                    className="button"
+                  <Button
+                    text="Ready to start?"
+                    className="py-2"
                     onClick={e => {
                       {
                         props.createCellar(e, cellar, capacity);
                       }
                     }}
-                  >
-                    Ready to start?{" "}
-                  </div>
+                  />
                 </div>
               </form>
             </>

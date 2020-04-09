@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Input from "./Input.jsx";
+import Button from "./Button.jsx";
 
 const LogIn = props => {
   const [email, setEmail] = useState("");
@@ -34,12 +35,11 @@ const LogIn = props => {
               />
             </div>
             <div className="w-100 mt-5">
-              <div
-                className="button"
+              <Button
+                text="Login"
+                className="py-2"
                 onClick={e => props.logIn(e, email, password)}
-              >
-                Log in
-              </div>
+              />
             </div>
           </form>
         </div>
