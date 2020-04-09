@@ -30,7 +30,7 @@ const SignUp = props => {
     }
     setError(error);
     if (name && email && password) {
-      setStep(2);
+      // setStep(2);
       props.signUp(e, name, email, password);
     }
   };

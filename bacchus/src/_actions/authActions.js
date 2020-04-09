@@ -21,6 +21,8 @@ function userSignUp(user) {
   postSignUp(user)
     .then(user => {
       let userLogged = user.data;
+      localStorage.setItem("currentUser", JSON.stringify(userLogged));
+
       store.dispatch({
         type: "LOGIN",
         userLogged
