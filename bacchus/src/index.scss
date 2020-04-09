@@ -380,7 +380,6 @@ input {
   width: 100%;
   z-index: 10;
   background-color: theme-color("primary");
-
   top: 0;
   animation: 1s layer-fade-out forwards;
 }
@@ -400,7 +399,18 @@ input {
   width: 100%;
   border-radius: 15px 15px 0px 0px;
   height: 300px;
-  animation: 1s slide-up forwards;
+  animation: 0.5s slide-up forwards;
+  z-index: 20;
+}
+
+@media (min-width: 1024px) {
+  .bottle-details {
+    width: 90%;
+    margin: 0 5%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+  }
 }
 
 @keyframes slide-up {

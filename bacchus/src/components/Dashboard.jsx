@@ -69,9 +69,13 @@ class Dashboard extends Component {
     this.setState({ bottleDetails: bottle });
   };
 
+  closeDetails = bottle => {
+    this.setState({ bottleDetails: false });
+  };
+
   render() {
     return (
-      <div className="position-relative">
+      <div className="position-relative h-100">
         <HeaderDashboard
           filterSelected={this.state.filterSelected}
           search={this.search}
