@@ -374,3 +374,40 @@ input {
   background-color: theme-color("primary");
   color: white;
 }
+
+.layer {
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  background-color: theme-color("primary");
+
+  top: 0;
+  animation: 1s layer-fade-out forwards;
+}
+
+@keyframes layer-fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    background-color: theme-color("primary");
+    opacity: 0.5;
+  }
+}
+
+.bottle-details {
+  bottom: 0;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  height: 300px;
+  animation: 1s slide-up forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

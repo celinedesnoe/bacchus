@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const NewBottleStep5 = ({ bottle, setDetails }) => {
+const BottleCard = ({ bottle, seeDetails }) => {
   const [bottlePicto, setBottlePicto] = useState("");
 
   useEffect(() => {
@@ -18,7 +18,10 @@ const NewBottleStep5 = ({ bottle, setDetails }) => {
   };
 
   return (
-    <div className={`card card-bottle card-bottle-${bottle.color} mb-4`}>
+    <div
+      className={`card card-bottle card-bottle-${bottle.color} mb-4`}
+      onClick={() => seeDetails(bottle)}
+    >
       <div className="position-absolute new-bottle-name">
         <img alt="bottle" src={`/${bottlePicto}`} className="bottle-picto" />
       </div>
@@ -30,4 +33,4 @@ const NewBottleStep5 = ({ bottle, setDetails }) => {
   );
 };
 
-export default NewBottleStep5;
+export default BottleCard;

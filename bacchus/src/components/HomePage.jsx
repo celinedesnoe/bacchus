@@ -48,7 +48,6 @@ class HomePage extends Component {
 
   render() {
     const { login } = this.state;
-    console.log("this.props", this.props);
     return (
       <div className="h-100 text-white">
         <div className="auth-header mb-4 d-flex flex-column">

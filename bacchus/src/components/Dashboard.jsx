@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import EmptyDashboard from "./EmptyDashboard.jsx";
 import BottleCard from "./BottleCard.jsx";
+import BottleDetails from "./BottleDetails.jsx";
 import AddButton from "./AddButton.jsx";
 import HeaderDashboard from "./HeaderDashboard.jsx";
 
@@ -14,7 +15,8 @@ class Dashboard extends Component {
       filterSelected: "all",
       searchValue: "",
       bottles: [],
-      bottlesResults: []
+      bottlesResults: [],
+      bottleDetails: false
     };
   }
 
@@ -63,9 +65,13 @@ class Dashboard extends Component {
     this.setState({ bottlesResults: results });
   };
 
+  seeDetails = bottle => {
+    this.setState({ bottleDetails: bottle });
+  };
+
   render() {
     return (
-      <div className="">
+      <div className="position-relative">
         <HeaderDashboard
           filterSelected={this.state.filterSelected}
           search={this.search}
@@ -78,12 +84,21 @@ class Dashboard extends Component {
           ) : (
             <div className="list-bottles d-flex flex-column w-100 px-4">
               {this.state.bottlesResults.map((bottle, index) => (
-                <BottleCard bottle={bottle} key={bottle._id} />
+                <BottleCard
+                  bottle={bottle}
+                  key={bottle._id}
+                  seeDetails={this.seeDetails}
+                />
               ))}
             </div>
           )}
         </div>
-        <AddButton />
+
+        {this.state.bottleDetails ? (
+          <BottleDetails bottle={this.state.bottleDetails} />
+        ) : (
+          <AddButton />
+        )}
       </div>
     );
   }
