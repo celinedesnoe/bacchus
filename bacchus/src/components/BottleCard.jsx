@@ -27,7 +27,7 @@ const BottleCard = ({ bottle, seeDetails }) => {
       </div>
       <div className="pl-5 mt-3">
         <div className="extrabold mb-1">{bottle.name}</div>
-        <div className="small text-grey">{bottle.millesime}</div>
+        <div className="small text-grey">{bottle.vintage}</div>
       </div>
     </div>
   );

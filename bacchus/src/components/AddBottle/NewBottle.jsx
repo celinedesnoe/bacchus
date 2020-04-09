@@ -15,10 +15,10 @@ const NewBottle = props => {
   const [bottle, setBottle] = useState({});
   const [error, setError] = useState(null);
 
-  const setDetails1 = (name, color, millesime) => {
+  const setDetails1 = (name, color, vintage) => {
     bottle.name = name;
     bottle.color = color;
-    bottle.millesime = millesime;
+    bottle.vintage = vintage;
     setBottle(bottle);
     setError(false);
   };

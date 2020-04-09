@@ -25,6 +25,17 @@ body {
   font-weight: 800;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 input {
   background-color: theme-color("primary-light") !important;
   font-size: 14px !important;
@@ -263,7 +274,7 @@ input {
   left: 20px;
 }
 
-.millesime-card {
+.vintage-card {
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: 700;
@@ -419,5 +430,55 @@ input {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+.list-comments {
+  overflow-y: scroll;
+  width: 100%;
+  max-width: calc(100% - 36px);
+  position: relative;
+}
+
+.comment-card {
+  border-radius: 15px;
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+  width: 138px;
+  height: 115px;
+  min-width: 138px;
+  min-height: 115px;
+
+  .note {
+    font-weight: bold;
+    font-size: 18px;
+    color: theme-color("secondary");
+  }
+  .date {
+    font-size: 12px;
+    color: theme-color("grey");
+  }
+  .comment {
+    font-size: 16px;
+  }
+}
+
+.button-add-comment {
+  background: theme-color("secondary");
+  color: white;
+  height: 115px;
+  width: 22px;
+  box-shadow: 1px 5px 19px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  &::before {
+    z-index: 2;
+    pointer-events: none;
+    transition: 0.4s;
+    position: absolute;
+    top: 0;
+    left: -16px;
+    width: 16px;
+    height: 100%;
+    content: "";
+    box-shadow: -16px 8px 8px rgba(0, 0, 0, 0.1);
   }
 }

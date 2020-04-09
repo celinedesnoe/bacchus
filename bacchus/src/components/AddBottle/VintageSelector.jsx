@@ -1,32 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MillesimeSelector = ({ addMillesime, bottleMillesime }) => {
-  const [millesime, setMillesime] = useState(
-    bottleMillesime ? bottleMillesime : null
-  );
+const VintageSelector = ({ addVintage, bottleVintage }) => {
+  const [vintage, setVintage] = useState(bottleVintage ? bottleVintage : null);
   useEffect(() => {
-    addMillesime(millesime);
-  }, [millesime]);
+    addVintage(vintage);
+  }, [vintage]);
 
-  console.log(typeof millesime);
+  console.log(typeof vintage);
   return (
     <div className="mb-3">
-      <div className="label-input mb-2">Millésime</div>
+      <div className="label-input mb-2">Vintage</div>
       <div className="d-flex align-items-center justify-content-between">
         <div className="d-flex align-items-center">
           <div
             className="counter-icon text-primary-light cursor-pointer"
-            onClick={() => setMillesime(!millesime ? 2015 : millesime - 1)}
+            onClick={() => setVintage(!vintage ? 2014 : vintage - 1)}
           >
             <FontAwesomeIcon icon={["fa", "chevron-left"]} />
           </div>
-          <div className="millesime-card px-3 mx-2">
+          <div className="vintage-card px-3 mx-2">
             <input
-              value={!millesime ? "?" : millesime}
+              value={!vintage ? "?" : vintage}
               onChange={e => {
                 let value = parseInt(e.target.value);
-                setMillesime(value);
+                setVintage(value);
               }}
               type="number"
               placeholder="2015"
@@ -35,15 +33,15 @@ const MillesimeSelector = ({ addMillesime, bottleMillesime }) => {
           </div>
           <div
             className="counter-icon text-primary-light cursor-pointer"
-            onClick={() => setMillesime(!millesime ? 2015 : millesime + 1)}
+            onClick={() => setVintage(!vintage ? 2016 : vintage + 1)}
           >
             <FontAwesomeIcon icon={["fa", "chevron-right"]} />
           </div>
         </div>
         <div
-          className={`millesime-card py-2 px-3 mx-3 cursor-pointer ${!millesime &&
+          className={`vintage-card py-2 px-3 mx-3 cursor-pointer ${!vintage &&
             "selected"}`}
-          onClick={() => setMillesime(null)}
+          onClick={() => setVintage(null)}
         >
           Non-vintage
         </div>
@@ -52,4 +50,4 @@ const MillesimeSelector = ({ addMillesime, bottleMillesime }) => {
   );
 };
 
-export default MillesimeSelector;
+export default VintageSelector;

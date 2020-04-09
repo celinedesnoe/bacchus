@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import Input from "../Input";
 import ColorSelector from "./ColorSelector";
-import MillesimeSelector from "./MillesimeSelector";
+import VintageSelector from "./VintageSelector";
 import { useEffect } from "react";
 
 const NewBottleStep1 = ({ setDetails, bottle, error }) => {
   const [name, setName] = useState(bottle.name ? bottle.name : "");
   const [color, setColor] = useState(bottle.color ? bottle.color : "");
-  const [millesime, setMillesime] = useState(
-    bottle.millesime ? bottle.millesime : ""
-  );
+  const [vintage, setVintage] = useState(bottle.vintage ? bottle.vintage : "");
 
   useEffect(() => {
-    setDetails(name, color, millesime);
-  }, [name, color, millesime]);
+    setDetails(name, color, vintage);
+  }, [name, color, vintage]);
 
   return (
     <div className="card card-new-bottle w-100">
@@ -29,10 +27,7 @@ const NewBottleStep1 = ({ setDetails, bottle, error }) => {
         error={error}
       />
       <ColorSelector addColor={setColor} bottleColor={bottle.color} />
-      <MillesimeSelector
-        addMillesime={setMillesime}
-        bottleMillesime={bottle.millesime}
-      />
+      <VintageSelector addVintage={setVintage} bottleVintage={bottle.vintage} />
     </div>
   );
 };
