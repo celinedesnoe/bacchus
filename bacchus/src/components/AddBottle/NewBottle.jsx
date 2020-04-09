@@ -65,7 +65,7 @@ const NewBottle = props => {
 
   const nextStep = () => {
     if (!bottle.name) {
-      setError(true);
+      setError("The name of the château or domain is required");
     } else {
       setError(false);
       step === 4 ? save() : setStep(step + 1);

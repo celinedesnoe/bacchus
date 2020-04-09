@@ -7,9 +7,27 @@ const SignUp = props => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState({});
   const [cellar, setCellar] = useState("");
   const [capacity, setCapacity] = useState(0);
 
+  const submitSignup = e => {
+    let error = {};
+    if (!name) {
+      error.name = "Name is required";
+    }
+    if (!email) {
+      error.email = "Email is required";
+    }
+    if (!password) {
+      error.password = "Password is required";
+    }
+    setError(error);
+    if (name && email && password) {
+      setStep(2);
+      props.signUp(e, name, email, password);
+    }
+  };
   return (
     <>
       <div className="position-absolute card log-in-box d-flex align-items-center flex-column mt-3">
@@ -17,14 +35,18 @@ const SignUp = props => {
           {step === 1 ? (
             <>
               <h4 className="my-4 text-dark">Create your account</h4>
-              <form onSubmit={console.log("SUBMIT")} className="w-100">
+              <form className="w-100">
                 <div className="w-100">
                   <Input
                     placeholder="John"
                     className="mb-3"
                     title="Name"
-                    onChange={e => setName(e.target.value)}
+                    onChange={e => {
+                      setName(e.target.value);
+                      setError({});
+                    }}
                     value={name}
+                    error={error.name}
                   />
                 </div>
                 <div className="w-100">
@@ -32,8 +54,12 @@ const SignUp = props => {
                     placeholder="john.doe@gmail.com"
                     className="mb-3"
                     title="E-mail"
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={e => {
+                      setEmail(e.target.value);
+                      setError({});
+                    }}
                     value={email}
+                    error={error.email}
                   />
                 </div>
                 <div className="w-100">
@@ -42,17 +68,20 @@ const SignUp = props => {
                     className="mb-3"
                     title="Password"
                     type="password"
-                    onChange={e => setPassword(e.target.value)}
+                    onChange={e => {
+                      setPassword(e.target.value);
+                      setError({});
+                    }}
                     value={password}
+                    error={error.password}
                   />
                 </div>
-                <div className="w-100 mt-5">
+                <div className="w-100 mt-4">
                   <Button
                     text="Next"
                     className="py-2"
                     onClick={e => {
-                      setStep(2);
-                      props.signUp(e, name, email, password);
+                      submitSignup(e);
                     }}
                   />
                 </div>
@@ -82,7 +111,7 @@ const SignUp = props => {
                   />
                 </div>
 
-                <div className="w-100 mt-5">
+                <div className="w-100 mt-4">
                   <Button
                     text="Ready to start?"
                     className="py-2"

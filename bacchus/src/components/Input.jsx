@@ -23,9 +23,7 @@ const Input = props => {
         onKeyUp={props.onKeyUp}
         autoComplete={props.autoComplete}
       />
-      {props.error && (
-        <div className="input-error">{props.title} is required</div>
-      )}
+      {props.error && <div className="input-error">{props.error}</div>}
     </div>
   );
 };

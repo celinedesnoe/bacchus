@@ -26,7 +26,7 @@ const NewBottleStep1 = ({ setDetails, bottle, error }) => {
         title="Name of the château or domain*"
         onChange={e => setName(e.target.value)}
         value={name}
-        error={error}
+        error={"The name of the château or domain is required"}
       />
       <ColorSelector addColor={setColor} bottleColor={bottle.color} />
       <MillesimeSelector
