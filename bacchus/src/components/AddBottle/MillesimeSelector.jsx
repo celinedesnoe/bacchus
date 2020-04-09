@@ -45,7 +45,7 @@ const MillesimeSelector = ({ addMillesime, bottleMillesime }) => {
             "selected"}`}
           onClick={() => setMillesime(null)}
         >
-          I don't know
+          Non-vintage
         </div>
       </div>
     </div>

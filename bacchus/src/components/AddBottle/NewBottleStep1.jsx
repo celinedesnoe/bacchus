@@ -5,9 +5,11 @@ import MillesimeSelector from "./MillesimeSelector";
 import { useEffect } from "react";
 
 const NewBottleStep1 = ({ setDetails, bottle, error }) => {
-  const [name, setName] = useState(bottle.name);
-  const [color, setColor] = useState(bottle.color);
-  const [millesime, setMillesime] = useState(bottle.millesime);
+  const [name, setName] = useState(bottle.name ? bottle.name : "");
+  const [color, setColor] = useState(bottle.color ? bottle.color : "");
+  const [millesime, setMillesime] = useState(
+    bottle.millesime ? bottle.millesime : ""
+  );
 
   useEffect(() => {
     setDetails(name, color, millesime);

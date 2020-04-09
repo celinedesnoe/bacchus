@@ -72,6 +72,8 @@ const NewBottle = props => {
     }
   };
 
+  console.log("bottle", bottle);
+
   return (
     <div>
       <div className="header-new-bottle d-flex justify-content-center py-4 position-relative">

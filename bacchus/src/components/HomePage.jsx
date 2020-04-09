@@ -74,11 +74,20 @@ class HomePage extends Component {
         )}
 
         <div
-          className="position-absolute text-primary"
+          className="position-absolute text-primary text-center w-100"
           style={{ bottom: 0 }}
-          onClick={() => this.setState({ login: !login })}
         >
-          Already saved your cellar on Bacchus? Click here
+          <div>
+            {!login
+              ? "Already saved your cellar on Bacchus?"
+              : "Not saved your cellar on Bacchus yet?"}
+          </div>
+          <div
+            className="text-secondary my-2"
+            onClick={() => this.setState({ login: !login })}
+          >
+            Click here
+          </div>
         </div>
       </div>
     );
