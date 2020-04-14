@@ -19,6 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 0.98895;
+  color: theme-color("primary");
 }
 
 .extrabold {
@@ -460,6 +461,16 @@ input {
   .comment {
     font-size: 16px;
   }
+}
+
+.comment-empty-state {
+  border-radius: 15px;
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+  height: 115px;
+  min-height: 115px;
+  font-size: 18px;
+  font-weight: 500;
+  color: theme-color("secondary");
 }
 
 .button-add-comment {
