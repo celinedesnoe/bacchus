@@ -1,7 +1,8 @@
 $theme-colors: (
   "primary": #1a2340,
   "primary-light": #e8e8ec,
-  "secondary": #ed254e,
+  // "secondary": #ed254e,
+    "secondary": #ff0000,
   "tertiary": #f9dc5c,
   "grey": #908f8f,
   "red": #b4001a,
@@ -493,5 +494,25 @@ input {
       content: "";
       box-shadow: -16px 8px 8px rgba(0, 0, 0, 0.1);
     }
+  }
+}
+
+.bottles-selector-number {
+  .counter-button {
+    background-color: theme-color("primary");
+    color: white;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  .counter-bottles {
+    border: 2px solid theme-color("primary");
+    border-radius: 15px;
+    color: theme-color("primary");
+    font-size: 18px;
   }
 }
