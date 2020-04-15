@@ -15,8 +15,8 @@ const BottleDetails = ({ bottle }) => {
   return (
     <div>
       <div className="position-absolute layer"></div>
-      <div className="position-absolute bg-white bottle-details px-4">
-        <BottleHeader bottle={bottle} />
+      <div className="position-absolute bg-primary-light bottle-details px-3 py-1">
+        <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
         <BottleComments />
         <BottleSelectorNumber number={bottle.nb} updateNumber={updateNumber} />
       </div>

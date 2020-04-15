@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const BottleHeader = ({ bottle }) => {
+const BottleHeader = ({ bottle, className }) => {
   const [bottlePicto, setBottlePicto] = useState("");
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const BottleHeader = ({ bottle }) => {
       <div className="position-absolute new-bottle-name">
         <img alt="bottle" src={`/${bottlePicto}`} className="bottle-picto" />
       </div>
-      <div className="pl-5 mt-3">
+      <div className={`ml-5 mt-3 ${className}`}>
         <div className="extrabold">{bottle.name}</div>
         <div className="d-flex row mt-4">
           {bottle.vintage && (

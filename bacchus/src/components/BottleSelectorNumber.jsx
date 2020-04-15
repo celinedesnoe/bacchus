@@ -14,24 +14,30 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
   }, [nbBottles]);
 
   return (
-    <div
-      className={`bottles-selector-number d-flex align-items-center justify-content-center my-3`}
-    >
-      <div
-        className="counter-button"
-        onClick={() => setNbBottles(nbBottles - 1)}
-      >
-        <FontAwesomeIcon icon={["fa", "minus"]} />
-      </div>
-      <div className="counter-bottles px-2 py-3 mx-2">
-        {nbBottles} {wording}
+    <div className="mt-3 p-3 bottle-card-details">
+      <div className="label-input pb-1 mr-4 mb-2">
+        Number of bottles in stock
       </div>
 
       <div
-        className="counter-button"
-        onClick={() => setNbBottles(nbBottles + 1)}
+        className={`bottles-selector-number d-flex align-items-center justify-content-center my-3`}
       >
-        <FontAwesomeIcon icon={["fa", "plus"]} />
+        <div
+          className="counter-button"
+          onClick={() => setNbBottles(nbBottles - 1)}
+        >
+          <FontAwesomeIcon icon={["fa", "minus"]} />
+        </div>
+        <div className="counter-bottles px-2 py-3 mx-2">
+          {nbBottles} {wording}
+        </div>
+
+        <div
+          className="counter-button"
+          onClick={() => setNbBottles(nbBottles + 1)}
+        >
+          <FontAwesomeIcon icon={["fa", "plus"]} />
+        </div>
       </div>
     </div>
   );
