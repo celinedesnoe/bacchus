@@ -1,4 +1,8 @@
-import { postNewBottle, getAllBottles } from "../_services/api";
+import {
+  postNewBottle,
+  getAllBottles,
+  updateNumberBottles
+} from "../_services/api";
 import { store } from "../_helpers/store";
 
 function addBottle(bottle) {
@@ -32,7 +36,23 @@ function addAllBottles() {
     });
 }
 
+function updateBottle(bottle) {
+  let payload = { bottle: bottle };
+  updateNumberBottles(bottle._id, payload)
+    .then(bottle => {
+      let bottleUpdated = bottle.data;
+      store.dispatch({
+        type: "UPDATE",
+        bottleUpdated
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
 export const bottleActions = {
   addBottle,
-  addAllBottles
+  addAllBottles,
+  updateBottle
 };

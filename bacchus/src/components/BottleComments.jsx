@@ -53,7 +53,7 @@ const BottleComments = () => {
 
   return (
     <div className="mt-4">
-      <div class="label-input pb-1 mr-4 mb-2">Comments</div>
+      <div className="label-input pb-1 mr-4 mb-2">Comments</div>
 
       <div className="d-flex align-items-center w-100">
         {emptyStateComments ? (

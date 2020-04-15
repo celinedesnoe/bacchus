@@ -14,7 +14,7 @@ const HeaderDashboard = props => {
             <span className="text-secondary nb-bottles">
               {` ${props.bottles.length} `}
             </span>
-            bottles in stock
+            wines in stock
           </h5>
         </div>
         <div

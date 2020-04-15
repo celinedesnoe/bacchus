@@ -54,6 +54,12 @@ export function getAllBottles(userId) {
     .catch(errorHandler);
 }
 
+export function updateNumberBottles(bottleId, nb) {
+  return backendApi
+    .put(`/api/process-update-bottle-number/${bottleId}`, nb)
+    .catch(errorHandler);
+}
+
 // export function getLogOut() {
 //   return backendApi.get("/api/logout").catch(errorHandler);
 // }

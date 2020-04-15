@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const BottleSelectorNumber = ({ number }) => {
-  const wording = number > 1 ? "bottles" : "bottle";
+const BottleSelectorNumber = ({ number, updateNumber }) => {
+  const [nbBottles, setNbBottles] = useState(number ? number : 0);
+  const [wording, setWording] = useState(number > 1 ? "bottles" : "bottle");
+
+  useEffect(() => {
+    if (number !== nbBottles) {
+      let text = nbBottles > 1 ? "bottles" : "bottle";
+      updateNumber(nbBottles);
+      setWording(text);
+    }
+  }, [nbBottles]);
 
   return (
     <div
       className={`bottles-selector-number d-flex align-items-center justify-content-center my-3`}
     >
-      <div className="counter-button">
-        {" "}
+      <div
+        className="counter-button"
+        onClick={() => setNbBottles(nbBottles - 1)}
+      >
         <FontAwesomeIcon icon={["fa", "minus"]} />
       </div>
-      <div className="counter-bottles p-2 mx-2">
-        {number ? number : 0} {wording}
+      <div className="counter-bottles px-2 py-3 mx-2">
+        {nbBottles} {wording}
       </div>
 
-      <div className="counter-button">
+      <div
+        className="counter-button"
+        onClick={() => setNbBottles(nbBottles + 1)}
+      >
         <FontAwesomeIcon icon={["fa", "plus"]} />
       </div>
     </div>

@@ -411,7 +411,6 @@ input {
   bottom: 0;
   width: 100%;
   border-radius: 15px 15px 0px 0px;
-  height: 300px;
   animation: 0.5s slide-up forwards;
   z-index: 20;
 }
@@ -466,7 +465,7 @@ input {
 
 .comment-empty-state {
   border-radius: 15px;
-  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+  border: 1px dashed theme-color("grey");
   height: 115px;
   min-height: 115px;
   font-size: 18px;
@@ -511,8 +510,10 @@ input {
   }
   .counter-bottles {
     border: 2px solid theme-color("primary");
-    border-radius: 15px;
+    border-radius: 20px;
     color: theme-color("primary");
     font-size: 18px;
+    width: 110px;
+    text-align: center;
   }
 }

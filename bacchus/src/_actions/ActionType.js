@@ -4,5 +4,6 @@ export const userConstants = {
 
 export const bottleConstants = {
   ADD: "ADD",
-  GETALL: "GETALL"
+  GETALL: "GETALL",
+  UPDATE: "UPDATE"
 };
