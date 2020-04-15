@@ -74,20 +74,24 @@ class Dashboard extends Component {
   };
 
   render() {
+    let { bottleDetails, bottlesResults, filterSelected } = this.state;
     return (
       <div className="position-relative h-100">
         <HeaderDashboard
-          filterSelected={this.state.filterSelected}
+          filterSelected={filterSelected}
           search={this.search}
           selectFilter={this.selectFilter}
         />
 
-        <div className="d-flex justify-content-center">
+        <div
+          className="d-flex justify-content-center h-100"
+          style={{ overflowY: `${bottleDetails && "hidden"}` }}
+        >
           {this.props.bottles.length === 0 ? (
             <EmptyDashboard />
           ) : (
             <div className="list-bottles d-flex flex-column w-100 px-4">
-              {this.state.bottlesResults.map((bottle, index) => (
+              {bottlesResults.map((bottle, index) => (
                 <BottleCard
                   bottle={bottle}
                   key={bottle._id}
@@ -98,8 +102,8 @@ class Dashboard extends Component {
           )}
         </div>
 
-        {this.state.bottleDetails ? (
-          <BottleDetails bottle={this.state.bottleDetails} />
+        {bottleDetails ? (
+          <BottleDetails bottle={bottleDetails} />
         ) : (
           <AddButton />
         )}

@@ -419,7 +419,8 @@ input {
   .bottle-details {
     width: 90%;
     margin: 0 5%;
-    bottom: 50%;
+    top: 10%;
+    bottom: unset;
     transform: translateX(-50%);
     border-radius: 15px;
   }
