@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import BottleHeader from "./BottleHeader.jsx";
 import BottleComments from "./BottleComments.jsx";
 import BottleSelectorNumber from "./BottleSelectorNumber.jsx";
+import BottlePrice from "./BottlePrice.jsx";
 import { bottleActions } from "../_actions";
 
 const BottleDetails = ({ bottle }) => {
@@ -18,7 +19,13 @@ const BottleDetails = ({ bottle }) => {
       <div className="position-absolute bg-primary-light bottle-details px-3 py-1">
         <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
         <BottleComments />
-        <BottleSelectorNumber number={bottle.nb} updateNumber={updateNumber} />
+        <div className="d-flex">
+          <BottlePrice price={bottle.price} />
+          <BottleSelectorNumber
+            number={bottle.nb}
+            updateNumber={updateNumber}
+          />
+        </div>
       </div>
     </div>
   );

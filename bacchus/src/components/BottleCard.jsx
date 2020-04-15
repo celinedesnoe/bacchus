@@ -14,6 +14,8 @@ const BottleCard = ({ bottle, seeDetails }) => {
         return setBottlePicto("whitewine.svg");
       case "rosé":
         return setBottlePicto("roséwine.svg");
+      default:
+        return setBottlePicto("unknownwine.svg");
     }
   };
 
