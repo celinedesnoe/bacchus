@@ -14,13 +14,11 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
   }, [nbBottles]);
 
   return (
-    <div className="mt-3 p-3 bottle-card-details">
-      <div className="label-input pb-1 mr-4 mb-2">
-        Number of bottles in stock
-      </div>
+    <div className="mt-3 p-3 bottle-card-details w-100">
+      <div className="label-input ">Number of bottles in stock</div>
 
       <div
-        className={`bottles-selector-number d-flex align-items-center justify-content-center my-3`}
+        className={`bottles-selector-number d-flex align-items-center justify-content-center mt-3`}
       >
         <div
           className="counter-button"

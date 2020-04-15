@@ -2,9 +2,11 @@ import React from "react";
 
 const BottlePrice = ({ price }) => {
   return (
-    <div className="mt-3 p-3 bottle-card-details">
-      <div className="label-input pb-1 mr-4 mb-2">Price of one bottle</div>
-      <div className="badge badge-tertiary">{price} $</div>
+    <div className="mt-3 mr-3 p-3 bottle-card-details w-100">
+      <div className="label-input">Price of one bottle</div>
+      <div className="h-100 d-flex align-items-center justify-content-center">
+        <div className="badge badge-tertiary">{price} $</div>
+      </div>
     </div>
   );
 };

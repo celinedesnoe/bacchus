@@ -502,8 +502,8 @@ input {
     background-color: theme-color("primary");
     color: white;
     border-radius: 50%;
-    height: 35px;
-    width: 35px;
+    height: 27px;
+    width: 27px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -513,8 +513,9 @@ input {
     border: 2px solid theme-color("primary");
     border-radius: 20px;
     color: theme-color("primary");
-    font-size: 18px;
-    width: 110px;
+    font-size: 16px;
+    font-weight: 700;
+    width: 90px;
     text-align: center;
   }
 }
