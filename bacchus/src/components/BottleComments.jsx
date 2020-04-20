@@ -24,7 +24,7 @@ const comments = [];
 
 const emptyStateComments = comments.length === 0;
 
-const BottleComments = () => {
+const BottleComments = (props) => {
   const [buttonClass, setButtonClass] = useState("");
   const refList = useRef();
   const refAllComments = useRef();
@@ -61,7 +61,7 @@ const BottleComments = () => {
         ) : (
           <div className="list-comments d-flex" ref={refList}>
             <div className="d-flex" ref={refAllComments}>
-              {comments.map(comment => (
+              {comments.map((comment) => (
                 <CommentCard comment={comment} key={comment.id} />
               ))}
             </div>
@@ -69,6 +69,7 @@ const BottleComments = () => {
         )}
         <div
           className={`${buttonClass} button-add-comment d-flex justify-content-center align-items-center position-relative ml-3 py-2`}
+          onClick={props.openAddComment}
         >
           <FontAwesomeIcon icon={["fa", "plus"]} />
         </div>

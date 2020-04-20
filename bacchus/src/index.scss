@@ -6,7 +6,7 @@ $theme-colors: (
   "tertiary": #f9dc5c,
   "grey": #908f8f,
   "red": #b4001a,
-  "rosé": #ef9284
+  "rosé": #ef9284,
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
@@ -59,6 +59,42 @@ input {
   }
 
   &.input-invalid {
+    border: 1px solid theme-color("secondary") !important;
+  }
+}
+
+textarea::-webkit-outer-spin-button,
+textarea::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+textarea[type="number"] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  background-color: theme-color("primary-light") !important;
+  font-size: 14px !important;
+  border: 0px solid theme-color("primary-light") !important;
+  color: theme-color("primary") !important;
+
+  &::placeholder {
+    opacity: 0.5 !important;
+    font-size: 14px !important;
+  }
+  &:focus {
+    border: 0px solid theme-color("grey") !important;
+    box-shadow: none !important;
+  }
+
+  &:active {
+    border: 0px solid theme-color("grey") !important;
+    box-shadow: none !important;
+  }
+
+  &.textarea-invalid {
     border: 1px solid theme-color("secondary") !important;
   }
 }
@@ -138,6 +174,7 @@ input {
 }
 
 .card {
+  border: unset;
   background-color: white;
   color: theme-color("dark");
   border-radius: 4px;
@@ -338,7 +375,7 @@ input {
 
 .card-bottle {
   font-size: 18px;
-  box-shadow: 1px 5px 19px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
   min-height: 118px;
   &.card-bottle {
     &-white {
@@ -515,7 +552,6 @@ input {
     color: theme-color("primary");
     font-size: 16px;
     font-weight: 700;
-    width: 90px;
     text-align: center;
   }
 }
@@ -523,4 +559,10 @@ input {
 .bottle-card-details {
   background-color: white;
   border-radius: 10px;
+}
+
+.fav {
+  path {
+    fill: theme-color("secondary");
+  }
 }

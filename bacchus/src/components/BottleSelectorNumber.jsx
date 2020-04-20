@@ -26,7 +26,7 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
         >
           <FontAwesomeIcon icon={["fa", "minus"]} />
         </div>
-        <div className="counter-bottles px-2 py-3 mx-2">
+        <div className="counter-bottles badge mx-2">
           {nbBottles} {wording}
         </div>
 
