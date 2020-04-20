@@ -16,11 +16,12 @@ class Dashboard extends Component {
       searchValue: "",
       bottles: [],
       bottlesResults: [],
-      bottleDetails: false
+      bottleDetails: false,
     };
   }
 
   componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
     this.setState({ bottles: this.props.bottles }, () => this.displayBottles());
   }
 
@@ -29,18 +30,18 @@ class Dashboard extends Component {
       this.setState(
         {
           bottles: this.props.bottles,
-          bottlesResults: this.props.bottles
+          bottlesResults: this.props.bottles,
         },
         () => this.displayBottles()
       );
     }
   }
 
-  search = searchValue => {
+  search = (searchValue) => {
     this.setState({ searchValue: searchValue }, () => this.displayBottles());
   };
 
-  selectFilter = filter => {
+  selectFilter = (filter) => {
     this.setState({ filterSelected: filter }, () => this.displayBottles());
   };
 
@@ -49,28 +50,36 @@ class Dashboard extends Component {
     let { filterSelected, searchValue } = this.state;
     let results = [];
     if (searchValue !== "") {
-      results = bottles.filter(bottle =>
+      results = bottles.filter((bottle) =>
         Object.keys(bottle).some(
-          key => bottle[key].toString().search(searchValue) !== -1
+          (key) => bottle[key].toString().search(searchValue) !== -1
         )
       );
       if (filterSelected !== "all") {
-        results = results.filter(bottle => bottle.nb > 0);
+        results = results.filter((bottle) => bottle.nb > 0);
       }
     } else if (filterSelected !== "all") {
-      results = bottles.filter(bottle => bottle.nb > 0);
+      results = bottles.filter((bottle) => bottle.nb > 0);
     } else {
       results = bottles;
     }
     this.setState({ bottlesResults: results });
   };
 
-  seeDetails = bottle => {
+  seeDetails = (bottle) => {
     this.setState({ bottleDetails: bottle });
   };
 
-  closeDetails = bottle => {
-    this.setState({ bottleDetails: false });
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
+  myRef = React.createRef();
+
+  handleClickOutside = (e) => {
+    if (!this.myRef.current?.contains(e.target)) {
+      this.setState({ bottleDetails: false });
+    }
   };
 
   render() {
@@ -85,7 +94,7 @@ class Dashboard extends Component {
 
         <div
           className="d-flex justify-content-center h-100"
-          style={{ overflowY: `${bottleDetails && "hidden"}` }}
+          style={{ overflowY: `${bottleDetails ? "hidden" : "scroll"}` }}
         >
           {this.props.bottles.length === 0 ? (
             <EmptyDashboard />
@@ -103,7 +112,7 @@ class Dashboard extends Component {
         </div>
 
         {bottleDetails ? (
-          <BottleDetails bottle={bottleDetails} />
+          <BottleDetails bottle={bottleDetails} ref={this.myRef} />
         ) : (
           <AddButton />
         )}
@@ -112,7 +121,7 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { authReducer, bottlesReducer } = state;
   return { user: authReducer, bottles: bottlesReducer };
 };

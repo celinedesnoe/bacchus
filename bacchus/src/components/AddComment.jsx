@@ -20,10 +20,7 @@ const AddComment = ({ bottle, addComment }) => {
   };
 
   return (
-    <div
-      className="position-fixed bg-white bottle-details px-3 pt-1 pb-3"
-      style={{ top: 0 }}
-    >
+    <div className="position-fixed bg-white bottle-details add-comment px-3 pt-1 pb-3">
       <h4 className="text-center my-3">Add a comment</h4>
       <Textarea
         title="Comment"
