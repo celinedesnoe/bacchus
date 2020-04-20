@@ -22,6 +22,8 @@ const Textarea = (props) => {
         maxLength={props.maxLength}
         onKeyUp={props.onKeyUp}
         autoComplete={props.autoComplete}
+        rows={props.rows ? props.rows : 3}
+        autoFocus={props.autoFocus}
       />
       {props.error && <div className="input-error">{props.error}</div>}
     </div>

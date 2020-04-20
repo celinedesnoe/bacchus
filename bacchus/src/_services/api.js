@@ -5,7 +5,7 @@ const backendApi = axios.create({
   // baseURL: process.env.REACT_APP_BACKEND_URL,
   baseURL: "http://localhost:5555/",
   // send cookies to the backend on every request (for logged-in users)
-  withCredentials: true
+  withCredentials: true,
 });
 
 // allows us to replace axios.get("http://localhost:5555/api/phones") with axios.get("/api/phones");
@@ -54,7 +54,8 @@ export function getAllBottles(userId) {
     .catch(errorHandler);
 }
 
-export function updateNumberBottles(bottleId, nb) {
+export function updateOneBottle(bottleId, nb) {
+  console.log("nb", nb);
   return backendApi
     .put(`/api/process-update-bottle-number/${bottleId}`, nb)
     .catch(errorHandler);

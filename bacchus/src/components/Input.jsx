@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = props => {
+const Input = (props) => {
   const id = "input-id-" + Math.round(Math.random() * 1000);
 
   return (
@@ -22,6 +22,7 @@ const Input = props => {
         maxLength={props.maxLength}
         onKeyUp={props.onKeyUp}
         autoComplete={props.autoComplete}
+        autoFocus={props.autoFocus}
       />
       {props.error && <div className="input-error">{props.error}</div>}
     </div>

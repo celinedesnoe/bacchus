@@ -15,6 +15,12 @@ const BottleDetails = ({ bottle }) => {
     bottle.nb = nb;
     bottleActions.updateBottle(bottle);
   };
+
+  const addComment = (comment) => {
+    bottle.comments.push(comment);
+    bottleActions.updateBottle(bottle);
+  };
+
   const [isOpenAddComment, setOpenAddComment] = useState(false);
 
   const openAddComment = () => {
@@ -31,7 +37,10 @@ const BottleDetails = ({ bottle }) => {
             <SvgFavorite />
           </div>
           <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
-          <BottleComments openAddComment={openAddComment} />
+          <BottleComments
+            openAddComment={openAddComment}
+            comments={bottle.comments}
+          />
           <div className="d-flex justify-content-between">
             <BottlePrice price={bottle.price} />
             <BottleSelectorNumber
@@ -40,7 +49,7 @@ const BottleDetails = ({ bottle }) => {
             />
           </div>
         </div>
-        {isOpenAddComment && <AddComment />}
+        {isOpenAddComment && <AddComment addComment={addComment} />}
       </div>
     </div>
   );

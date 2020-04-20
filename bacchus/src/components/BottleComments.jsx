@@ -3,29 +3,10 @@ import CommentCard from "./CommentCard.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CommentsEmptyState from "./CommentsEmptyState.jsx";
 
-// const comments = [
-//   { comment: "Great wine", date: "23/04/2020", note: "90/100", id: 23 },
-//   {
-//     comment: "Need to open it 2 hours before",
-//     date: "02/02/2020",
-//     note: "65/100",
-//     id: 24
-//   },
-//   { comment: "Great wine", date: "23/04/2020", note: "90/100", id: 25 },
-//   {
-//     comment: "Need to open it 2 hours before",
-//     date: "02/02/2020",
-//     note: "65/100",
-//     id: 36
-//   }
-// ];
-
-const comments = [];
-
-const emptyStateComments = comments.length === 0;
-
-const BottleComments = (props) => {
+const BottleComments = ({ comments, openAddComment }) => {
   const [buttonClass, setButtonClass] = useState("");
+  const emptyStateComments = comments.length === 0;
+
   const refList = useRef();
   const refAllComments = useRef();
 
@@ -62,14 +43,14 @@ const BottleComments = (props) => {
           <div className="list-comments d-flex" ref={refList}>
             <div className="d-flex" ref={refAllComments}>
               {comments.map((comment) => (
-                <CommentCard comment={comment} key={comment.id} />
+                <CommentCard comment={comment} key={comment._id} />
               ))}
             </div>
           </div>
         )}
         <div
           className={`${buttonClass} button-add-comment d-flex justify-content-center align-items-center position-relative ml-3 py-2`}
-          onClick={props.openAddComment}
+          onClick={openAddComment}
         >
           <FontAwesomeIcon icon={["fa", "plus"]} />
         </div>

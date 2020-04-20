@@ -1,7 +1,7 @@
 import {
   postNewBottle,
   getAllBottles,
-  updateNumberBottles
+  updateOneBottle,
 } from "../_services/api";
 import { store } from "../_helpers/store";
 
@@ -9,14 +9,14 @@ function addBottle(bottle) {
   let userId = store.getState().authReducer._id;
   bottle.userId = userId;
   postNewBottle(bottle)
-    .then(bottle => {
+    .then((bottle) => {
       let newBottle = bottle.data;
       store.dispatch({
         type: "ADD",
-        newBottle
+        newBottle,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 }
@@ -24,29 +24,30 @@ function addBottle(bottle) {
 function addAllBottles() {
   let userId = store.getState().authReducer._id;
   getAllBottles(userId)
-    .then(bottle => {
+    .then((bottle) => {
       let allBottles = bottle.data;
       store.dispatch({
         type: "GETALL",
-        allBottles
+        allBottles,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 }
 
 function updateBottle(bottle) {
   let payload = { bottle: bottle };
-  updateNumberBottles(bottle._id, payload)
-    .then(bottle => {
+  console.log("PAYLOAD", payload);
+  updateOneBottle(bottle._id, payload)
+    .then((bottle) => {
       let bottleUpdated = bottle.data;
       store.dispatch({
         type: "UPDATE",
-        bottleUpdated
+        bottleUpdated,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 }
@@ -54,5 +55,5 @@ function updateBottle(bottle) {
 export const bottleActions = {
   addBottle,
   addAllBottles,
-  updateBottle
+  updateBottle,
 };
