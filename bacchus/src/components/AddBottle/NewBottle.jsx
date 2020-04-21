@@ -5,12 +5,12 @@ import { bottleActions } from "../../_actions";
 import NewBottleStep1 from "./NewBottleStep1.jsx";
 import NewBottleStep2 from "./NewBottleStep2.jsx";
 import NewBottleStep3 from "./NewBottleStep3.jsx";
-import NewBottleStep5 from "./NewBottleStep5.jsx";
+import NewBottleStep4 from "./NewBottleStep4.jsx";
 import Button from "../Button.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NewBottle = (props) => {
+const NewBottle = () => {
   const [step, setStep] = useState(1);
   const [bottle, setBottle] = useState({});
   const [error, setError] = useState(null);
@@ -58,7 +58,7 @@ const NewBottle = (props) => {
       case 3:
         return <NewBottleStep3 setDetails={setDetails3} bottle={bottle} />;
       case 4:
-        return <NewBottleStep5 bottle={bottle} />;
+        return <NewBottleStep4 bottle={bottle} />;
       default:
         return (
           <NewBottleStep1
@@ -78,8 +78,6 @@ const NewBottle = (props) => {
       step === 4 ? save() : setStep(step + 1);
     }
   };
-
-  console.log("bottle", bottle);
 
   return (
     <div>

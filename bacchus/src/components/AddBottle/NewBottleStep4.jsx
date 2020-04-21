@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BottleHeader from "../BottleHeader.jsx";
 
-const NewBottleStep5 = ({ bottle }) => {
+const NewBottleStep4 = ({ bottle }) => {
   return (
     <div>
       <div className="d-flex justify-content-center my-3">
@@ -27,4 +27,4 @@ const NewBottleStep5 = ({ bottle }) => {
   );
 };
 
-export default NewBottleStep5;
+export default NewBottleStep4;

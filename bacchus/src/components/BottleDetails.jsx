@@ -5,14 +5,20 @@ import BottleHeader from "./BottleHeader.jsx";
 import BottleComments from "./BottleComments.jsx";
 import BottleSelectorNumber from "./BottleSelectorNumber.jsx";
 import BottlePrice from "./BottlePrice.jsx";
+import BottlePictures from "./BottlePictures.jsx";
 import AddComment from "./AddComment.jsx";
 
 import SvgFavorite from "./SvgFavorite.jsx";
 import { bottleActions } from "../_actions";
 
-const BottleDetails = ({ bottle }) => {
+const BottleDetails = ({ bottle, ref }) => {
   const updateNumber = (nb) => {
     bottle.nb = nb;
+    bottleActions.updateBottle(bottle);
+  };
+
+  const addPicture = (url) => {
+    bottle.pictures = bottle.pictures.push(url);
     bottleActions.updateBottle(bottle);
   };
 
@@ -29,8 +35,6 @@ const BottleDetails = ({ bottle }) => {
 
   return (
     <div>
-      <div className="position-fixed layer"></div>
-
       <div className="position-fixed bg-primary-light bottle-details">
         <div className="px-3 pt-1 pb-3">
           <div className="fav">
@@ -48,6 +52,7 @@ const BottleDetails = ({ bottle }) => {
               updateNumber={updateNumber}
             />
           </div>
+          <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
         </div>
         {isOpenAddComment && <AddComment addComment={addComment} />}
       </div>

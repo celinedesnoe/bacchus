@@ -12,7 +12,7 @@ class HomePage extends Component {
     this.state = {
       content: "",
       login: true,
-      signup: false
+      signup: false,
     };
   }
 
@@ -21,7 +21,7 @@ class HomePage extends Component {
     let user = {
       email: email,
       originalPassword: password,
-      name: name
+      name: name,
     };
     authActions.userSignUp(user);
   }
@@ -30,7 +30,7 @@ class HomePage extends Component {
     event.preventDefault();
     let user = {
       email: email,
-      originalPassword: password
+      originalPassword: password,
     };
     authActions.userLogin(user);
   };
@@ -38,10 +38,9 @@ class HomePage extends Component {
   createCellar(event, cellar, capacity) {
     let cellarInfo = {
       name: cellar,
-      capacity: capacity
+      capacity: capacity,
     };
-    console.log(cellarInfo);
-    postCellar(cellarInfo).then(response => {
+    postCellar(cellarInfo).then((response) => {
       console.log(response);
     });
   }
@@ -93,7 +92,7 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { authReducer } = state;
   return { user: authReducer };
 };

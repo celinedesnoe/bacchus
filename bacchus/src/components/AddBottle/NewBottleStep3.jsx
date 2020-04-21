@@ -55,13 +55,14 @@ const NewBottleStep3 = ({ bottle, setDetails, submit }) => {
               className="pic-miniature"
             />
           ))}
-          {/* {isLoading && ( */}
-          <div className="pic-miniature d-flex align-items-center justify-content-center bg-primary-light">
+          <div
+            className={`pic-miniature d-flex align-items-center justify-content-center bg-primary-light ${!isLoading &&
+              "d-none"}`}
+          >
             <div class="spinner-border spinner-border-sm" role="status">
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-          {/* )} */}
         </div>
       </div>
     </div>

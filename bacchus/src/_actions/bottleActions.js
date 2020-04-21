@@ -38,7 +38,6 @@ function addAllBottles() {
 
 function updateBottle(bottle) {
   let payload = { bottle: bottle };
-  console.log("PAYLOAD", payload);
   updateOneBottle(bottle._id, payload)
     .then((bottle) => {
       let bottleUpdated = bottle.data;

@@ -5,10 +5,9 @@ import { postPicture } from "../_services/api";
 const AddPictureBtn = (props) => {
   const uploadChange = (event) => {
     const { files } = event.target;
-    console.log("event.target", event.target.files);
-    props.checkLoadingPic(true);
+    props.checkLoadingPic && props.checkLoadingPic(true);
     postPicture(files[0]).then((response) => {
-      props.uploadPicture(response.data.fileUrl);
+      props.uploadPicture && props.uploadPicture(response.data.fileUrl);
     });
   };
 

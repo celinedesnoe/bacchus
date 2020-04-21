@@ -18,6 +18,7 @@ class Dashboard extends Component {
       bottlesResults: [],
       bottleDetails: false,
     };
+    this.myRef = React.createRef();
   }
 
   componentDidMount() {
@@ -77,6 +78,9 @@ class Dashboard extends Component {
   myRef = React.createRef();
 
   handleClickOutside = (e) => {
+    console.log("this.myRef", this.myRef);
+    console.log("e.target", e.target);
+
     if (!this.myRef.current?.contains(e.target)) {
       this.setState({ bottleDetails: false });
     }
@@ -112,7 +116,12 @@ class Dashboard extends Component {
         </div>
 
         {bottleDetails ? (
-          <BottleDetails bottle={bottleDetails} ref={this.myRef} />
+          <div>
+            <div className="position-fixed layer"></div>
+            <div ref={this.myRef}>
+              <BottleDetails bottle={bottleDetails} />
+            </div>
+          </div>
         ) : (
           <AddButton />
         )}

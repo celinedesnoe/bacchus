@@ -7,7 +7,6 @@ const VintageSelector = ({ addVintage, bottleVintage }) => {
     addVintage(vintage);
   }, [vintage]);
 
-  console.log(typeof vintage);
   return (
     <div className="mb-3">
       <div className="label-input mb-2">Vintage</div>
@@ -22,7 +21,7 @@ const VintageSelector = ({ addVintage, bottleVintage }) => {
           <div className="vintage-card px-3 mx-2">
             <input
               value={!vintage ? "?" : vintage}
-              onChange={e => {
+              onChange={(e) => {
                 let value = parseInt(e.target.value);
                 setVintage(value);
               }}

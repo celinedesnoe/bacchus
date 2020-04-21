@@ -54,10 +54,9 @@ export function getAllBottles(userId) {
     .catch(errorHandler);
 }
 
-export function updateOneBottle(bottleId, nb) {
-  console.log("nb", nb);
+export function updateOneBottle(bottleId, bottle) {
   return backendApi
-    .put(`/api/process-update-bottle-number/${bottleId}`, nb)
+    .put(`/api/process-update-bottle-number/${bottleId}`, bottle)
     .catch(errorHandler);
 }
 
