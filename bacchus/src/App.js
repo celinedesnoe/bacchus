@@ -15,7 +15,8 @@ import {
   faChevronRight,
   faChevronLeft,
   faPlus,
-  faMinus
+  faMinus,
+  faCamera,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -25,7 +26,8 @@ library.add(
   faChevronRight,
   faChevronLeft,
   faPlus,
-  faMinus
+  faMinus,
+  faCamera
 );
 
 class App extends Component {
@@ -36,11 +38,11 @@ class App extends Component {
       userInfo = JSON.parse(userInfo);
       this.props.dispatch({
         type: "LOGIN",
-        userLogged: userInfo
+        userLogged: userInfo,
       });
     }
     this.state = {
-      currentUser: userInfo
+      currentUser: userInfo,
     };
   }
 
@@ -69,7 +71,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   const { authReducer, bottlesReducer } = state;
   return { user: authReducer, bottles: bottlesReducer };
 };

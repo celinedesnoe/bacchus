@@ -1,13 +1,6 @@
-$theme-colors: (
-  "primary": #1a2340,
-  "primary-light": #e8e8ec,
-  // "secondary": #ed254e,
-    "secondary": #ff0000,
-  "tertiary": #f9dc5c,
-  "grey": #908f8f,
-  "red": #b4001a,
-  "rosé": #ef9284,
-);
+@import "./utils/variables";
+@import "./base/base";
+@import "./components/buttons";
 
 @import "~bootstrap/scss/bootstrap.scss";
 .App {
@@ -574,4 +567,14 @@ textarea {
   path {
     fill: theme-color("secondary");
   }
+}
+
+.pic-miniature {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 16px;
 }

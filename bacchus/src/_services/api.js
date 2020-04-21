@@ -61,6 +61,12 @@ export function updateOneBottle(bottleId, nb) {
     .catch(errorHandler);
 }
 
+export function postPicture(file) {
+  const uploadData = new FormData();
+  uploadData.append("userFile", file);
+  return backendApi.post("/api/single-upload", uploadData).catch(errorHandler);
+}
+
 // export function getLogOut() {
 //   return backendApi.get("/api/logout").catch(errorHandler);
 // }

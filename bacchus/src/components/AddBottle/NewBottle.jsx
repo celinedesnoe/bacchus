@@ -10,7 +10,7 @@ import Button from "../Button.jsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NewBottle = props => {
+const NewBottle = (props) => {
   const [step, setStep] = useState(1);
   const [bottle, setBottle] = useState({});
   const [error, setError] = useState(null);
@@ -31,9 +31,10 @@ const NewBottle = props => {
     setBottle(bottle);
   };
 
-  const setDetails3 = (nb, price) => {
+  const setDetails3 = (nb, price, pic) => {
     bottle.nb = nb;
     bottle.price = price;
+    bottle.pictures = pic;
     setBottle(bottle);
   };
 
@@ -58,8 +59,14 @@ const NewBottle = props => {
         return <NewBottleStep3 setDetails={setDetails3} bottle={bottle} />;
       case 4:
         return <NewBottleStep5 bottle={bottle} />;
-      // case 5:
-      //   return <NewBottleStep5 setDetails={setDetails4} bottle={bottle} />;
+      default:
+        return (
+          <NewBottleStep1
+            setDetails={setDetails1}
+            bottle={bottle}
+            error={error}
+          />
+        );
     }
   };
 
