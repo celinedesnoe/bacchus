@@ -53,6 +53,7 @@ const NewBottleStep3 = ({ bottle, setDetails, submit }) => {
             <div
               style={{ backgroundImage: `url("${picture}")` }}
               className="pic-miniature"
+              key={picture}
             />
           ))}
           <div

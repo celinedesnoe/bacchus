@@ -23,6 +23,7 @@ const BottlePictures = ({ pictures, addPicture }) => {
           <div
             style={{ backgroundImage: `url("${picture}")` }}
             className="pic-miniature"
+            key={picture}
           />
         ))}
         <AddPictureBtn
