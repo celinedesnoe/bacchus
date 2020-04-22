@@ -78,9 +78,6 @@ class Dashboard extends Component {
   myRef = React.createRef();
 
   handleClickOutside = (e) => {
-    console.log("this.myRef", this.myRef);
-    console.log("e.target", e.target);
-
     if (!this.myRef.current?.contains(e.target)) {
       this.setState({ bottleDetails: false });
     }

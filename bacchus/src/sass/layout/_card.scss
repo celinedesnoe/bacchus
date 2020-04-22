@@ -1,0 +1,15 @@
+.card {
+  border: unset;
+  background-color: white;
+  color: theme-color("dark");
+  border-radius: 4px;
+  box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.5rem !important;
+}
+
+.card-bottle {
+  font-size: 18px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
+  min-height: 118px;
+  @include card-bottle($wine-palettes);
+}

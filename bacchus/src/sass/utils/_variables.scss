@@ -1,8 +1,9 @@
 $theme-colors: (
-  "primary": #1a2340,
+  "primary": #0c1b33,
   "primary-light": #e8e8ec,
-  // "secondary": #ed254e,
-    "secondary": #ff0000,
+  "warning": #ff0000,
+  "secondary": #3ab795,
+  "secondary-light": #b8e5d7,
   "tertiary": #f9dc5c,
   "grey": #908f8f,
   "red": #b4001a,
@@ -11,3 +12,14 @@ $theme-colors: (
 
 $colour-primary: #1a2340;
 $colour-primary-light: #e8e8ec;
+$colour-secondary: #ff0000;
+$colour-tertiary: #f9dc5c;
+$colour-grey: #908f8f;
+$colour-red: #b4001a;
+$colour-rosé: #ef9284;
+
+$wine-palettes: (
+  rosé: $colour-rosé,
+  red: $colour-red,
+  white: $colour-tertiary,
+);
