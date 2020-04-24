@@ -18,6 +18,7 @@ class Dashboard extends Component {
       bottlesResults: [],
       bottleDetails: false,
       animateDetails: "slide-up",
+      animateLayer: "layer-fade-in",
     };
     this.myRef = React.createRef();
     this.detailsRef = React.createRef();
@@ -26,16 +27,6 @@ class Dashboard extends Component {
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
-    const details = this.detailsRef.current;
-    if (details) {
-      details.addEventListener("mousedown", this.lock, false);
-
-      details.addEventListener("touchstart", this.lock, false);
-      details.addEventListener("mousemove", this.updatePosition, false);
-
-      details.addEventListener("mouseup", this.move, false);
-      details.addEventListener("touchend", this.move, false);
-    }
     this.setState({ bottles: this.props.bottles }, () => this.displayBottles());
   }
 
@@ -44,7 +35,6 @@ class Dashboard extends Component {
     if (details && window.matchMedia("(max-width: 1023px)").matches) {
       details.addEventListener("mousemove", this.updatePosition, false);
       details.addEventListener("touchmove", this.updatePosition, false);
-
       details.addEventListener("mouseup", this.move, false);
       details.addEventListener("touchend", this.move, false);
     }
@@ -107,52 +97,60 @@ class Dashboard extends Component {
     if (!this.myRef.current?.contains(e.target)) {
       const details = this.detailsRef.current;
       if (details) {
-        details.classList.add("hide-details");
-        setTimeout(() => {
-          this.setState({ bottleDetails: false, animateDetails: "slide-up" });
-        }, 600);
+        this.hideDetails();
       }
     }
   };
 
-  lock = (e) => {
-    const details = this.detailsRef.current;
-    this.setState({ lock: true });
+  hideDetails = () => {
+    this.setState({
+      animateDetails: "hide-details",
+      animateLayer: "layer-fade-out",
+    });
+    setTimeout(() => {
+      this.setState({
+        bottleDetails: false,
+        animateDetails: "slide-up",
+        animateLayer: "layer-fade-in",
+      });
+    }, 600);
+  };
 
-    // details.classList.add("hide-details");
+  upDetails = () => {
+    const details = this.detailsRef.current;
+    this.setState({ animateDetails: "up" }, () => {
+      setTimeout(() => {
+        details.style.top = "";
+      }, 600);
+    });
   };
 
   updatePosition = (e) => {
-    const details = this.detailsRef.current;
     this.setState({ animateDetails: "" });
-
+    const details = this.detailsRef.current;
     let y;
     if (e.touches) {
       y = e.touches[0].pageY;
+      details.style.top = y + "px";
     }
-
-    details.style.top = y + "px";
   };
 
   move = (e) => {
     const details = this.detailsRef.current;
-    console.log("details.style.top", details.offsetTop);
     if (details.offsetTop > 250) {
-      this.setState({ animateDetails: "hide-details" });
-      setTimeout(() => {
-        this.setState({ bottleDetails: false, animateDetails: "slide-up" });
-      }, 600);
+      this.hideDetails();
     } else {
-      this.setState({ animateDetails: "up" }, () => {
-        setTimeout(() => {
-          details.style.top = "";
-        }, 600);
-      });
+      this.upDetails();
     }
   };
   render() {
-    let { bottleDetails, bottlesResults, filterSelected } = this.state;
-    console.log("animateDetails", this.state.animatDetails);
+    let {
+      bottleDetails,
+      bottlesResults,
+      filterSelected,
+      animateDetails,
+      animateLayer,
+    } = this.state;
     return (
       <div className="position-relative h-100">
         <HeaderDashboard
@@ -182,12 +180,15 @@ class Dashboard extends Component {
 
         {bottleDetails ? (
           <div>
-            {/* <div ref={this.layerRef} className="position-fixed layer"></div> */}
+            <div
+              ref={this.layerRef}
+              className={`position-fixed layer ${animateLayer}`}
+            ></div>
             <div ref={this.myRef}>
               <BottleDetails
                 bottle={bottleDetails}
                 detailsRef={this.detailsRef}
-                animateDetails={this.state.animateDetails}
+                animateDetails={animateDetails}
               />
             </div>
           </div>
