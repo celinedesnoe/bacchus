@@ -19,14 +19,29 @@ class Dashboard extends Component {
       bottleDetails: false,
     };
     this.myRef = React.createRef();
+    this.detailsRef = React.createRef();
   }
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
+    let details = this.myRef.current;
+    if (details) {
+      details.addEventListener("mousedown", this.lock, false);
+      details.addEventListener("touchstart", this.lock, false);
+      details.addEventListener("mouseup", this.move, false);
+      details.addEventListener("touchend", this.move, false);
+    }
     this.setState({ bottles: this.props.bottles }, () => this.displayBottles());
   }
 
   componentDidUpdate(prevProps) {
+    let details = this.myRef.current;
+    if (details) {
+      details.addEventListener("mousedown", this.lock, false);
+      details.addEventListener("touchstart", this.lock, false);
+      details.addEventListener("mouseup", this.move, false);
+      details.addEventListener("touchend", this.move, false);
+    }
     if (prevProps.bottles.length !== this.props.bottles.length) {
       this.setState(
         {
@@ -73,9 +88,14 @@ class Dashboard extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
+    let details = this.detailsRef.current;
+    if (details) {
+      details.removeEventListener("mousedown", this.lock, false);
+      details.removeEventListener("touchstart", this.lock, false);
+      details.removeEventListener("mouseup", this.move, false);
+      details.removeEventListener("touchend", this.move, false);
+    }
   }
-
-  myRef = React.createRef();
 
   handleClickOutside = (e) => {
     if (!this.myRef.current?.contains(e.target)) {
@@ -83,6 +103,19 @@ class Dashboard extends Component {
     }
   };
 
+  lock = (e) => {
+    let details = this.detailsRef.current;
+    console.log("START", details.classList);
+
+    details.classList.add("hide-details");
+  };
+
+  move = (e) => {
+    let details = this.detailsRef.current;
+    console.log("END", details.classList);
+
+    details.classList.add("hide-details");
+  };
   render() {
     let { bottleDetails, bottlesResults, filterSelected } = this.state;
     return (
@@ -116,7 +149,10 @@ class Dashboard extends Component {
           <div>
             <div className="position-fixed layer"></div>
             <div ref={this.myRef}>
-              <BottleDetails bottle={bottleDetails} />
+              <BottleDetails
+                bottle={bottleDetails}
+                detailsRef={this.detailsRef}
+              />
             </div>
           </div>
         ) : (

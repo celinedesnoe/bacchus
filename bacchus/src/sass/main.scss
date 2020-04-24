@@ -331,3 +331,17 @@
     fill: theme-color("secondary");
   }
 }
+
+@keyframes hide-details {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.hide-details {
+  animation: hide-details 0.6s forwards;
+}

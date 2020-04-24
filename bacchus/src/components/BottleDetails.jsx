@@ -11,7 +11,7 @@ import AddComment from "./AddComment.jsx";
 import SvgFavorite from "./SvgFavorite.jsx";
 import { bottleActions } from "../_actions";
 
-const BottleDetails = ({ bottle, ref }) => {
+const BottleDetails = ({ bottle, detailsRef }) => {
   const updateNumber = (nb) => {
     bottle.nb = nb;
     bottleActions.updateBottle(bottle);
@@ -34,28 +34,29 @@ const BottleDetails = ({ bottle, ref }) => {
   };
 
   return (
-    <div>
-      <div className="position-fixed bg-primary-light bottle-details">
-        <div className="px-3 pt-1 pb-3">
-          <div className="fav">
-            <SvgFavorite />
-          </div>
-          <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
-          <BottleComments
-            openAddComment={openAddComment}
-            comments={bottle.comments}
-          />
-          <div className="d-flex justify-content-between">
-            <BottlePrice price={bottle.price} />
-            <BottleSelectorNumber
-              number={bottle.nb}
-              updateNumber={updateNumber}
-            />
-          </div>
-          <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
+    <div
+      className="position-fixed bg-primary-light bottle-details"
+      ref={detailsRef}
+    >
+      <div className="px-3 pt-1 pb-3">
+        <div className="fav">
+          <SvgFavorite />
         </div>
-        {isOpenAddComment && <AddComment addComment={addComment} />}
+        <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
+        <BottleComments
+          openAddComment={openAddComment}
+          comments={bottle.comments}
+        />
+        <div className="d-flex justify-content-between">
+          <BottlePrice price={bottle.price} />
+          <BottleSelectorNumber
+            number={bottle.nb}
+            updateNumber={updateNumber}
+          />
+        </div>
+        <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
       </div>
+      {isOpenAddComment && <AddComment addComment={addComment} />}
     </div>
   );
 };

@@ -6,6 +6,7 @@ const BottleCard = ({ bottle, seeDetails }) => {
   useEffect(() => {
     findBottlePicto();
   }, []);
+
   const findBottlePicto = () => {
     switch (bottle.color) {
       case "red":
