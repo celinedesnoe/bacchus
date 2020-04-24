@@ -2,6 +2,8 @@
   width: 100%;
   border-radius: 15px 15px 0px 0px;
   z-index: 20;
+  bottom: 0;
+  top: 75px;
 
   &.add-comment {
     top: 0;
@@ -9,8 +11,6 @@
 }
 
 .slide-up {
-  bottom: 0;
-  top: 75px;
   animation: 0.5s slide-up forwards;
 }
 
@@ -20,7 +20,7 @@
     margin: 0 5%;
     top: 10%;
     bottom: unset;
-    transform: translateX(-50%);
+    animation: 0.5s slide-up-big forwards;
     border-radius: 15px;
     &.add-comment {
       margin: 0;
@@ -36,5 +36,14 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-big {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
   }
 }

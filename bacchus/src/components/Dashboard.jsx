@@ -41,9 +41,7 @@ class Dashboard extends Component {
 
   componentDidUpdate(prevProps) {
     const details = this.detailsRef.current;
-    if (details) {
-      // details.addEventListener("mousedown", this.lock, false);
-      // details.addEventListener("touchstart", this.lock, false);
+    if (details && window.matchMedia("(max-width: 1023px)").matches) {
       details.addEventListener("mousemove", this.updatePosition, false);
       details.addEventListener("touchmove", this.updatePosition, false);
 
@@ -111,7 +109,7 @@ class Dashboard extends Component {
       if (details) {
         details.classList.add("hide-details");
         setTimeout(() => {
-          this.setState({ bottleDetails: false });
+          this.setState({ bottleDetails: false, animateDetails: "slide-up" });
         }, 600);
       }
     }
@@ -120,7 +118,6 @@ class Dashboard extends Component {
   lock = (e) => {
     const details = this.detailsRef.current;
     this.setState({ lock: true });
-    this.setState({ animateDetails: "" });
 
     // details.classList.add("hide-details");
   };
@@ -155,7 +152,7 @@ class Dashboard extends Component {
   };
   render() {
     let { bottleDetails, bottlesResults, filterSelected } = this.state;
-    console.log("animationDetails", this.state.animationDetails);
+    console.log("animateDetails", this.state.animatDetails);
     return (
       <div className="position-relative h-100">
         <HeaderDashboard
