@@ -17,17 +17,22 @@ class Dashboard extends Component {
       bottles: [],
       bottlesResults: [],
       bottleDetails: false,
+      animateDetails: "slide-up",
     };
     this.myRef = React.createRef();
     this.detailsRef = React.createRef();
+    this.layerRef = React.createRef();
   }
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
-    let details = this.myRef.current;
+    const details = this.detailsRef.current;
     if (details) {
       details.addEventListener("mousedown", this.lock, false);
+
       details.addEventListener("touchstart", this.lock, false);
+      details.addEventListener("mousemove", this.updatePosition, false);
+
       details.addEventListener("mouseup", this.move, false);
       details.addEventListener("touchend", this.move, false);
     }
@@ -35,10 +40,13 @@ class Dashboard extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    let details = this.myRef.current;
+    const details = this.detailsRef.current;
     if (details) {
-      details.addEventListener("mousedown", this.lock, false);
-      details.addEventListener("touchstart", this.lock, false);
+      // details.addEventListener("mousedown", this.lock, false);
+      // details.addEventListener("touchstart", this.lock, false);
+      details.addEventListener("mousemove", this.updatePosition, false);
+      details.addEventListener("touchmove", this.updatePosition, false);
+
       details.addEventListener("mouseup", this.move, false);
       details.addEventListener("touchend", this.move, false);
     }
@@ -50,6 +58,17 @@ class Dashboard extends Component {
         },
         () => this.displayBottles()
       );
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+    const details = this.detailsRef.current;
+    if (details) {
+      details.removeEventListener("mousedown", this.lock, false);
+      details.removeEventListener("touchstart", this.lock, false);
+      details.removeEventListener("mouseup", this.move, false);
+      details.removeEventListener("touchend", this.move, false);
     }
   }
 
@@ -86,38 +105,57 @@ class Dashboard extends Component {
     this.setState({ bottleDetails: bottle });
   };
 
-  componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
-    let details = this.detailsRef.current;
-    if (details) {
-      details.removeEventListener("mousedown", this.lock, false);
-      details.removeEventListener("touchstart", this.lock, false);
-      details.removeEventListener("mouseup", this.move, false);
-      details.removeEventListener("touchend", this.move, false);
-    }
-  }
-
   handleClickOutside = (e) => {
     if (!this.myRef.current?.contains(e.target)) {
-      this.setState({ bottleDetails: false });
+      const details = this.detailsRef.current;
+      if (details) {
+        details.classList.add("hide-details");
+        setTimeout(() => {
+          this.setState({ bottleDetails: false });
+        }, 600);
+      }
     }
   };
 
   lock = (e) => {
-    let details = this.detailsRef.current;
-    console.log("START", details.classList);
+    const details = this.detailsRef.current;
+    this.setState({ lock: true });
+    this.setState({ animateDetails: "" });
 
-    details.classList.add("hide-details");
+    // details.classList.add("hide-details");
+  };
+
+  updatePosition = (e) => {
+    const details = this.detailsRef.current;
+    this.setState({ animateDetails: "" });
+
+    let y;
+    if (e.touches) {
+      y = e.touches[0].pageY;
+    }
+
+    details.style.top = y + "px";
   };
 
   move = (e) => {
-    let details = this.detailsRef.current;
-    console.log("END", details.classList);
-
-    details.classList.add("hide-details");
+    const details = this.detailsRef.current;
+    console.log("details.style.top", details.offsetTop);
+    if (details.offsetTop > 250) {
+      this.setState({ animateDetails: "hide-details" });
+      setTimeout(() => {
+        this.setState({ bottleDetails: false, animateDetails: "slide-up" });
+      }, 600);
+    } else {
+      this.setState({ animateDetails: "up" }, () => {
+        setTimeout(() => {
+          details.style.top = "";
+        }, 600);
+      });
+    }
   };
   render() {
     let { bottleDetails, bottlesResults, filterSelected } = this.state;
+    console.log("animationDetails", this.state.animationDetails);
     return (
       <div className="position-relative h-100">
         <HeaderDashboard
@@ -147,11 +185,12 @@ class Dashboard extends Component {
 
         {bottleDetails ? (
           <div>
-            <div className="position-fixed layer"></div>
+            {/* <div ref={this.layerRef} className="position-fixed layer"></div> */}
             <div ref={this.myRef}>
               <BottleDetails
                 bottle={bottleDetails}
                 detailsRef={this.detailsRef}
+                animateDetails={this.state.animateDetails}
               />
             </div>
           </div>

@@ -1,12 +1,17 @@
 .bottle-details {
-  bottom: 0;
   width: 100%;
   border-radius: 15px 15px 0px 0px;
-  animation: 0.5s slide-up forwards;
   z-index: 20;
+
   &.add-comment {
     top: 0;
   }
+}
+
+.slide-up {
+  bottom: 0;
+  top: 75px;
+  animation: 0.5s slide-up forwards;
 }
 
 @media (min-width: 1024px) {

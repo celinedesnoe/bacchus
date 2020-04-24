@@ -11,7 +11,9 @@ import AddComment from "./AddComment.jsx";
 import SvgFavorite from "./SvgFavorite.jsx";
 import { bottleActions } from "../_actions";
 
-const BottleDetails = ({ bottle, detailsRef }) => {
+const BottleDetails = ({ bottle, detailsRef, animateDetails }) => {
+  // const [anim, setAnim] = useState(animateDetails);
+
   const updateNumber = (nb) => {
     bottle.nb = nb;
     bottleActions.updateBottle(bottle);
@@ -34,30 +36,33 @@ const BottleDetails = ({ bottle, detailsRef }) => {
   };
 
   return (
-    <div
-      className="position-fixed bg-primary-light bottle-details"
-      ref={detailsRef}
-    >
-      <div className="px-3 pt-1 pb-3">
-        <div className="fav">
-          <SvgFavorite />
-        </div>
-        <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
-        <BottleComments
-          openAddComment={openAddComment}
-          comments={bottle.comments}
-        />
-        <div className="d-flex justify-content-between">
-          <BottlePrice price={bottle.price} />
-          <BottleSelectorNumber
-            number={bottle.nb}
-            updateNumber={updateNumber}
+    console.log("RENDER"),
+    (
+      <div
+        className={`position-fixed bg-primary-light bottle-details ${animateDetails} `}
+        ref={detailsRef}
+      >
+        <div className="px-3 pt-1 pb-3">
+          <div className="fav">
+            <SvgFavorite />
+          </div>
+          <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
+          <BottleComments
+            openAddComment={openAddComment}
+            comments={bottle.comments}
           />
+          <div className="d-flex justify-content-between">
+            <BottlePrice price={bottle.price} />
+            <BottleSelectorNumber
+              number={bottle.nb}
+              updateNumber={updateNumber}
+            />
+          </div>
+          <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
         </div>
-        <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
+        {isOpenAddComment && <AddComment addComment={addComment} />}
       </div>
-      {isOpenAddComment && <AddComment addComment={addComment} />}
-    </div>
+    )
   );
 };
 

@@ -342,6 +342,36 @@
   }
 }
 
+@keyframes hide-details-modal {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-150%);
+  }
+}
+
 .hide-details {
   animation: hide-details 0.6s forwards;
+}
+
+@media (min-width: 1024px) {
+  .hide-details {
+    animation: hide-details-modal 0.6s forwards;
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    top: 75px;
+  }
+}
+
+.up {
+  animation: up 0.6s forwards;
 }
