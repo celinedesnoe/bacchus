@@ -14,3 +14,18 @@
     }
   }
 }
+
+@mixin color-input($wine-palettes) {
+  @each $state, $wine in $wine-palettes {
+    &-#{$state} {
+      border-left: 5px solid $wine;
+      &.selected {
+        background-color: $wine;
+        .radio {
+          border: 1px solid $wine;
+          color: $wine;
+        }
+      }
+    }
+  }
+}

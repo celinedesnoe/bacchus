@@ -63,10 +63,6 @@
   color: theme-color("grey") !important;
 }
 
-.search-bar {
-  border-radius: 4px;
-}
-
 .empty-dashboard-box {
   width: 80%;
   position: relative;
@@ -78,63 +74,6 @@
   border-radius: 0px 0px 40px 40px;
   color: white;
   font-size: 18px;
-}
-
-.color-input {
-  width: 80px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-weight: 700;
-  font-size: 12px;
-  border-radius: 0px 4px 4px 0px;
-  transition: 0.4s;
-  cursor: pointer;
-
-  .radio {
-    font-size: 9px;
-    border-radius: 50px;
-    border: 1px solid theme-color("primary-light");
-    width: 15px;
-    height: 15px;
-    transition: 0.4s;
-    color: transparent;
-  }
-
-  &.selected {
-    color: white;
-    .radio {
-      background-color: white;
-    }
-  }
-  &-red {
-    border-left: 5px solid theme-color("red");
-    &.selected {
-      background-color: theme-color("red");
-      .radio {
-        border: 1px solid theme-color("red");
-        color: theme-color("red");
-      }
-    }
-  }
-  &-rosé {
-    border-left: 5px solid theme-color("rosé");
-    &.selected {
-      background-color: theme-color("rosé");
-      .radio {
-        border: 1px solid theme-color("rosé");
-        color: theme-color("rosé");
-      }
-    }
-  }
-  &-white {
-    border-left: 5px solid theme-color("tertiary");
-    &.selected {
-      background-color: theme-color("tertiary");
-      .radio {
-        border: 1px solid theme-color("tertiary");
-        color: theme-color("tertiary");
-      }
-    }
-  }
 }
 
 .close-icon {
