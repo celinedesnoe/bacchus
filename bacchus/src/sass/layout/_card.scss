@@ -11,5 +11,6 @@
   font-size: 18px;
   box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.15);
   min-height: 118px;
+  cursor: pointer;
   @include card-bottle($wine-palettes);
 }

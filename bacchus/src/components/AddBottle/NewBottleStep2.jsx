@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Input from "../Input";
+import Select from "../Select";
+import Searchable from "../Searchable";
+
+const allCepages = ["Pinot", "Cabernet"];
 
 const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
   const [cepage, setCepage] = useState(bottle.cepage);
@@ -9,6 +13,7 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
 
   useEffect(() => {
     setDetails(cepage, appellation, region, country);
+    console.log("cepage", cepage);
   }, [cepage, appellation, region, country]);
 
   return (
@@ -17,32 +22,32 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
         <div className="d-flex justify-content-center mb-4 mt-3">
           Add details
         </div>
-        <Input
-          title="Cépage"
-          placeholder="Pinot Noir"
+        <Searchable
           className="mb-3"
-          onChange={e => setCepage(e.target.value)}
+          placeholder="Pinot noir"
           value={cepage}
+          options={allCepages}
+          onChange={(option) => setCepage(option)}
         />
         <Input
           title="Appellation"
           placeholder="Margaux"
           className="mb-3"
-          onChange={e => setAppellation(e.target.value)}
+          onChange={(e) => setAppellation(e.target.value)}
           value={appellation}
         />
         <Input
           title="Region"
           placeholder="Bordeaux"
           className="mb-3"
-          onChange={e => setRegion(e.target.value)}
+          onChange={(e) => setRegion(e.target.value)}
           value={region}
         />
         <Input
           title="Country"
           placeholder="France"
           className="mb-3"
-          onChange={e => setCountry(e.target.value)}
+          onChange={(e) => setCountry(e.target.value)}
           value={country}
         />
       </div>

@@ -50,6 +50,22 @@ input[type="file"] {
   height: 100%;
 }
 
+.input-list {
+  position: absolute;
+  background-color: white;
+  border: 1px solid $colour-primary-light;
+  width: 100%;
+  z-index: 3;
+}
+
+.input-options {
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: $colour-primary-light;
+  }
+}
+
 .search-bar {
   border-radius: 4px;
 }
