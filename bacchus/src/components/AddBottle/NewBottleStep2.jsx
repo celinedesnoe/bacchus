@@ -23,6 +23,7 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
           Add details
         </div>
         <Searchable
+          title="Cépage"
           className="mb-3"
           placeholder="Pinot noir"
           value={cepage}

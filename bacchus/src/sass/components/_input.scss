@@ -61,7 +61,9 @@ input[type="file"] {
 .input-options {
   cursor: pointer;
   transition: 0.3s;
-  &:hover {
+
+  &:hover,
+  &.hovered {
     background-color: $colour-primary-light;
   }
 }
