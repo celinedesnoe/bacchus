@@ -1,0 +1,850 @@
+[
+  {
+    "appellation": "Ajaccio",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Aloxe-corton",
+    "region": "Bourgogne Côte de Beaune"
+  },
+  {
+    "appellation": "Alsace",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace klevener de heiligenstein",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace `edelzwicker`",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace `gentil`",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (chasselas)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (gewurztraminer)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (muscat)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (pinot, pinot blanc ou klevner)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (pinot gris)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (pinot noir)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (riesling)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (sylvaner)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Alsace (tokay-pinot gris)",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Anjou",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Anjou-coteaux de la loire",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Anjou-gamay",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Anjou mousseux",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Anjou-villages",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Anjou-villages-brissac",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Arbois",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Arbois pupillin",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Arbois mousseux",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Auxey-duresses",
+    "region": "Bourgogne Côte de Beaune"
+  },
+  {
+    "appellation": "Bandol",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Banyuls",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Banyuls grand cru",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Barsac",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bâtard-montrachet",
+    "region": "Bourgogne Côte de Beaune"
+  },
+  {
+    "appellation": "Béarn",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Beaujolais",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Beaujolais-villages",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Beaumes de venise",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Beaune",
+    "region": "Bourgogne Côte de Beaune"
+  },
+  {
+    "appellation": "Bellet",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Bergerac",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Bergerac sec",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Bergerac rosé",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Bienvenues-bâtard-montrachet",
+    "region": "Bourgogne Côte de Beaune"
+  },
+  {
+    "appellation": "Blagny",
+    "region": "Bourgogne Côte de Beaune"
+  },
+  {
+    "appellation": "Blanquette de limoux",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Blanquette de limoux méthode ancestrale",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Blaye",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Blaye côtes de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bonnes-mares",
+    "region": "Bourgogne Côte de Nuits"
+  },
+  {
+    "appellation": "Bonnes-mares",
+    "region": "Bourgogne Côte de Nuits"
+  },
+  {
+    "appellation": "Bonnezeaux",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bordeaux clairet",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bordeaux-côtes de francs",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bordeaux rosé",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bordeaux sec",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bordeaux supérieur",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Bourgogne",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne aligoté",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne aligoté bouzeron",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne côte chalonnaise",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne côte d'auxerre",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne grand ordinaire",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne hautes-côtes de beaune",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne mousseux",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne ordinaire",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne passetoutgrain",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne rosé",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne tonnerre",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgogne vezelay",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Bourgueil",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Bouzeron",
+    "region": "Bourgogne Côte chalonnaise"
+  },
+  {
+    "appellation": "Brouilly",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Bugey",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Buzet",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Cabardès",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Cabernet d'anjou",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Cabernet de saumur",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Cadillac",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Cadillac côtes de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Cahors",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Canon-fronsac",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Cassis",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Castillon côtes de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Cérons",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Chablis",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Chablis grand cru",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Chablis premier cru",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Chambertin clos-de-bèze",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Chambolle-musigny",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Champagne",
+    "region": "Champagne"
+  },
+  {
+    "appellation": "Champagne grand cru",
+    "region": "Champagne"
+  },
+  {
+    "appellation": "Champagne premier cru",
+    "region": "Champagne"
+  },
+  {
+    "appellation": "Chapelle-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Charlemagne",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Charmes-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Chassagne-montrachet",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Château-chalon",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Château-grillet",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Châteaumeillant",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Châteauneuf-du-pape",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Châtillon-en-diois",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Chénas",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Chevalier-montrachet",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Cheverny",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Chinon",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Chiroubles",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Chorey-lès-beaune",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Clairette de bellegarde",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Clairette de die",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Clairette du languedoc",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Clos de la roche",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Clos de tart",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Clos de vougeot",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Clos des lambrays",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Clos saint-denis",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Collioure",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Condrieu",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Corbières",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Corbières-boutenac",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Cornas",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Corse",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corse calvi",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corse calvi",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corse coteaux du cap corse",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corse figari",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corse porto-vecchio",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corse sartène",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Corton",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Corton",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Corton charlemagne",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Côte de beaune",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Côte de brouilly",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Côte de nuits-villages",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Côte roannaise",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Côte-rôtie",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Coteaux champenois",
+    "region": "Champagne"
+  },
+  {
+    "appellation": "Coteaux d'aix-en-provence",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Coteaux d'ancenis",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux de die",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Coteaux de l'aubance",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux de pierrevert",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Coteaux de saumur",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux du giennois",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux du languedoc",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Coteaux du layon",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux du loir",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux du loir",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux du lyonnais",
+    "region": "Lyonnais"
+  },
+  {
+    "appellation": "Coteaux du quercy",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Coteaux du tricastin",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Coteaux du vendômois",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Coteaux varois-en-provence",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Côtes d'auvergne",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Côtes d'auvergne-chanturgue",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Côtes de beaune-villages",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Côtes de bergerac",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes de blaye",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Côtes de bordeaux saint-macaire",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Côtes de bourg",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Côtes de castillon",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Côtes de duras",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes de millau",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes de montravel",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes de provence",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Côtes de provence",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Côtes de saint-mont",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes de toul",
+    "region": "L'Est"
+  },
+  {
+    "appellation": "Côtes du brulhois",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes du forez",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Côtes du frontonnais",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes du jura",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Côtes du jura mousseux",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Côtes du marmandais",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Côtes du rhône",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Côtes du rhône",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Côtes du roussillon",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Côtes du roussillon",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Côtes du vivarais",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Cour-cheverny",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Crémant d'alsace",
+    "region": "Alsace"
+  },
+  {
+    "appellation": "Crémant de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Crémant de bourgogne",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Crémant de die",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Crémant de limoux",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Crémant de loire",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Crémant du jura",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Crépy",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Criots-bâtard-montrachet",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Crozes-hermitage",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Echézeaux",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Entre-deux-mers",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Entre-deux-mers haut-benauge",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Faugères",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Fiefs vendéens",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Fitou",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Fixin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Fleurie",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Floc de gascogne",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Francs côtes de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Fronsac",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Gaillac",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Gaillac premieres côtes",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Gevrey-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Gigondas",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Givry",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Grands-échezeaux",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Graves",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Graves-de-vayres",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Graves supérieures",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Grignan-Les Adhémar",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Griotte-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Gros-plant du pays nantais",
+    "region": "Vallée de la Loire"
+  }
+]
