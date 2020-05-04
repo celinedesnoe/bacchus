@@ -846,5 +846,686 @@
   {
     "appellation": "Gros-plant du pays nantais",
     "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Haut-médoc",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Haut-montravel",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Haut-poitou",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Hermitage",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Irancy",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Irouléguy",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Jasnières",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Juliénas",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Jurançon",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Jurançon sec",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "La grande rue",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "La tâche",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Ladoix",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Lalande-de-pomerol",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Latricières-chambertin",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Lavilledieu",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Les baux-de-provence",
+    "region": "Provence"
+  },
+  {
+    "appellation": "L'étoile",
+    "region": "Jura"
+  },
+  {
+    "appellation": "L'étoile mousseux",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Limoux",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Lirac",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Listrac-médoc",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Loupiac",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Luberon",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Lussac saint-émilion",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Mâcon",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Mâcon-supérieur",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Mâcon-villages",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Macvin du jura",
+    "region": "Jura"
+  },
+  {
+    "appellation": "Madiran",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Malepère",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Maranges",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Marcillac",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Margaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Marsannay",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Marsannay rosé",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Maury",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Mazis-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Mazoyères-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Médoc",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Menetou-salon",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Mercurey",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Meursault",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Minervois",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Minervois-la-livinière",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Monbazillac",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Montagne-saint-émilion",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Montagny",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Monthélie",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Montlouis-sur-loire",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Montlouis-sur-loire mousseux",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Montlouis-sur-loire pétillant",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Montrachet",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Montravel",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Morey saint-denis",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Morgon",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Moselle",
+    "region": "L'Est"
+  },
+  {
+    "appellation": "Moulin-à-vent",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Moulis",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Muscadet",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Muscadet",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Muscadet côtes de grandlieu",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Muscadet sèvre-et-maine",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Muscadet coteaux de la loire",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Muscat de beaumes-de-venise",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Muscat de frontignan",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Muscat de lunel",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Muscat de mireval",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Muscat de rivesaltes",
+    "region": "Roussillon"
+  },
+
+  {
+    "appellation": "Muscat de aint-jean-de-minervois",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Muscat du cap corse",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Musigny",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Nuits-saint-georges",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Orléans",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Orléans-cléry",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Pacherenc du vic-bilh",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Pacherenc du vic-bilh sec",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Palette",
+    "region": "Provence"
+  },
+  {
+    "appellation": "Patrimonio",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Pauillac",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Pécharmant",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Pernand-vergelesses",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Pessac-léognan",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Petit chablis",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Pineau des charentes",
+    "region": "Charentes"
+  },
+  {
+    "appellation": "Pomerol",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Pommard",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Pommeau de normandie",
+    "region": "Normandie"
+  },
+  {
+    "appellation": "Pouilly-fuissé",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Pouilly-fumé",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Pouilly-loché",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Pouilly-sur-loire",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Pouilly-vinzelles",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Premières côtes de blaye",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Premières côtes de bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Puisseguin-saint-émilion",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Puligny-montrachet",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Puligny-montrachet",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Quarts de chaume",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Quincy",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Rasteau",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Régnié",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Reuilly",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Richebourg",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Rivesaltes",
+    "region": "Roussillon"
+  },
+  {
+    "appellation": "Romanée (La)",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Romanée-conti",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Romanée saint-vivant",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Rosé d'anjou",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Rosé de loire",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Rosé des riceys",
+    "region": "Champagne"
+  },
+  {
+    "appellation": "Rosette",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Roussette de savoie",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Roussette du bugey",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Ruchottes-chambertin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Rully",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Saint-amour",
+    "region": "Beaujolais"
+  },
+  {
+    "appellation": "Saint-aubin",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Saint-bris",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Saint-chinian",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Saint-chinian Berlou",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Saint-chinian Roquebrun",
+    "region": "Languedoc"
+  },
+  {
+    "appellation": "Saint-émilion",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Saint-émilion grand cru",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Saint-estèphe",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Saint-georges-saint-émilion",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Saint-joseph",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Saint-julien",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Saint-nicolas-de-bourgueil",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Saint-péray",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Saint-péray mousseux",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Saint-pourçain",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Saint-romain",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Saint sardos",
+    "region": "Sud-ouest"
+  },
+  {
+    "appellation": "Saint-véran",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Sainte-croix-du-mont",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Sainte-foy-bordeaux",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Santenay",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Saumur",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Saumur mousseux",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Saumur-champigny",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Saussignac",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Sauternes",
+    "region": "Bordeaux"
+  },
+  {
+    "appellation": "Savennières",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Savigny-lès-beaune",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Seyssel",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Seyssel mousseux",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Tavel",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Touraine",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Tursan",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Vacqueyras",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Valençay",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Ventoux",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Vin de savoie",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Vin de savoie mousseux",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Vin de savoie pétillant",
+    "region": "Savoie"
+  },
+  {
+    "appellation": "Vin de corse",
+    "region": "Corse"
+  },
+  {
+    "appellation": "Vins de l'orléannais",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Vins d'entraygues et du fel",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Vins d'estaing",
+    "region": "Sud-Ouest"
+  },
+  {
+    "appellation": "Vins du thouarsais",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Vinsobres",
+    "region": "Vallée du Rhône"
+  },
+  {
+    "appellation": "Viré-clessé",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Volnay",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Volnay santenots",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Vosne-romanée",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Vougeot",
+    "region": "Bourgogne"
+  },
+  {
+    "appellation": "Vouvray",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Vouvray mousseux",
+    "region": "Vallée de la Loire"
+  },
+  {
+    "appellation": "Vouvray pétillant",
+    "region": "Vallée de la Loire"
   }
 ]
