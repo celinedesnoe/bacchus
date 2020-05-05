@@ -5,7 +5,7 @@
   },
   {
     "appellation": "Aloxe-corton",
-    "region": "Bourgogne Côte de Beaune"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Alsace",
@@ -97,7 +97,7 @@
   },
   {
     "appellation": "Auxey-duresses",
-    "region": "Bourgogne Côte de Beaune"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Bandol",
@@ -117,7 +117,7 @@
   },
   {
     "appellation": "Bâtard-montrachet",
-    "region": "Bourgogne Côte de Beaune"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Béarn",
@@ -137,7 +137,7 @@
   },
   {
     "appellation": "Beaune",
-    "region": "Bourgogne Côte de Beaune"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Bellet",
@@ -157,11 +157,11 @@
   },
   {
     "appellation": "Bienvenues-bâtard-montrachet",
-    "region": "Bourgogne Côte de Beaune"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Blagny",
-    "region": "Bourgogne Côte de Beaune"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Blanquette de limoux",
@@ -181,11 +181,7 @@
   },
   {
     "appellation": "Bonnes-mares",
-    "region": "Bourgogne Côte de Nuits"
-  },
-  {
-    "appellation": "Bonnes-mares",
-    "region": "Bourgogne Côte de Nuits"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Bonnezeaux",
@@ -273,7 +269,7 @@
   },
   {
     "appellation": "Bouzeron",
-    "region": "Bourgogne Côte chalonnaise"
+    "region": "Bourgogne"
   },
   {
     "appellation": "Brouilly",
@@ -483,10 +479,7 @@
     "appellation": "Corse calvi",
     "region": "Corse"
   },
-  {
-    "appellation": "Corse calvi",
-    "region": "Corse"
-  },
+
   {
     "appellation": "Corse coteaux du cap corse",
     "region": "Corse"
@@ -502,10 +495,6 @@
   {
     "appellation": "Corse sartène",
     "region": "Corse"
-  },
-  {
-    "appellation": "Corton",
-    "region": "Bourgogne"
   },
   {
     "appellation": "Corton",
@@ -579,10 +568,7 @@
     "appellation": "Coteaux du loir",
     "region": "Vallée de la Loire"
   },
-  {
-    "appellation": "Coteaux du loir",
-    "region": "Vallée de la Loire"
-  },
+
   {
     "appellation": "Coteaux du lyonnais",
     "region": "Lyonnais"
@@ -655,10 +641,7 @@
     "appellation": "Côtes de provence",
     "region": "Provence"
   },
-  {
-    "appellation": "Côtes de provence",
-    "region": "Provence"
-  },
+
   {
     "appellation": "Côtes de saint-mont",
     "region": "Sud-Ouest"
@@ -695,18 +678,12 @@
     "appellation": "Côtes du rhône",
     "region": "Vallée du Rhône"
   },
-  {
-    "appellation": "Côtes du rhône",
-    "region": "Vallée du Rhône"
-  },
+
   {
     "appellation": "Côtes du roussillon",
     "region": "Roussillon"
   },
-  {
-    "appellation": "Côtes du roussillon",
-    "region": "Roussillon"
-  },
+
   {
     "appellation": "Côtes du vivarais",
     "region": "Vallée du Rhône"
@@ -1082,10 +1059,6 @@
   {
     "appellation": "Moulis",
     "region": "Bordeaux"
-  },
-  {
-    "appellation": "Muscadet",
-    "region": "Vallée de la Loire"
   },
   {
     "appellation": "Muscadet",

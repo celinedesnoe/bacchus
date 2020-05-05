@@ -11,21 +11,26 @@ const Searchable = (props) => {
 
   const filterOptions = () => {
     let allOptions = props.options;
-    let filteredOptions = allOptions.filter((option) => option.includes(value));
+    let filteredOptions = allOptions.filter((option, index) =>
+      option.includes(value)
+    );
+
     setFilteredOptions(filteredOptions);
   };
 
   useEffect(() => {
     filterOptions();
+    if (props.value) {
+      setValue(props.value);
+    }
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", chooseOption);
-    console.log("indexHover", indexHover);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", chooseOption);
     };
-  }, [value, indexHover]);
+  }, [value, indexHover, props.value]);
 
   const handleClickOutside = (e) => {
     if (!refOptions.current?.contains(e.target)) {
@@ -37,13 +42,11 @@ const Searchable = (props) => {
   const chooseOption = (e) => {
     switch (e.keyCode) {
       case 40:
-        indexHover < options.length - 1 && setIndexHover(indexHover + 1);
-        return console.log("40", indexHover);
+        return indexHover < options.length - 1 && setIndexHover(indexHover + 1);
       case 38:
-        indexHover > 0 && setIndexHover(indexHover - 1);
-        return console.log("38", indexHover);
+        return indexHover > 0 && setIndexHover(indexHover - 1);
       case 13:
-        selectValue();
+        return selectValue();
       default:
         return;
     }
@@ -53,7 +56,6 @@ const Searchable = (props) => {
     let option = options.find((option, index) => {
       return index === indexHover;
     });
-    console.log("option", option);
     setValue(option);
     setSeeOptions(false);
     setIndexHover(0);

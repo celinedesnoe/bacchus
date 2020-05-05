@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Input from "../Input";
-import Select from "../Select";
 import Searchable from "../Searchable";
+import appellations from "../../data/appellations.json";
+import cepages from "../../data/cepages.json";
+import regions from "../../data/regions.json";
 
-const allCepages = ["Pinot", "Cabernet"];
+const allApellations = appellations.map(
+  (appellation) => appellation.appellation
+);
 
 const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
   const [cepage, setCepage] = useState(bottle.cepage);
@@ -13,8 +17,14 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
 
   useEffect(() => {
     setDetails(cepage, appellation, region, country);
-    console.log("cepage", cepage);
   }, [cepage, appellation, region, country]);
+
+  const findRegion = (option) => {
+    let region = appellations.find(
+      (appellation) => appellation.appellation === option
+    ).region;
+    setRegion(region);
+  };
 
   return (
     <div>
@@ -27,23 +37,31 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
           className="mb-3"
           placeholder="Pinot noir"
           value={cepage}
-          options={allCepages}
+          options={cepages}
           onChange={(option) => setCepage(option)}
         />
-        <Input
+        <Searchable
           title="Appellation"
-          placeholder="Margaux"
           className="mb-3"
-          onChange={(e) => setAppellation(e.target.value)}
+          placeholder="Côte de beaune"
           value={appellation}
+          options={allApellations}
+          onChange={(option) => {
+            setAppellation(option);
+            findRegion(option);
+          }}
         />
-        <Input
+        <Searchable
           title="Region"
-          placeholder="Bordeaux"
           className="mb-3"
-          onChange={(e) => setRegion(e.target.value)}
+          placeholder="Bourgogne"
           value={region}
+          options={regions}
+          onChange={(option) => {
+            setRegion(option);
+          }}
         />
+
         <Input
           title="Country"
           placeholder="France"
