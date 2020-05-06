@@ -30,7 +30,7 @@ const Searchable = (props) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", chooseOption);
     };
-  }, [value, indexHover, props.value]);
+  }, [value, indexHover, props.value, props.options]);
 
   const handleClickOutside = (e) => {
     if (!refOptions.current?.contains(e.target)) {
@@ -73,6 +73,8 @@ const Searchable = (props) => {
           }   `}
           value={value}
           onChange={(e) => {
+            console.log("e", e.target.value);
+            props.resetValue && props.resetValue();
             setValue(e.target.value);
           }}
           type={props.type ? props.type : `text`}

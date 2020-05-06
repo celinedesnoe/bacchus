@@ -14,16 +14,23 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
   const [appellation, setAppellation] = useState(bottle.appellation);
   const [region, setRegion] = useState(bottle.region);
   const [country, setCountry] = useState(bottle.country);
+  const [listAppellations, setListAppellations] = useState(allApellations);
 
   useEffect(() => {
     setDetails(cepage, appellation, region, country);
   }, [cepage, appellation, region, country]);
 
   const findRegion = (option) => {
-    let region = appellations.find(
-      (appellation) => appellation.appellation === option
-    ).region;
+    let region = appellations.find((item) => item.appellation === option)
+      ?.region;
     setRegion(region);
+  };
+
+  const findAppellations = (option) => {
+    let appellationsFromRegions = appellations.reduce((acc, item) => {
+      return item.region === option ? [...acc, item.appellation] : acc;
+    }, []);
+    setListAppellations(appellationsFromRegions);
   };
 
   return (
@@ -39,16 +46,21 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
           value={cepage}
           options={cepages}
           onChange={(option) => setCepage(option)}
+          resetValue={() => setCepage("")}
         />
         <Searchable
           title="Appellation"
           className="mb-3"
           placeholder="Côte de beaune"
           value={appellation}
-          options={allApellations}
+          options={listAppellations}
           onChange={(option) => {
             setAppellation(option);
             findRegion(option);
+          }}
+          resetValue={() => {
+            setAppellation("");
+            findRegion("");
           }}
         />
         <Searchable
@@ -59,6 +71,12 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
           options={regions}
           onChange={(option) => {
             setRegion(option);
+            setAppellation("");
+            findAppellations(option);
+          }}
+          resetValue={() => {
+            setRegion("");
+            setListAppellations(allApellations);
           }}
         />
 
