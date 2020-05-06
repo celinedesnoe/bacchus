@@ -67,3 +67,13 @@
     transform: translate(-50%, -50%);
   }
 }
+
+.btn-sideview {
+  position: absolute;
+  top: 12px;
+  background-color: $colour-tertiary;
+  color: white;
+  width: 50px;
+  height: 45px;
+  @include btn-sideview($directions, 50px);
+}

@@ -29,3 +29,13 @@
     }
   }
 }
+
+@mixin btn-sideview($directions, $px) {
+  @each $state, $direction in $directions {
+    &-#{$state} {
+      border-top-#{$direction}-radius: 40px;
+      border-bottom-#{$direction}-radius: 40px;
+      #{$direction}: -$px;
+    }
+  }
+}

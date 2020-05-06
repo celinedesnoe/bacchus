@@ -2,11 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Search from "./Search.jsx";
+import SideviewLeft from "./SideviewLeft.jsx";
 const HeaderDashboard = (props) => {
   return (
     <div className="header-dashboard px-3 py-2">
-      <div className="d-flex justify-content-between mt-3">
-        <div className="">
+      <SideviewLeft />
+      <div>
+        <div className="text-center mt-3">
           <h5>
             <span className="text-secondary nb-bottles">
               {` ${props.bottles.length} `}
@@ -14,12 +16,6 @@ const HeaderDashboard = (props) => {
             wines
           </h5>
         </div>
-        <div
-          className={`profile-image mr-3`}
-          style={{
-            backgroundImage: `url(https://randomuser.me/api/portraits/women/90.jpg)`,
-          }}
-        />
       </div>
       <Search
         placeholder="What are you looking for?"

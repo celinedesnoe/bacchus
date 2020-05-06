@@ -73,7 +73,6 @@ const Searchable = (props) => {
           }   `}
           value={value}
           onChange={(e) => {
-            console.log("e", e.target.value);
             props.resetValue && props.resetValue();
             setValue(e.target.value);
           }}
