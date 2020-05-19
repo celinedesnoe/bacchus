@@ -26,42 +26,29 @@ const BottleHeader = ({ bottle, className }) => {
         <img alt="bottle" src={`/${bottlePicto}`} className="bottle-picto" />
       </div>
       <div className={`ml-5 mt-3 ${className}`}>
-        <div className="extrabold">{bottle.name}</div>
-        <div className="d-flex row mt-4">
-          {bottle.vintage && (
-            <div className="col-6">
-              <div className="label-input pb-1 mr-4">Vintage</div>
-              <div className="">{bottle.vintage}</div>
-            </div>
-          )}
-          {(bottle.region || bottle.country) && (
-            <div className="col-6">
-              <div className="label-input pb-1">Origin</div>
-              <div className="">
-                {bottle.region ? bottle.region : ""}
-                {bottle.country
-                  ? bottle.region
-                    ? ", " + bottle.country
-                    : bottle.country
-                  : ""}
-              </div>
-            </div>
-          )}
+        <div className="text-grey mb-1">{bottle.vintage}</div>
+        <div className="extrabold mb-2">{bottle.name}</div>
+
+        <div className="mb-1">
+          <img src="/place.svg" className="icon-wine" alt="place" />
+          {bottle.appellation && <span>{bottle.appellation}</span>}
+
+          {(bottle.region || bottle.country) && bottle.region
+            ? bottle.region
+            : ""}
+          {bottle.country
+            ? bottle.region
+              ? ", " + bottle.country
+              : bottle.country
+            : ""}
         </div>
-        <div className="d-flex row mt-3">
-          {bottle.appellation && (
-            <div className="col-6">
-              <div className="label-input pb-1 mr-4">Appellation</div>
-              <div className="">{bottle.appellation}</div>
-            </div>
-          )}
-          {bottle.cepage && (
-            <div className="col-6">
-              <div className="label-input pb-1">Cépage</div>
-              <div className="">{bottle.cepage ? bottle.cepage : "N/A"}</div>
-            </div>
-          )}
-        </div>
+
+        {bottle.cepage && (
+          <div>
+            <img src="/grape.svg" className="icon-wine" alt="grape" />
+            {bottle.cepage}
+          </div>
+        )}
       </div>
     </div>
   );

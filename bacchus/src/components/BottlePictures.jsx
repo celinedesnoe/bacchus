@@ -16,9 +16,13 @@ const BottlePictures = ({ pictures, addPicture }) => {
   };
 
   return (
-    <div className="mt-3 mr-3 p-3 bottle-card-details w-100">
-      <div className="label-input mb-2">Pictures</div>
+    <div className="mr-3 p-3 w-100">
+      <div className="card-label mb-2">Pictures</div>
       <div className="h-100 d-flex align-items-center">
+        <AddPictureBtn
+          uploadPicture={uploadPicture}
+          checkLoadingPic={checkLoadingPic}
+        />
         {pics.map((picture) => (
           <div
             style={{ backgroundImage: `url("${picture}")` }}
@@ -26,10 +30,6 @@ const BottlePictures = ({ pictures, addPicture }) => {
             key={picture}
           />
         ))}
-        <AddPictureBtn
-          uploadPicture={uploadPicture}
-          checkLoadingPic={checkLoadingPic}
-        />
       </div>
     </div>
   );

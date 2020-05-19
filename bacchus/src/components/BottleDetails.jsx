@@ -36,33 +36,28 @@ const BottleDetails = ({ bottle, detailsRef, animateDetails }) => {
   };
 
   return (
-    console.log("RENDER"),
-    (
-      <div
-        className={`position-fixed bg-primary-light bottle-details ${animateDetails} `}
-        ref={detailsRef}
-      >
-        <div className="px-3 pt-1 pb-3">
-          <div className="fav">
-            <SvgFavorite />
-          </div>
-          <BottleHeader bottle={bottle} className={"bottle-card-details p-3"} />
-          <BottleComments
-            openAddComment={openAddComment}
-            comments={bottle.comments}
+    <div
+      className={`position-fixed bg-white bottle-details ${animateDetails} `}
+      ref={detailsRef}
+    >
+      <div className="px-3 pt-1 pb-3">
+        <BottleHeader bottle={bottle} className={"p-3"} />
+        <div className="d-flex justify-content-around my-2">
+          <BottlePrice price={bottle.price} />
+          <BottleSelectorNumber
+            number={bottle.nb}
+            updateNumber={updateNumber}
           />
-          <div className="d-flex justify-content-between">
-            <BottlePrice price={bottle.price} />
-            <BottleSelectorNumber
-              number={bottle.nb}
-              updateNumber={updateNumber}
-            />
-          </div>
-          <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
         </div>
-        {isOpenAddComment && <AddComment addComment={addComment} />}
+        <BottleComments
+          openAddComment={openAddComment}
+          comments={bottle.comments}
+        />
+
+        <BottlePictures pictures={bottle.pictures} addPicture={addPicture} />
       </div>
-    )
+      {isOpenAddComment && <AddComment addComment={addComment} />}
+    </div>
   );
 };
 

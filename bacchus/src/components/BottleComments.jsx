@@ -33,8 +33,8 @@ const BottleComments = ({ comments, openAddComment }) => {
   }, [refAllComments]);
 
   return (
-    <div className="mt-3 bg-white bottle-card-details p-3">
-      <div className="label-input pb-1 mr-4 mb-2">Comments</div>
+    <div className="mt-3 bg-white p-3">
+      <div className="card-label pb-1 mr-4 mb-2">Comments</div>
 
       <div className="d-flex align-items-center w-100">
         {emptyStateComments ? (

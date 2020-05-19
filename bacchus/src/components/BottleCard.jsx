@@ -29,8 +29,8 @@ const BottleCard = ({ bottle, seeDetails }) => {
         <img alt="bottle" src={`/${bottlePicto}`} className="bottle-picto" />
       </div>
       <div className="pl-5 mt-3">
-        <div className="extrabold mb-1">{bottle.name}</div>
-        <div className="small text-grey">{bottle.vintage}</div>
+        <div className="small text-grey mb-1">{bottle.vintage}</div>
+        <div className="extrabold ">{bottle.name}</div>
       </div>
     </div>
   );

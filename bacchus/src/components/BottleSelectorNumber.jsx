@@ -14,11 +14,9 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
   }, [nbBottles]);
 
   return (
-    <div className="mt-3 p-3 bottle-card-details w-100">
-      <div className="label-input ">Number of bottles in stock</div>
-
+    <div className="">
       <div
-        className={`bottles-selector-number d-flex align-items-center justify-content-center mt-3`}
+        className={`bottles-badge d-flex align-items-center justify-content-center`}
       >
         <div
           className="counter-button"
@@ -26,7 +24,7 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
         >
           <FontAwesomeIcon icon={["fa", "minus"]} />
         </div>
-        <div className="counter-bottles badge mx-2">
+        <div className="counter-bottles badge">
           {nbBottles} {wording}
         </div>
 
