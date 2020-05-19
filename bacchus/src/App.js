@@ -17,6 +17,7 @@ import {
   faPlus,
   faMinus,
   faCamera,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -27,7 +28,8 @@ library.add(
   faChevronLeft,
   faPlus,
   faMinus,
-  faCamera
+  faCamera,
+  faBars
 );
 
 class App extends Component {

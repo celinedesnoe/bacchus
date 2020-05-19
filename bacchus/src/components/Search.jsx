@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Search = props => {
+const Search = (props) => {
   const id = "input-id-" + Math.round(Math.random() * 1000);
 
   return (

@@ -5,16 +5,16 @@ import Search from "./Search.jsx";
 import SideviewLeft from "./SideviewLeft.jsx";
 const HeaderDashboard = (props) => {
   return (
-    <div className="header-dashboard px-3 py-2">
+    <div className="header-dashboard d-flex align-items-center flex-column px-3 py-4">
       <SideviewLeft />
       <div>
-        <div className="text-center mt-3">
-          <h5>
+        <div className="text-center mb-3">
+          <div>
             <span className="text-secondary nb-bottles">
               {` ${props.bottles.length} `}
             </span>
             wines
-          </h5>
+          </div>
         </div>
       </div>
       <Search

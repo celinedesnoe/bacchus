@@ -75,9 +75,11 @@ class Dashboard extends Component {
     if (searchValue !== "") {
       results = bottles.filter((bottle) =>
         Object.keys(bottle).some(
-          (key) => bottle[key].toString().search(searchValue) !== -1
+          (key) =>
+            bottle[key] && bottle[key].toString().search(searchValue) !== -1
         )
       );
+      console.log("results", results);
       if (filterSelected !== "all") {
         results = results.filter((bottle) => bottle.nb > 0);
       }
