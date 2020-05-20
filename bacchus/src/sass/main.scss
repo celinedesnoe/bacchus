@@ -281,11 +281,11 @@
 
 @keyframes hide-details-modal {
   0% {
-    transform: translateY(0);
+    transform: translate(-50%, 0);
   }
 
   100% {
-    transform: translateY(-150%);
+    transform: translate(-50%, -150%);
   }
 }
 

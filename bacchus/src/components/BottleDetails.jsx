@@ -8,12 +8,9 @@ import BottlePrice from "./BottlePrice.jsx";
 import BottlePictures from "./BottlePictures.jsx";
 import AddComment from "./AddComment.jsx";
 
-import SvgFavorite from "./SvgFavorite.jsx";
 import { bottleActions } from "../_actions";
 
 const BottleDetails = ({ bottle, detailsRef, animateDetails }) => {
-  // const [anim, setAnim] = useState(animateDetails);
-
   const updateNumber = (nb) => {
     bottle.nb = nb;
     bottleActions.updateBottle(bottle);

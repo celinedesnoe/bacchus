@@ -4,10 +4,6 @@
   z-index: 20;
   bottom: 0;
   top: 75px;
-
-  &.add-comment {
-    top: 0;
-  }
 }
 
 .slide-up {
@@ -17,15 +13,14 @@
 @media (min-width: 500px) {
   .bottle-details {
     width: 500px;
-    left: 50%;
     top: 10%;
+    left: 50%;
+    transform: translate(-50%, -100%);
     bottom: unset;
     animation: 0.5s slide-up-big forwards;
     border-radius: 15px;
     &.add-comment {
-      margin: 0;
-      width: 100%;
-      height: 100%;
+      top: 0;
     }
   }
 }
