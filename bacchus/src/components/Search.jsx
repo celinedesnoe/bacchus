@@ -10,24 +10,26 @@ const Search = (props) => {
       <div className="text-grey pl-2">
         <FontAwesomeIcon icon={["fa", "search"]} />
       </div>
-      <input
-        className={`form-control form-search ${
-          props.error ? "is-invalid" : ""
-        }  ${props.className ? props.className : ""} `}
-        // style={style}
-        value={props.value}
-        onChange={props.onChange}
-        type={props.type ? props.type : `text`}
-        name={props.name}
-        id={id}
-        placeholder={props.placeholder}
-        disabled={props.disabled}
-        aria-label={props.ariaLabel ? props.ariaLabel : ""}
-        aria-describedby={props.ariaDescribedby ? props.ariaDescribedby : ""}
-        maxLength={props.maxLength}
-        onKeyUp={props.onKeyUp}
-        autoComplete={props.autoComplete}
-      />
+      <form>
+        <input
+          className={`form-control form-search ${
+            props.error ? "is-invalid" : ""
+          }  ${props.className ? props.className : ""} `}
+          // style={style}
+          value={props.value}
+          onChange={props.onChange}
+          type={props.type ? props.type : `text`}
+          name={props.name}
+          id={id}
+          placeholder={props.placeholder}
+          disabled={props.disabled}
+          aria-label={props.ariaLabel ? props.ariaLabel : ""}
+          aria-describedby={props.ariaDescribedby ? props.ariaDescribedby : ""}
+          maxLength={props.maxLength}
+          onKeyUp={props.onKeyUp}
+          autoComplete={props.autoComplete}
+        />
+      </form>
     </div>
   );
 };

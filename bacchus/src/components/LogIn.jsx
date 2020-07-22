@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import Input from "./Input.jsx";
 import Button from "./Button.jsx";
 
-const LogIn = props => {
+const LogIn = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
-  const submitLogin = e => {
-    let checkEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-      email
-    );
+  const submitLogin = (e) => {
+    let checkEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
     if (!checkEmail) {
       setEmailError("Please enter a correct email address");
     }
@@ -34,7 +32,7 @@ const LogIn = props => {
         <div>
           <h4 className="my-4 text-dark">Log in to your cellar</h4>
           <form
-            onSubmit={e => props.logIn(e, email, password)}
+            onSubmit={(e) => props.logIn(e, email, password)}
             className="w-100"
           >
             <div className="w-100">
@@ -42,7 +40,7 @@ const LogIn = props => {
                 placeholder="john.doe@gmail.com"
                 className="mb-3"
                 title="E-mail"
-                onChange={e => {
+                onChange={(e) => {
                   setEmail(e.target.value);
                   setEmailError(false);
                 }}
@@ -56,7 +54,7 @@ const LogIn = props => {
                 className="mb-3"
                 title="Password"
                 type="password"
-                onChange={e => {
+                onChange={(e) => {
                   setPassword(e.target.value);
                   setPasswordError(false);
                 }}
@@ -68,7 +66,7 @@ const LogIn = props => {
               <Button
                 text="Login"
                 className="py-2"
-                onClick={e => submitLogin(e)}
+                onClick={(e) => submitLogin(e)}
               />
             </div>
           </form>

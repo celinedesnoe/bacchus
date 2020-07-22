@@ -79,7 +79,6 @@ class Dashboard extends Component {
             bottle[key] && bottle[key].toString().search(searchValue) !== -1
         )
       );
-      console.log("results", results);
       if (filterSelected !== "all") {
         results = results.filter((bottle) => bottle.nb > 0);
       }
@@ -165,7 +164,9 @@ class Dashboard extends Component {
           className="d-flex justify-content-center h-100"
           style={{ overflowY: `${bottleDetails ? "hidden" : "scroll"}` }}
         >
-          {this.props.bottles.length === 0 ? (
+          {this.props.loading ? (
+            <div>HELLO</div>
+          ) : this.props.bottles.length === 0 ? (
             <EmptyDashboard />
           ) : (
             <div className="list-bottles d-flex flex-column w-100 px-4">

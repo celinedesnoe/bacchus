@@ -22,33 +22,40 @@ function addBottle(bottle) {
 }
 
 function addAllBottles() {
-  let userId = store.getState().authReducer._id;
-  getAllBottles(userId)
-    .then((bottle) => {
-      let allBottles = bottle.data;
-      store.dispatch({
-        type: "GETALL",
-        allBottles,
+  return new Promise((resolve, reject) => {
+    let userId = store.getState().authReducer._id;
+    getAllBottles(userId)
+      .then((bottle) => {
+        let allBottles = bottle.data;
+        store.dispatch({
+          type: "GETALL",
+          allBottles,
+        });
+        resolve(allBottles);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
       });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  });
 }
 
 function updateBottle(bottle) {
-  let payload = { bottle: bottle };
-  updateOneBottle(bottle._id, payload)
-    .then((bottle) => {
-      let bottleUpdated = bottle.data;
-      store.dispatch({
-        type: "UPDATE",
-        bottleUpdated,
+  return new Promise((resolve, reject) => {
+    let payload = { bottle: bottle };
+    updateOneBottle(bottle._id, payload)
+      .then((bottle) => {
+        let bottleUpdated = bottle.data;
+        store.dispatch({
+          type: "UPDATE",
+          bottleUpdated,
+        });
+        resolve(bottleUpdated);
+      })
+      .catch((err) => {
+        reject(err);
       });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  });
 }
 
 export const bottleActions = {

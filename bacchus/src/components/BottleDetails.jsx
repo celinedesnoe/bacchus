@@ -23,7 +23,12 @@ const BottleDetails = ({ bottle, detailsRef, animateDetails }) => {
 
   const addComment = (comment) => {
     bottle.comments.push(comment);
-    bottleActions.updateBottle(bottle);
+    bottleActions
+      .updateBottle(bottle)
+      .then(() => {
+        setOpenAddComment(false);
+      })
+      .catch(() => console.log("ERROR"));
   };
 
   const [isOpenAddComment, setOpenAddComment] = useState(false);

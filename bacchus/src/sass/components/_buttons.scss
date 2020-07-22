@@ -1,20 +1,3 @@
-@keyframes shadow-pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(#ed254e, 0.6);
-    box-shadow: 0 0 0 0 rgba(#ed254e, 0.6);
-  }
-
-  70% {
-    -webkit-box-shadow: 0 0 0 10px rgba(#ed254e, 0);
-    box-shadow: 0 0 0 10px rgba(#ed254e, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(#ed254e, 0);
-    box-shadow: 0 0 0 0 rgba(#ed254e, 0);
-  }
-}
-
 .button {
   background-color: theme-color("secondary");
   color: white;
@@ -24,20 +7,20 @@
   padding: 4px;
   min-width: fit-content;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   text-decoration: none;
-  &:hover {
-    -webkit-animation: shadow-pulse 1s infinite;
 
-    animation: shadow-pulse 1s;
+  &:hover {
+    color: theme-color("secondary");
+    background-color: white;
   }
 }
 
 .button-secondary {
   background-color: white;
-  color: theme-color("secondary");
+  color: theme-color("grey");
   border-radius: 5px;
-  border: 2px solid theme-color("secondary");
+  border: 2px solid theme-color("grey");
   text-align: center;
   padding: 4px;
   min-width: fit-content;
@@ -45,9 +28,8 @@
   transition: 0.3s;
   text-decoration: none;
   &:hover {
-    -webkit-animation: shadow-pulse 1s infinite;
-
-    animation: shadow-pulse 1s;
+    background-color: theme-color("grey");
+    color: white;
   }
 }
 

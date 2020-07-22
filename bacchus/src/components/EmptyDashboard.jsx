@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { history } from "../_helpers/history";
 
-const EmptyDashboard = props => {
+const EmptyDashboard = (props) => {
   return (
     <div className="card empty-dashboard-box d-flex align-items-center flex-column mt-3">
       <div className="my-3 extrabold">No bottles yet?</div>
@@ -10,7 +10,7 @@ const EmptyDashboard = props => {
         <img
           src="/two-bottles-yellow.svg"
           className="two-bottles"
-          al="two-bottles"
+          alt="two-bottles"
         />
       </div>
       <Button

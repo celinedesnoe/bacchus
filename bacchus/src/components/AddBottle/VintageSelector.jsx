@@ -5,7 +5,7 @@ const VintageSelector = ({ addVintage, bottleVintage }) => {
   const [vintage, setVintage] = useState(bottleVintage ? bottleVintage : null);
   useEffect(() => {
     addVintage(vintage);
-  }, [vintage]);
+  }, [vintage, addVintage]);
 
   return (
     <div className="mb-3">

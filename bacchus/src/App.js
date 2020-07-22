@@ -45,25 +45,39 @@ class App extends Component {
     }
     this.state = {
       currentUser: userInfo,
+      loading: true,
     };
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.user.email !== this.props.user.email) {
-      bottleActions.addAllBottles(this.props.user);
+      this.setState({ loading: true });
+      bottleActions
+        .addAllBottles(this.props.user)
+        .then(() => {
+          this.setState({ loading: false });
+        })
+        .catch(() => console.log("ERROR"));
 
       this.setState({ currentUser: this.props.user });
     }
   }
 
   render() {
+    console.log("this.state.loading", this.state.loading);
     return (
       <div className="App">
         <Switch>
           {!this.state.currentUser && (
             <Route exact path="/" component={HomePage} />
           )}
-          <Route exact path="/" component={Dashboard} />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Dashboard {...props} loading={this.state.loading} />
+            )}
+          />
 
           <Route exact path="/new-bottle" component={NewBottle} />
         </Switch>
