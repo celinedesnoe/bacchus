@@ -17,13 +17,13 @@ const AddPictureBtn = (props) => {
         <FontAwesomeIcon icon={["fa", "camera"]} />
       </div>
       <input
+        class="file-upload"
         onChange={(e) => uploadChange(e)}
         type="file"
         accept="image/png, image/jpeg"
         multiple
         name="files"
         is="image"
-        className="file-upload"
         id="upload"
       />
     </div>
