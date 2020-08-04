@@ -7,6 +7,8 @@ import BottleDetails from "./BottleDetails.jsx";
 import AddButton from "./AddButton.jsx";
 import HeaderDashboard from "./HeaderDashboard.jsx";
 
+import { bottleActions } from "../_actions";
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +30,15 @@ class Dashboard extends Component {
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
     this.setState({ bottles: this.props.bottles }, () => this.displayBottles());
+    if (this.props.match) {
+      let { id } = this.props.match.params;
+      bottleActions
+        .getOneBottle(id)
+        .then((res) => {
+          this.setState({ bottleDetails: res });
+        })
+        .catch();
+    }
   }
 
   componentDidUpdate(prevProps) {

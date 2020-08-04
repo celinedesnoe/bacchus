@@ -7,6 +7,8 @@ import { Switch, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import Dashboard from "./components/Dashboard";
 import NewBottle from "./components/AddBottle/NewBottle";
+import BottleDetails from "./components/BottleDetails";
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faSearch,
@@ -64,7 +66,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("this.state.loading", this.state.loading);
     return (
       <div className="App">
         <Switch>
@@ -77,6 +78,12 @@ class App extends Component {
             render={(props) => (
               <Dashboard {...props} loading={this.state.loading} />
             )}
+          />
+          <Route
+            path="/:id"
+            component={(props) => {
+              return <Dashboard match={props.match} />;
+            }}
           />
 
           <Route exact path="/new-bottle" component={NewBottle} />

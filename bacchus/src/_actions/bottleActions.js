@@ -2,6 +2,7 @@ import {
   postNewBottle,
   getAllBottles,
   updateOneBottle,
+  getBottleDetails,
 } from "../_services/api";
 import { store } from "../_helpers/store";
 
@@ -40,6 +41,24 @@ function addAllBottles() {
   });
 }
 
+function getOneBottle(bottleId) {
+  return new Promise((resolve, reject) => {
+    getBottleDetails(bottleId)
+      .then((bottle) => {
+        let oneBottle = bottle.data;
+        store.dispatch({
+          type: "GETONE",
+          oneBottle,
+        });
+        resolve(oneBottle);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject(err);
+      });
+  });
+}
+
 function updateBottle(bottle) {
   return new Promise((resolve, reject) => {
     let payload = { bottle: bottle };
@@ -62,4 +81,5 @@ export const bottleActions = {
   addBottle,
   addAllBottles,
   updateBottle,
+  getOneBottle,
 };

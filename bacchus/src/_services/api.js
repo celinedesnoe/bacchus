@@ -54,6 +54,13 @@ export function getAllBottles(userId) {
     .catch(errorHandler);
 }
 
+export function getBottleDetails(id) {
+  console.log("id", id);
+  return backendApi
+    .post(`/api/process-bottle-details/${id}`)
+    .catch(errorHandler);
+}
+
 export function updateOneBottle(bottleId, bottle) {
   return backendApi
     .put(`/api/process-update-bottle-number/${bottleId}`, bottle)

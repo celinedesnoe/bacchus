@@ -6,6 +6,8 @@ export const bottlesReducer = (state = [], action) => {
       return state.concat(action.newBottle);
     case bottleConstants.GETALL:
       return state.concat(action.allBottles);
+    case bottleConstants.GETONE:
+      return state.concat(action.oneBottle);
     case bottleConstants.UPDATE:
       for (let i = 0; i < state.length; i++) {
         if (state[i]._id === action.bottleUpdated._id) {
