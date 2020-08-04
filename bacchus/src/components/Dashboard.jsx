@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { history } from "../_helpers/history";
 
 import EmptyDashboard from "./EmptyDashboard.jsx";
 import BottleCard from "./BottleCard.jsx";
@@ -32,12 +33,14 @@ class Dashboard extends Component {
     this.setState({ bottles: this.props.bottles }, () => this.displayBottles());
     if (this.props.match) {
       let { id } = this.props.match.params;
-      bottleActions
-        .getOneBottle(id)
-        .then((res) => {
-          this.setState({ bottleDetails: res });
-        })
-        .catch();
+      if (id) {
+        bottleActions
+          .getOneBottle(id)
+          .then((res) => {
+            this.setState({ bottleDetails: res });
+          })
+          .catch();
+      }
     }
   }
 
@@ -120,11 +123,14 @@ class Dashboard extends Component {
       animateLayer: "layer-fade-out",
     });
     setTimeout(() => {
-      this.setState({
-        bottleDetails: false,
-        animateDetails: "slide-up",
-        animateLayer: "layer-fade-in",
-      });
+      this.setState(
+        {
+          bottleDetails: false,
+          animateDetails: "slide-up",
+          animateLayer: "layer-fade-in",
+        },
+        () => history.push("/")
+      );
     }, 600);
   };
 
