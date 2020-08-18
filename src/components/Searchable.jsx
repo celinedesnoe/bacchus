@@ -13,7 +13,7 @@ const Searchable = (props) => {
     const filterOptions = () => {
       let allOptions = props.options;
       let filteredOptions = allOptions.filter((option, index) =>
-        option.includes(value)
+        option.toLowerCase().includes(value.toLowerCase())
       );
 
       setFilteredOptions(filteredOptions);
