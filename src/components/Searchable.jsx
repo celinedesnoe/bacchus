@@ -9,19 +9,6 @@ const Searchable = (props) => {
 
   const refOptions = useRef();
 
-  const chooseOption = (e) => {
-    switch (e.keyCode) {
-      case 40:
-        return indexHover < options.length - 1 && setIndexHover(indexHover + 1);
-      case 38:
-        return indexHover > 0 && setIndexHover(indexHover - 1);
-      case 13:
-        return selectValue();
-      default:
-        return;
-    }
-  };
-
   useEffect(() => {
     const filterOptions = () => {
       let allOptions = props.options;
@@ -30,6 +17,21 @@ const Searchable = (props) => {
       );
 
       setFilteredOptions(filteredOptions);
+    };
+
+    const chooseOption = (e) => {
+      switch (e.keyCode) {
+        case 40:
+          return (
+            indexHover < options.length - 1 && setIndexHover(indexHover + 1)
+          );
+        case 38:
+          return indexHover > 0 && setIndexHover(indexHover - 1);
+        case 13:
+          return selectValue();
+        default:
+          return;
+      }
     };
 
     filterOptions();
@@ -43,7 +45,7 @@ const Searchable = (props) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", chooseOption);
     };
-  }, [value, indexHover, props.value, props.options, chooseOption]);
+  }, [value, indexHover, props.value, props.options, options.length]);
 
   const handleClickOutside = (e) => {
     if (!refOptions.current?.contains(e.target)) {

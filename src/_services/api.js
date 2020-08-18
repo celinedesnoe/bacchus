@@ -61,6 +61,7 @@ export function getBottleDetails(id) {
 }
 
 export function updateOneBottle(bottleId, bottle) {
+  console.log("bottle", bottle);
   return backendApi
     .put(`/api/process-update-bottle-number/${bottleId}`, bottle)
     .catch(errorHandler);

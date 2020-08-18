@@ -17,7 +17,9 @@ const BottleDetails = ({ bottle, detailsRef, animateDetails }) => {
   };
 
   const addPicture = (url) => {
-    bottle.pictures = bottle.pictures.push(url);
+    console.log("bottle.pictures", bottle.pictures);
+    bottle.pictures.push(url);
+    console.log("bottle.pictures", bottle.pictures);
     bottleActions.updateBottle(bottle);
   };
 
