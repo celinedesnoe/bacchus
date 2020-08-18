@@ -79,14 +79,14 @@ class App extends Component {
               <Dashboard {...props} loading={this.state.loading} />
             )}
           />
+          <Route exact path="/new-bottle" component={NewBottle} />
+
           <Route
             path="/:id"
             component={(props) => {
               return <Dashboard match={props.match} />;
             }}
           />
-
-          <Route exact path="/new-bottle" component={NewBottle} />
         </Switch>
       </div>
     );

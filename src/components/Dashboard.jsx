@@ -34,6 +34,7 @@ class Dashboard extends Component {
     if (this.props.match) {
       let { id } = this.props.match.params;
       if (id) {
+        console.log("id", id);
         bottleActions
           .getOneBottle(id)
           .then((res) => {

@@ -55,6 +55,7 @@ export function getAllBottles(userId) {
 }
 
 export function getBottleDetails(id) {
+  console.log("CALL API");
   return backendApi
     .post(`/api/process-bottle-details/${id}`)
     .catch(errorHandler);
