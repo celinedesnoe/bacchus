@@ -19,7 +19,7 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
         className={`bottles-badge d-flex align-items-center justify-content-center`}
       >
         <div
-          className="counter-button"
+          className="counter-button cursor-pointer"
           onClick={() => setNbBottles(nbBottles - 1)}
         >
           <FontAwesomeIcon icon={["fa", "minus"]} />
@@ -29,7 +29,7 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
         </div>
 
         <div
-          className="counter-button"
+          className="counter-button cursor-pointer"
           onClick={() => setNbBottles(nbBottles + 1)}
         >
           <FontAwesomeIcon icon={["fa", "plus"]} />
