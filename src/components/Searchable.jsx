@@ -9,16 +9,29 @@ const Searchable = (props) => {
 
   const refOptions = useRef();
 
-  const filterOptions = () => {
-    let allOptions = props.options;
-    let filteredOptions = allOptions.filter((option, index) =>
-      option.includes(value)
-    );
-
-    setFilteredOptions(filteredOptions);
+  const chooseOption = (e) => {
+    switch (e.keyCode) {
+      case 40:
+        return indexHover < options.length - 1 && setIndexHover(indexHover + 1);
+      case 38:
+        return indexHover > 0 && setIndexHover(indexHover - 1);
+      case 13:
+        return selectValue();
+      default:
+        return;
+    }
   };
 
   useEffect(() => {
+    const filterOptions = () => {
+      let allOptions = props.options;
+      let filteredOptions = allOptions.filter((option, index) =>
+        option.includes(value)
+      );
+
+      setFilteredOptions(filteredOptions);
+    };
+
     filterOptions();
     if (props.value) {
       setValue(props.value);
@@ -30,25 +43,12 @@ const Searchable = (props) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", chooseOption);
     };
-  }, [value, indexHover, props.value, props.options]);
+  }, [value, indexHover, props.value, props.options, chooseOption]);
 
   const handleClickOutside = (e) => {
     if (!refOptions.current?.contains(e.target)) {
       setSeeOptions(false);
       setIndexHover(0);
-    }
-  };
-
-  const chooseOption = (e) => {
-    switch (e.keyCode) {
-      case 40:
-        return indexHover < options.length - 1 && setIndexHover(indexHover + 1);
-      case 38:
-        return indexHover > 0 && setIndexHover(indexHover - 1);
-      case 13:
-        return selectValue();
-      default:
-        return;
     }
   };
 
@@ -95,8 +95,9 @@ const Searchable = (props) => {
             {options.map((option, index) => {
               return (
                 <div
-                  className={`input-options my-2 p-2 ${index === indexHover &&
-                    "hovered"}`}
+                  className={`input-options my-2 p-2 ${
+                    index === indexHover && "hovered"
+                  }`}
                   value={option}
                   key={option}
                   onClick={() => {

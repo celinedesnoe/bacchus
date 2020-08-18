@@ -5,7 +5,7 @@ const ColorSelector = ({ addColor, bottleColor }) => {
   const [color, setColor] = useState(bottleColor);
   useEffect(() => {
     addColor(color);
-  }, [color]);
+  }, [color, addColor]);
   return (
     <div className="mb-4">
       <div className="label-input mb-2">Color</div>

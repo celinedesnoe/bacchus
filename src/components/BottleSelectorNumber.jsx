@@ -11,7 +11,7 @@ const BottleSelectorNumber = ({ number, updateNumber }) => {
       updateNumber(nbBottles);
       setWording(text);
     }
-  }, [nbBottles]);
+  }, [nbBottles, number, updateNumber]);
 
   return (
     <div className="">

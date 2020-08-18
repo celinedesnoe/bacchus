@@ -9,7 +9,7 @@ const allApellations = appellations.map(
   (appellation) => appellation.appellation
 );
 
-const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
+const NewBottleStep2 = ({ bottle, setDetails }) => {
   const [cepage, setCepage] = useState(bottle.cepage);
   const [appellation, setAppellation] = useState(bottle.appellation);
   const [region, setRegion] = useState(bottle.region);
@@ -18,7 +18,7 @@ const NewBottleStep2 = ({ bottle, setDetails, submit }) => {
 
   useEffect(() => {
     setDetails(cepage, appellation, region, country);
-  }, [cepage, appellation, region, country]);
+  }, [cepage, appellation, region, country, bottle, setDetails]);
 
   const findRegion = (option) => {
     let region = appellations.find((item) => item.appellation === option)

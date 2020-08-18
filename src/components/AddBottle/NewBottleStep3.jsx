@@ -11,7 +11,7 @@ const NewBottleStep3 = ({ bottle, setDetails, submit }) => {
 
   useEffect(() => {
     setDetails(bottlesNumber, price, pictures);
-  }, [bottlesNumber, price, pictures]);
+  }, [bottlesNumber, price, pictures, setDetails]);
 
   const uploadPicture = (url) => {
     setPictures([...pictures, url]);
@@ -23,54 +23,52 @@ const NewBottleStep3 = ({ bottle, setDetails, submit }) => {
   };
 
   return (
-    console.log("isLoading", isLoading),
-    (
-      <div>
-        <div className="card">
-          <div className="d-flex justify-content-center mb-4 mt-3">
-            Add some figures
-          </div>
-          <Input
-            title="Number of bottles"
-            placeholder="3"
-            className="mb-3"
-            onChange={(e) => setBottlesNumber(e.target.value)}
-            value={bottlesNumber}
-            type="number"
+    <div>
+      <div className="card">
+        <div className="d-flex justify-content-center mb-4 mt-3">
+          Add some figures
+        </div>
+        <Input
+          title="Number of bottles"
+          placeholder="3"
+          className="mb-3"
+          onChange={(e) => setBottlesNumber(e.target.value)}
+          value={bottlesNumber}
+          type="number"
+        />
+        <Input
+          title="Price per bottle"
+          placeholder="30$"
+          className="mb-3"
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
+          type="number"
+        />
+        <div className="label-input mb-2">Pictures</div>
+        <div className="d-flex">
+          <AddPictureBtn
+            uploadPicture={uploadPicture}
+            checkLoadingPic={checkLoadingPic}
           />
-          <Input
-            title="Price per bottle"
-            placeholder="30$"
-            className="mb-3"
-            onChange={(e) => setPrice(e.target.value)}
-            value={price}
-            type="number"
-          />
-          <div className="label-input mb-2">Pictures</div>
-          <div className="d-flex">
-            <AddPictureBtn
-              uploadPicture={uploadPicture}
-              checkLoadingPic={checkLoadingPic}
-            />
-            {pictures.map((picture) => (
-              <div
-                style={{ backgroundImage: `url("${picture}")` }}
-                className="pic-miniature"
-                key={picture}
-              />
-            ))}
+          {pictures.map((picture) => (
             <div
-              className={`pic-miniature align-items-center justify-content-center bg-primary-light ${!isLoading &&
-                "d-none"}`}
-            >
-              <div className="spinner-border spinner-border-sm" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
+              style={{ backgroundImage: `url("${picture}")` }}
+              className="pic-miniature"
+              key={picture}
+            />
+          ))}
+          <div
+            className={`pic-miniature align-items-center justify-content-center bg-primary-light ${
+              !isLoading ? "d-none" : "d-flex"
+            }`}
+          >
+            <div className="spinner-border spinner-border-sm" role="status">
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         </div>
       </div>
-    )
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import { authActions } from "../_actions";
 import LogIn from "./LogIn.jsx";
 import SignUp from "./SignUp.jsx";
 
-import { postSignUp, postCellar, postLogIn } from "../_services/api";
+import { postCellar } from "../_services/api";
 
 class HomePage extends Component {
   constructor(props) {
@@ -59,7 +59,7 @@ class HomePage extends Component {
               <img
                 src="/two-bottles.svg"
                 className="two-bottles"
-                al="two-bottles"
+                alt="two-bottles"
               />
             </div>
           </div>

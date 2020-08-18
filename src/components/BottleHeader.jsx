@@ -4,21 +4,20 @@ const BottleHeader = ({ bottle, className }) => {
   const [bottlePicto, setBottlePicto] = useState("");
 
   useEffect(() => {
+    const findBottlePicto = () => {
+      switch (bottle.color) {
+        case "red":
+          return setBottlePicto("redwine.svg");
+        case "white":
+          return setBottlePicto("whitewine.svg");
+        case "rosé":
+          return setBottlePicto("roséwine.svg");
+        default:
+          return setBottlePicto("unknownwine.svg");
+      }
+    };
     findBottlePicto();
-  }, []);
-
-  const findBottlePicto = () => {
-    switch (bottle.color) {
-      case "red":
-        return setBottlePicto("redwine.svg");
-      case "white":
-        return setBottlePicto("whitewine.svg");
-      case "rosé":
-        return setBottlePicto("roséwine.svg");
-      default:
-        return setBottlePicto("unknownwine.svg");
-    }
-  };
+  });
 
   return (
     <div>

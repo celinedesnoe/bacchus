@@ -30,6 +30,15 @@ const BottlePictures = ({ pictures, addPicture }) => {
             key={picture}
           />
         ))}
+        <div
+          className={`pic-miniature align-items-center justify-content-center bg-primary-light ${
+            !isLoading ? "d-none" : "d-flex"
+          }`}
+        >
+          <div className="spinner-border spinner-border-sm" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
       </div>
     </div>
   );

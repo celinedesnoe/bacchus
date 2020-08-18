@@ -11,7 +11,7 @@ const NewBottleStep1 = ({ setDetails, bottle, error }) => {
 
   useEffect(() => {
     setDetails(name, color, vintage);
-  }, [name, color, vintage]);
+  }, [name, color, vintage, setDetails]);
 
   return (
     <div className="card card-new-bottle w-100">
@@ -22,7 +22,7 @@ const NewBottleStep1 = ({ setDetails, bottle, error }) => {
         placeholder="Château Margaux"
         className={"mb-4"}
         title="Name of the château or domain*"
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         value={name}
         error={error}
       />
