@@ -2,7 +2,7 @@ Small personal project done during the lock down
 
 Wine bottle management app to track what you have in stock
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
