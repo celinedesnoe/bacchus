@@ -1,0 +1,331 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./vendors/bootstrap";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./components/buttons";
+@import "./components/input";
+@import "./components/select";
+
+@import "./components/textarea";
+@import "./components/images";
+
+@import "./layout/card";
+@import "./layout/header";
+@import "./layout/modal";
+@import "./layout/layer";
+@import "./layout/sideview";
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.auth-header {
+  background-color: theme-color("primary");
+  border-radius: 0px 0px 40px 40px;
+  width: 100%;
+  height: 50%;
+}
+
+.log-in-box {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: fit-content;
+  animation: 1s log-in-box-show forwards;
+  animation-delay: 1s;
+}
+
+.header-dashboard {
+  font-size: 24px;
+  background-color: theme-color("primary");
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+.nb-bottles {
+  font-weight: 800;
+}
+
+.two-bottles {
+  height: 70px;
+  width: 70px;
+}
+
+.form-search {
+  background-color: white !important;
+  color: theme-color("grey") !important;
+}
+
+.empty-dashboard-box {
+  width: 80%;
+  position: relative;
+  top: 162px;
+  height: fit-content;
+}
+
+.header-new-bottle {
+  background-color: theme-color("primary");
+  border-radius: 0px 0px 40px 40px;
+  color: white;
+  font-size: 18px;
+}
+
+.close-icon {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+
+.vintage-card {
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  font-size: 12px;
+  transition: 0.3s;
+  &.selected {
+    background-color: theme-color("secondary");
+    color: white;
+  }
+  .input-inline {
+    background-color: white !important;
+    font-size: 14px !important;
+    border: 0px solid white !important;
+    color: #1a2340 !important;
+    width: 54px;
+    height: 27px;
+  }
+}
+
+.card-new-bottle {
+  border: 1px solid transparent;
+  font-size: 18px;
+}
+
+.dot-step {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border: 1px solid theme-color("primary-light");
+  margin-left: 4px;
+  background-color: transparent;
+
+  &:nth-child(1) {
+    margin-left: 0px;
+  }
+
+  &.selected {
+    background-color: theme-color("primary");
+    border: 1px solid theme-color("primary");
+  }
+}
+
+.badge {
+  border-radius: 15px;
+  padding: 8px 16px;
+  font-size: inherit;
+  &-primary {
+    background-color: theme-color("primary");
+  }
+  &-tertiary {
+    background-color: theme-color("tertiary");
+  }
+}
+
+.new-bottle-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bottle-picto {
+  position: absolute;
+  top: -34px;
+  left: -4px;
+}
+
+.list-bottles {
+  top: 170px;
+  position: relative;
+}
+
+.add-button {
+  background-color: theme-color("tertiary");
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+}
+
+.counter-icon {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  background-color: theme-color("primary");
+  color: white;
+}
+
+.list-comments {
+  overflow-y: scroll;
+  position: relative;
+}
+
+.comment-card {
+  border-radius: 15px;
+  box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+  width: 138px;
+  height: 115px;
+  min-width: 138px;
+  min-height: 115px;
+
+  .note {
+    font-weight: bold;
+    font-size: 18px;
+    color: theme-color("secondary");
+  }
+  .date {
+    font-size: 12px;
+    color: theme-color("grey");
+  }
+  .comment {
+    font-size: 16px;
+  }
+}
+
+.comment-empty-state {
+  border-radius: 15px;
+  border: 1px dashed theme-color("grey");
+  height: 115px;
+  min-height: 115px;
+  font-size: 18px;
+  font-weight: 500;
+  color: theme-color("secondary");
+}
+
+.button-add-comment {
+  cursor: pointer;
+  background: theme-color("tertiary");
+  color: white;
+  height: 115px;
+  min-width: 22px;
+  box-shadow: 1px 5px 19px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  transition: 0.3s;
+  border: 2px solid theme-color("tertiary");
+  &.shadow {
+    &::before {
+      z-index: 2;
+      pointer-events: none;
+      transition: 0.4s;
+      position: absolute;
+      top: 0;
+      left: -16px;
+      width: 16px;
+      height: 100%;
+      content: "";
+      box-shadow: -16px 8px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  &:hover {
+    background: white;
+    color: theme-color("tertiary");
+    border: 2px solid theme-color("tertiary");
+  }
+}
+
+.bottles-badge {
+  background-color: theme-color("primary");
+  border-radius: 10px;
+  border: 2px solid;
+  width: fit-content;
+  padding: 0px 2px;
+  .counter-button {
+    background-color: white;
+    color: theme-color("primary");
+    border-radius: 10px;
+    height: 27px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border: 2px solid theme-color("primary");
+  }
+  .counter-bottles {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.fav {
+  path {
+    fill: theme-color("secondary");
+  }
+}
+
+@keyframes hide-details {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes hide-details-modal {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    transform: translate(-50%, -150%);
+  }
+}
+
+.hide-details {
+  animation: hide-details 0.6s forwards;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    top: 75px;
+  }
+}
+
+.up {
+  animation: up 0.6s forwards;
+}
+
+@media (min-width: 1024px) {
+  .hide-details {
+    animation: hide-details-modal 0.6s forwards;
+  }
+  .up {
+    animation: none;
+  }
+}
+
+.icon-wine {
+  height: 14px;
+  margin-right: 8px;
+}

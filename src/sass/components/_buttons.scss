@@ -1,0 +1,69 @@
+.button {
+  background-color: theme-color("secondary");
+  color: white;
+  border-radius: 5px;
+  border: 2px solid theme-color("secondary");
+  text-align: center;
+  padding: 4px;
+  min-width: fit-content;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    color: theme-color("secondary");
+    background-color: white;
+  }
+}
+
+.button-secondary {
+  background-color: white;
+  color: theme-color("grey");
+  border-radius: 5px;
+  border: 2px solid theme-color("grey");
+  text-align: center;
+  padding: 4px;
+  min-width: fit-content;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  &:hover {
+    background-color: theme-color("grey");
+    color: white;
+  }
+}
+
+.btn-add-picture {
+  width: 100%;
+  background-color: $colour-primary-light;
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 16px;
+  transition: 0.2s;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    background-color: $colour-secondary;
+    svg {
+      color: white;
+    }
+  }
+}
+
+.btn-sideview {
+  position: absolute;
+  top: 12px;
+  background-color: $colour-tertiary;
+  color: white;
+  width: 50px;
+  height: 45px;
+  @include btn-sideview($directions, 50px);
+}

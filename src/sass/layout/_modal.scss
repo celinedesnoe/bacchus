@@ -1,0 +1,45 @@
+.bottle-details {
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  z-index: 20;
+  bottom: 0;
+  top: 75px;
+}
+
+.slide-up {
+  animation: 0.5s slide-up forwards;
+}
+
+@media (min-width: 500px) {
+  .bottle-details {
+    width: 500px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    bottom: unset;
+    animation: 0.5s slide-up-big forwards;
+    border-radius: 15px;
+    &.add-comment {
+      top: 0;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-big {
+  0% {
+    transform: translate(-50%, -100%);
+  }
+  100% {
+    transform: translate(-50%, 0%);
+  }
+}

@@ -1,0 +1,41 @@
+@mixin image($size) {
+  width: $size;
+  height: $size;
+  border-radius: 4px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin card-bottle($wine-palettes) {
+  @each $state, $wine in $wine-palettes {
+    &-#{$state} {
+      border-left: 5px solid $wine;
+    }
+  }
+}
+
+@mixin color-input($wine-palettes) {
+  @each $state, $wine in $wine-palettes {
+    &-#{$state} {
+      border-left: 5px solid $wine;
+      &.selected {
+        background-color: $wine;
+        .radio {
+          border: 1px solid $wine;
+          color: $wine;
+        }
+      }
+    }
+  }
+}
+
+@mixin btn-sideview($directions, $px) {
+  @each $state, $direction in $directions {
+    &-#{$state} {
+      border-top-#{$direction}-radius: 40px;
+      border-bottom-#{$direction}-radius: 40px;
+      #{$direction}: -$px;
+    }
+  }
+}
