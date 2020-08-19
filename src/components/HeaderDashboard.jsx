@@ -2,13 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Search from "./Search.jsx";
-import SideviewLeft from "./SideviewLeft.jsx";
+// import SideviewLeft from "./SideviewLeft.jsx";
 const HeaderDashboard = (props) => {
   const wording = props.bottles.length > 1 ? "wines" : "wine";
 
   return (
     <div className="header-dashboard d-flex align-items-center flex-column px-3 py-4">
-      <SideviewLeft />
+      {/* <SideviewLeft /> */}
       <div>
         <div className="text-center mb-3">
           <div>

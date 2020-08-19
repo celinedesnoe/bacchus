@@ -5,4 +5,5 @@
 .pic-miniature {
   @include image(50px);
   margin-right: 16px;
+  cursor: pointer;
 }

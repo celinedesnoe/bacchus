@@ -62,7 +62,6 @@ function getOneBottle(bottleId) {
 function updateBottle(bottle) {
   return new Promise((resolve, reject) => {
     let payload = { bottle: bottle };
-    console.log("bottle", payload);
 
     updateOneBottle(bottle._id, payload)
       .then((bottle) => {
