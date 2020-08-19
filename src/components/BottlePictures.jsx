@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Viewer from "./Viewer.jsx";
-// import Viewer from "react-viewer";
+// import Viewer from "./Viewer.jsx";
+import Viewer from "react-viewer";
 
 import AddPictureBtn from "./AddPictureBtn.jsx";
 
